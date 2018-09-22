@@ -6,66 +6,111 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<style type="text/css">
-		section {
-			position:absolute;
-			width:140px;
-			height:1080px;
-			background-color:rgba(0, 0, 0, 0.5);
-		}
-		section .row,
-		.habilidades  {
-			padding:20px 10px;
-		}
-		h6 {
-			border-bottom:1px solid #CCC;
-			padding-bottom:7px;
-		}
-		section .col,
-		.habilidades h6
-		 {
-			color:#FFF;
-		}
-		ul{
-			text-align:left;
-		}
-		ul li {
-			color:#FFF;
-			font-size:13.5px;
-		}
-		.hab-conteudo {
-			margin-right:10px;
-		}
-		.col3{
-			background-color:#CCC;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 </head>
 <body >
-		<section >
-			<div class="row" >
-				<div class="col" >
-					<h6 style="">Informação de Contato</h6>
+	<header>
+		<div class="container">
+			<div id="areaObj">
+				<h2 style=""><img src="assets/images/foto perfil.jpg" height="150"/>Luiz Fernando Malta Martins</h2><br/>
+				<h4 style="">Desenvolvedor web front-end, desenvolvedor web back-end. Procuro me ingressar no
+				mercado de trabalho em alguma empresa de desenvolvimento de software, e/ou, que possua
+				desenvolvedores de software.</h4>	
+			</div>			
+		</div>		
+	</header>
+	<main>
+		<div class="separaDiv">
+			
+		</div>
+		
+		<div class="container">
+			<h5 style=""><strong>Experiência</strong></h5><br/>
+			<div class="borda" style="">
+				
+				<div class="ConteudoExp">
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6 style="">Charlotte Casa de Dança</h6>
+							<h6 style="">Goiânia, GO</h6>
+							<h6 style="">Junho - 2018</h6>
+							<h6 style="">Agosto - 2018</h6>
+						</div>
+						<div class="col-sm-9 col9">
+							<h4><img src="assets/images/star.png"/>Diretor Executivo</h4>
+							<span>Compra de produtos para venda no dia do evento, seja alimento, bebidas, gelo, materiais de limpeza, copos descartáveis. Reserva de mesas para evento, organizar a limpeza do galpão. No dia do evento, ser o responsável pelo caixa de entradas e fichas.</span>
+						</div>						
+					</div>
+					<br/>					
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6 style="">Edíficio Dj.Oliveira</h6>
+							<h6 style="">Goiânia, GO</h6>
+							<h6 style="">Maio - 2018</h6>
+							<h6 style="">Julho - 2018</h6>
+						</div>
+						<div class="col-sm-9 col9">
+							<h4><img src="assets/images/star.png"/>Porteiro Noturno</h4>
+							<span>Organização da guarita, fechamento dos portões da garagem, abertura do portão de entrada para
+							moradores, documentação de rotina diária, recebimento de correspondências e entrega
+							das mesmas. Vigilância de câmeras, entrega de recados e/ou utensílios de moradores.</span>
+						</div>						
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6 style="">Hinode</h6>
+							<h6 style="">Goiânia, GO</h6>
+							<h6 style="">Maio - 2016</h6>
+							<h6 style="">Julho - 2018</h6>
+						</div>
+						<div class="col-sm-9 col9">
+							<h4><img src="assets/images/star.png"/>Consultor Executivo</h4>
+							<span>Vendas diretas de produtos, seja cosméticos, perfumes, shampoos, cremes corporais e faciais.</span>
+						</div>						
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6 style="">Universidade Salgado de Oliveira</h6>
+							<h6 style="">Goiânia, GO</h6>
+							<h6 style="">Maio - 2014</h6>
+							<h6 style="">Maio - 2016</h6>
+						</div>
+						<div class="col-sm-9 col9">
+							<h4><img src="assets/images/star.png"/>Assistente de Laboratório</h4>
+							<span>Manutenção de laboratórios de informática, formatação de computadores, atendimento à alunos na matricula, no início e fim de semestre.</span>
+						</div>						
+					</div>
+
 				</div>
-				<div class="col" style="font-size:12px;">
-					E-mail<br/>
-					lufmalta@gmail.com
+			</div>
+		</div>
+	</main>
+	<section>
+			<div class="row">
+				<div class="col">
+					<h6>Informação de Contato</h6>
+				</div>
+				<div class="col">
+					<span>E-mail</span><br/>
+					<span>lufmalta@gmail.com</span>
 				</div>
 
-				<div class="col" style="font-size:12px;">
+				<div class="col">
 					<p></p>
-					Endereço<br/>
-					Rua u-53<br/>
-					Quadra 15<br/>
-					lote 10, casa 2<br/>
-					Setor Vila União
+					<span>Endereço</span><br/>
+					<span>Rua u-53</span><br/>
+					<span>Quadra 15</span><br/>
+					<span>lote 10, casa 2</span><br/>
+					<span>Setor Vila União</span>
 				</div>
-				<div class="col" style="font-size:12px;">
+				<div class="col">
 					<p></p>
-					Telefone<br/>
-					+55 62 982396838
+					<span>Telefone</span><br/>
+					<span>+55 62 982396838</span>
 				</div>
 			</div>
 			<div class="habilidades">
@@ -85,103 +130,26 @@
 					</ul>
 				</div>
 				
-			</div>
+			</div>	
+	</section>
+	<footer>
+		<div class="separaDiv">
 			
-		</section>
-	<header style="background-color:#CCC;">
-		<div class="container" style='margin:45px;'>
-			<div style="margin-left:80px;border-bottom:2px solid #DDD;">
-				<h2 style="text-align:left;word-wrap:wrap;text-align:center;">Luiz Fernando Malta Martins</h2><br/>
-				<h4 style="text-align:left;font-size:20px;">Desenvolvedor web front-end, desenvolvedor web back-end. Procuro me ingressar no
-				mercado de trabalho em alguma empresa de desenvolvimento de software, e/ou, que possua
-				desenvolvedores de software.</h4>	
-			</div>			
-		</div>		
-	</header>
-
-	<main style="background-color:#DDD;">
-
-		<div class="container" style="margin-top:20px;background-color: #DDD;margin:40px;">
-			<h5 style="margin-left:80px;text-align:center;">Experiência</h5><br/>
-			<div style="margin-left:80px;border-bottom:2px solid #DDD;background-color:#DDD;">
-				
-				<div class="ConteudoExp" style="margin-left:80px;border-bottom:2px solid #DDD;">
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Charlotte Casa de Dança</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Goiânia, GO</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Junho - 2018</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Agosto - 2018</h6>
-						</div>
-						<div class="col-sm-9" style="background-color:#CCC;">
-							<h4><img src="assets/images/star.png" style="padding-right:10px;"/>Diretor Executivo</h4>
-							<span>Compra de produtos para venda no dia do evento, seja alimento, bebidas, gelo, materiais de limpeza, copos descartáveis. Reserva de mesas para evento, organizar a limpeza do galpão. No dia do evento, ser o responsável pelo caixa de entradas e fichas.</span>
-						</div>						
-					</div>
-					<br/>					
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Edíficio Dj.Oliveira</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Goiânia, GO</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Maio - 2018</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Julho - 2018</h6>
-						</div>
-						<div class="col-sm-9" style="background-color:#CCC;">
-							<h4><img src="assets/images/star.png" style="padding-right:10px;"/>Porteiro Noturno</h4>
-							<span>Organização da guarita, fechamento dos portões da garagem, abertura do portão de entrada para
-							moradores, documentação de rotina diária, recebimento de correspondências e entrega
-							das mesmas. Vigilância de câmeras, entrega de recados e/ou utensílios de moradores.</span>
-						</div>						
-					</div>
-					<br/>
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Hinode</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Goiânia, GO</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Maio - 2016</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Julho - 2018</h6>
-						</div>
-						<div class="col-sm-9" style="background-color:#CCC;">
-							<h4><img src="assets/images/star.png" style="padding-right:10px;"/>Consultor Executivo</h4>
-							<span>Vendas diretas de produtos, seja cosméticos, perfumes, shampoos, cremes corporais e faciais.</span>
-						</div>						
-					</div>
-					<br/>
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Universidade Salgado de Oliveira</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Goiânia, GO</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Maio - 2014</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Maio - 2016</h6>
-						</div>
-						<div class="col-sm-9" style="background-color:#CCC;">
-							<h4><img src="assets/images/star.png" style="padding-right:10px;"/>Assistente de Laboratório</h4>
-							<span>Manutenção de laboratórios de informática, formatação de computadores, atendimento à alunos na matricula, no início e fim de semestre.</span>
-						</div>						
-					</div>
-
-				</div>
-			</div>
 		</div>
-		
-	</main>
-	<footer style="background-color:#DDD;">
-		<div class="container" style="margin-top:20px;background-color: #CCC;margin:40px;">
-			<h5 style="margin-left:80px;text-align:center;">Educação</h5><br/>
-			<div style="margin-left:80px;">
-				<div class="ConteudoExp" style="margin-left:80px;border-bottom:1px solid #DDD;">
-
+		<div class="container">
+			<h5><strong>Educação</strong></h5><br/>
+			<div class="fotmargen">
+				<div class="ConteudoExp">
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Universidade Salgado de Oliveira</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">Setor Sul, Goiânia</h6>
-							<h6 style="text-align:center;border-bottom:1px solid #DDD;">2016</h6>							
+							<h6 style="">Universidade Salgado de Oliveira</h6>
+							<h6 style="">Setor Sul, Goiânia</h6>
+							<h6 style="">2016</h6>							
 						</div>
-						<div class="col-sm-9" style="background-color:#CCC;">
-							
-							<h4><img src="assets/images/star.png" style="padding-right:10px;"/>Analise e Desenvolvimento de Sistemas</h4>
+						<div class="col-sm-9 col9">							
+							<h4><img src="assets/images/star.png"/>Analise e Desenvolvimento de Sistemas</h4>
 							<span>Curso PHP - Zero ao profissional - Professor Bonieky Lacerda(Sênior PHP) - (Cursando). Certificados já adquiridos: Banco de dados(MySql) - 10 horas, Bootstrap Básico - 10 horas, Fundamentos PHP - 20 horas, HTML5 e CSS3 - 20 horas, Javascript - 25 horas. Módulos concluídos: 14 módulos, total de 405 aulas concluídas. </span>
-							<a id="a" href="https://github.com/lufmalta/projetoteste2" target="_blank"></a>
+							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank"></a>
 						</div>						
 					</div>					
 					<br/>	
@@ -191,12 +159,8 @@
 		</div>
 	</footer>
 	
-	
-
-
 
 	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 

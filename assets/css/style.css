@@ -1,75 +1,144 @@
-body{
-	margin:0;
-	padding:0;
+section {
+	position:absolute;
+	width:140px;
+	height:1080px;
+	background-color:rgba(0, 0, 0, 0.5);
+	top:0;
+	left:0;
 }
-.topo {
-	width:100%;
-	background-color:#CCC;
-
+section .col {
+	font-size:12px;
 }
-.topoint {
-	width:100%;
-	max-width:1200px;
-	height:50px;
-	margin:auto;
+section .row,
+.habilidades  {
+	padding:20px 10px;
+}
+section h6 {
+	border-bottom:1px solid #CCC;
+	padding-bottom:7px;
+}
+section .col,
+.habilidades h6
+ {
+	color:#FFF;
+}
+ul{
+	text-align:left;
+}
+ul li {
+	color:#FFF;
+	font-size:13.5px;
+}
+.hab-conteudo {
+	margin-right:10px;
+}
+header{
 	background-color:#DDD;
 }
-.topoleft {
-	width:50%;
-	float:left;
-	height:50px;
+header #areaObj {
+	margin-left:80px;
+	border-bottom:2px solid #DDD;
 }
-.topoleft ul {
-	list-style:none;
+
+header #areaObj h2 {
+	text-align:left;
+	word-wrap:wrap;
+	text-align:center;
 }
-.topoleft ul li {
-	float:left;
-	margin-left:4px;
-	margin-right:4px;	
+header #areaObj h4{
+	text-align:left;
+	font-size:20px;
 }
-.topoleft ul a {
-	text-decoration:none;
-	color:black;
-}
-.topoleft ul a:hover {
-	color:blue;
-}
-.toporight {
-	width:50%;
-	float:right;
-	height:50px;
-}
-.toporight ul {
-	list-style:none;
-}
-.toporight ul li {
-	float:right;
-	margin-left:4px;
-	margin-right:4px;
-	text-decoration:none;
-}
-.toporight ul a {
-	text-decoration:none;
-	color:black;
-}
-.toporight ul a:hover {
-	color:blue;
-}
-.container {
-	width:100%;
-	
-}
-.containerint {
-	width:100%;
-	max-width:1200px;
-	min-height:400px;
-	margin:auto;
-	
-}
-.containerint .botaoadd{
-	margin-left:350px;
+header #areaObj img {
+	margin-right:20px;
 	margin-top:10px;
 }
-.conteudo table {
-	margin:auto;
+/*header .container {
+	margin:45px;
+}*/
+
+/*main .container{
+	margin:40px;
+}
+*/
+/*footer .container {
+	margin:40px;
+}*/
+main,
+main .container {
+	background-color:#DDD;
+}	
+main .container h5 {
+	margin-left:80px;
+	text-align:center;
+}
+main .container .borda {
+	margin-left:80px;
+	border-bottom:2px solid #DDD;
+	background-color:#DDD;
+}
+
+main .ConteudoExp,
+footer .ConteudoExp {
+	margin-left:80px;
+	border-bottom:1px solid #DDD;
+}
+main .ConteudoExp h6,
+footer .ConteudoExp h6 {
+	text-align:center;
+	border-bottom:1px solid #DDD;
+}
+main .col3,
+footer .col3 {
+	background-color:#CCC;
+}
+main .col9,
+footer .col9{
+	background-color:#CCC;
+}
+main .col9 img,
+footer .col9 img {
+	padding-right:10px;
+}
+footer {
+	background-color:#DDD;
+}
+footer .container {
+	background-color: #CCC;
+}
+footer .container h5{
+	margin-left:80px;
+	text-align:center;
+}
+.separaDiv {
+	width:100%;
+	height:20px;
+	background-color:#999;
+}
+#a {
+	word-wrap: break-word;
+}
+.fotmargen {
+	margin-left:80px;
+}
+
+
+@media only screen and (max-width:767px){
+
+		section h6 {
+		font-size:12px;
+	}
+		section {
+		width:125px;
+		position:fixed;
+	}
+		section .col,
+		section .hab-conteudo ul li{
+		font-size:11px;
+	}
+		#areaObj h2 {
+		font-size:11px;
+
+	}
+
 }
