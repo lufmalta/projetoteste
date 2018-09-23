@@ -86,7 +86,7 @@
 					</div>
 
 				</div>
-			</div>
+			</div> <!-- borda -->
 		</div>
 	</main>
 	<section>

@@ -74,7 +74,7 @@ main .container h5 {
 }
 main .container .borda {
 	margin-left:80px;
-	border-bottom:2px solid #DDD;
+	/*border-bottom:2px solid #DDD;*/
 	background-color:#DDD;
 }
 
@@ -137,7 +137,7 @@ footer .container h5{
 		font-size:11px;
 	}
 		#areaObj h2 {
-		font-size:11px;
+		font-size:17px;
 
 	}
 
