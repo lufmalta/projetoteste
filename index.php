@@ -14,8 +14,8 @@
 	<header>
 		<div class="container">
 			<div id="areaObj">
-				<h2 style=""><img src="assets/images/foto perfil.jpg" height="150"/>Luiz Fernando Malta Martins</h2><br/>
-				<h4 style="">Desenvolvedor web front-end, desenvolvedor web back-end. Procuro me ingressar no
+				<h2><img src="assets/images/foto perfil.jpg" height="150"/>Luiz Fernando Malta Martins</h2><br/>
+				<h4>Desenvolvedor web front-end, desenvolvedor web back-end. Procuro me ingressar no
 				mercado de trabalho em alguma empresa de desenvolvimento de software, e/ou, que possua
 				desenvolvedores de software.</h4>	
 			</div>			
@@ -27,16 +27,16 @@
 		</div>
 		
 		<div class="container">
-			<h5 style=""><strong>Experiência</strong></h5><br/>
-			<div class="borda" style="">
+			<h5><strong>Experiência</strong></h5><br/>
+			<div class="borda">
 				
 				<div class="ConteudoExp">
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="">Charlotte Casa de Dança</h6>
-							<h6 style="">Goiânia, GO</h6>
-							<h6 style="">Junho - 2018</h6>
-							<h6 style="">Agosto - 2018</h6>
+							<h6>Charlotte Casa de Dança</h6>
+							<h6>Goiânia, GO</h6>
+							<h6>Junho - 2018</h6>
+							<h6>Agosto - 2018</h6>
 						</div>
 						<div class="col-sm-9 col9">
 							<h4><img src="assets/images/star.png"/>Diretor Executivo</h4>
@@ -46,10 +46,10 @@
 					<br/>					
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="">Edíficio Dj.Oliveira</h6>
-							<h6 style="">Goiânia, GO</h6>
-							<h6 style="">Maio - 2018</h6>
-							<h6 style="">Julho - 2018</h6>
+							<h6>Edíficio Dj.Oliveira</h6>
+							<h6>Goiânia, GO</h6>
+							<h6>Maio - 2018</h6>
+							<h6>Julho - 2018</h6>
 						</div>
 						<div class="col-sm-9 col9">
 							<h4><img src="assets/images/star.png"/>Porteiro Noturno</h4>
@@ -61,10 +61,10 @@
 					<br/>
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="">Hinode</h6>
-							<h6 style="">Goiânia, GO</h6>
-							<h6 style="">Maio - 2016</h6>
-							<h6 style="">Julho - 2018</h6>
+							<h6>Hinode</h6>
+							<h6>Goiânia, GO</h6>
+							<h6>Maio - 2016</h6>
+							<h6>Julho - 2018</h6>
 						</div>
 						<div class="col-sm-9 col9">
 							<h4><img src="assets/images/star.png"/>Consultor Executivo</h4>
@@ -74,10 +74,10 @@
 					<br/>
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="">Universidade Salgado de Oliveira</h6>
-							<h6 style="">Goiânia, GO</h6>
-							<h6 style="">Maio - 2014</h6>
-							<h6 style="">Maio - 2016</h6>
+							<h6>Universidade Salgado de Oliveira</h6>
+							<h6>Goiânia, GO</h6>
+							<h6>Maio - 2014</h6>
+							<h6>Maio - 2016</h6>
 						</div>
 						<div class="col-sm-9 col9">
 							<h4><img src="assets/images/star.png"/>Assistente de Laboratório</h4>
@@ -102,21 +102,22 @@
 				<div class="col">
 					<p></p>
 					<span>Endereço</span><br/>
-					<span>Rua u-53</span><br/>
+					<span>Rua u-53, lote 10, casa 2, Setor Vila União</span>
+					<!-- <span>Rua u-53</span><br/>
 					<span>Quadra 15</span><br/>
 					<span>lote 10, casa 2</span><br/>
-					<span>Setor Vila União</span>
+					<span>Setor Vila União</span> -->
 				</div>
 				<div class="col">
 					<p></p>
 					<span>Telefone</span><br/>
-					<span>+55 62 982396838</span>
+					<span>+(55) (62) 982396838</span>
 				</div>
 			</div>
 			<div class="habilidades">
 				<div class="hab-conteudo ">
-					<h6 style="">Habilidades</h6>
-					<ul >
+					<h6>Habilidades</h6>
+					<ul>
 						<li>Desenvolvedor web - Junior</li>
 						<li>PHP - Orientação à Objetos</li>
 						<li>HTML - HTML5</li>
@@ -142,9 +143,9 @@
 				<div class="ConteudoExp">
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6 style="">Universidade Salgado de Oliveira</h6>
-							<h6 style="">Setor Sul, Goiânia</h6>
-							<h6 style="">2016</h6>							
+							<h6>Universidade Salgado de Oliveira</h6>
+							<h6>Setor Sul, Goiânia</h6>
+							<h6>2016</h6>							
 						</div>
 						<div class="col-sm-9 col9">							
 							<h4><img src="assets/images/star.png"/>Analise e Desenvolvimento de Sistemas</h4>

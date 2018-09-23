@@ -74,7 +74,7 @@ main .container h5 {
 }
 main .container .borda {
 	margin-left:80px;
-	/*border-bottom:2px solid #DDD;*/
+	border-bottom:2px solid #DDD;
 	background-color:#DDD;
 }
 
