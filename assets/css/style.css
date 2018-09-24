@@ -153,3 +153,32 @@ footer .container h5{
 	}
 
 }
+
+@media only screen and (max-width:500px){
+		#areaObj h2 {
+		font-size:11px;
+
+		}
+		header #areaObj img {
+		height:80px;
+		}
+		header #areaObj h4 {
+		font-size:11px;
+		}
+		main   .col9,
+		footer .col9{
+			font-size:12px;
+		}
+		main .ConteudoExp,
+		footer .ConteudoExp {
+			margin-left:45px;
+		}
+		main .col9 h4,
+		footer .col9 h4 {
+			font-size:15px;
+		}
+		main .container h5,
+		footer .container h5{
+			margin-left:100px;
+		}
+}

@@ -7,15 +7,17 @@
 /* @author Luiz Fernando - lufmalta@gmail.com
 */
 
-
+body{
+	background-color:#eee;
+}
 header {
-	background-color:#CCC;
+	background-color:#888;
 	width:100%;
 	height:50px;
 
 }
 header .topoint {
-	background-color:#DDD;
+	background-color:#ccc;
 	margin:auto;
 	height:50px;
 	max-width:1080px;
