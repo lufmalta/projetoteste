@@ -1,0 +1,31 @@
+/*
+
+/* Developed by Luiz Fernando Malta Martins
+
+/* Aqui esta todo os estilo da pagina index.php
+
+/* @author Luiz Fernando - lufmalta@gmail.com
+*/
+
+
+header {
+	background-color:#CCC;
+	width:100%;
+	height:50px;
+
+}
+header .topoint {
+	background-color:#DDD;
+	margin:auto;
+	height:50px;
+	max-width:1080px;
+	line-height:50px;
+	text-align:center;
+}
+main h3 {
+	text-align:center;
+}
+main .container label {
+	text-align:center;
+	
+}
