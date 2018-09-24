@@ -27,5 +27,8 @@ main h3 {
 }
 main .container label {
 	text-align:center;
-	
+
+}
+main .colHabilidades {
+	color:green;
 }
