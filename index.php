@@ -112,40 +112,40 @@
 
 				<h3>Primeira Empresa</h3>
 
-				<div class="row"> <!-- primeira linha, com cargo, empresa e cidade -->
-					<div class="col"> <!-- primeira linha, primeira coluna - Cargo -->
+				<div class="row"> <!-- primeira linha, com cargo1, empresa1 e cidade1 -->
+					<div class="col"> <!-- primeira linha, primeira coluna - Cargo1 -->
 						<div class="form-group">
 							<label for="cargo1" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a sua função na empresa" data-placement="right" ><strong>Cargo</strong></label>
 							<input id="cargo1" type="text" name="cargo1" class="form-control" maxlength="50" />
 						</div>
 					</div>
-					<div class="col"> <!-- primeira linha, segunda coluna - Empresa -->
+					<div class="col"> <!-- primeira linha, segunda coluna - Empresa1 -->
 						<div class="form-group">
 							<label for="empresa1" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a empresa" data-placement="right" ><strong>Empresa</strong></label>
 							<input id="empresa1" type="text" name="empresa1" class="form-control" maxlength="40" />
 						</div>
 					</div>
-					<div class="col"> <!-- primeira linha, terceira coluna - Cidade -->
+					<div class="col"> <!-- primeira linha, terceira coluna - Cidade1 -->
 						<div class="form-group">
 							<label for="cidade1" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a cidade da empresa" data-placement="right" ><strong>Cidade</strong></label>
 							<input id="cidade1" type="text" name="cidade1" class="form-control" maxlength="30" />
 						</div>
 					</div>
 				</div>
-				<div class="row"> <!-- segunda linha com dataEnt, DataSai e DescCargo -->
-					<div class="col"> <!-- segunda linha, primeira coluna - dataEnt -->
+				<div class="row"> <!-- segunda linha com dataEnt1, DataSai1 e DescCargo1 -->
+					<div class="col"> <!-- segunda linha, primeira coluna - dataEnt1 -->
 						<div class="form-group">
 							<label for="dataEnt1" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
 							<input id="dataEnt1" type="text" name="dataEnt1" class="form-control"  />
 						</div>
 					</div>
-					<div class="col"> <!-- segunda linha, segunda coluna - dataSai -->
+					<div class="col"> <!-- segunda linha, segunda coluna - dataSai1 -->
 						<div class="form-group">
 							<label for="dataSai1" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
 							<input id="dataSai1" type="text" name="dataSai1" class="form-control"  />
 						</div>
 					</div>
-					<div class="col"> <!-- segunda linha, terceira coluna - descCargo -->
+					<div class="col"> <!-- segunda linha, terceira coluna - descCargo1 -->
 						<div class="form-group">
 							<label class="label" style="color:green;" for="descCargo1" data-toggle="tooltip" title="Insira aqui o que você fazia na empresa, ou seja suas funções - Exemplo: Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos." data-placement="right"><strong>Descrição Cargo</strong></label><br/>
 							<textarea id="descCargo1"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
@@ -156,43 +156,86 @@
 
 				<h3>Segunda Empresa</h3>
 
-				<div class="row"> <!-- terceira linha, com cargo, empresa e cidade -->
-					<div class="col"> <!-- terceira linha, primeira coluna - Cargo -->
+				<div class="row"> <!-- terceira linha, com cargo2, empresa2 e cidade2 -->
+					<div class="col"> <!-- terceira linha, primeira coluna - Cargo2 -->
 						<div class="form-group">
 							<label for="cargo2" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a sua função na empresa" data-placement="right" ><strong>Cargo</strong></label>
 							<input id="cargo2" type="text" name="cargo2" class="form-control" maxlength="50" />
 						</div>
 					</div>
-					<div class="col"> <!-- terceira linha, segunda coluna - Empresa -->
+					<div class="col"> <!-- terceira linha, segunda coluna - Empresa2 -->
 						<div class="form-group">
 							<label for="empresa2" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a empresa" data-placement="right" ><strong>Empresa</strong></label>
 							<input id="empresa2" type="text" name="empresa2" class="form-control" maxlength="40" />
 						</div>
 					</div>
-					<div class="col"> <!-- terceira linha, terceira coluna - Cidade -->
+					<div class="col"> <!-- terceira linha, terceira coluna - Cidade2 -->
 						<div class="form-group">
 							<label for="cidade2" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a cidade da empresa" data-placement="right" ><strong>Cidade</strong></label>
 							<input id="cidade2" type="text" name="cidade2" class="form-control" maxlength="30" />
 						</div>
 					</div>
 				</div>
-				<div class="row"> <!-- quarta linha com dataEnt, DataSai e DescCargo -->
-					<div class="col"> <!-- quarta linha, primeira coluna - dataEnt -->
+				<div class="row"> <!-- quarta linha com dataEnt2, dataSai2 e descCargo2 -->
+					<div class="col"> <!-- quarta linha, primeira coluna - dataEnt2 -->
 						<div class="form-group">
 							<label for="dataEnt2" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
 							<input id="dataEnt2" type="text" name="dataEnt2" class="form-control"  />
 						</div>
 					</div>
-					<div class="col"> <!-- quarta linha, segunda coluna - dataSai -->
+					<div class="col"> <!-- quarta linha, segunda coluna - dataSai2 -->
 						<div class="form-group">
 							<label for="dataSai2" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
 							<input id="dataSai2" type="text" name="dataSai2" class="form-control"  />
 						</div>
 					</div>
-					<div class="col"> <!-- quarta linha, terceira coluna - descCargo -->
+					<div class="col"> <!-- quarta linha, terceira coluna - descCargo2 -->
 						<div class="form-group">
 							<label class="label" style="color:green;" for="descCargo2" data-toggle="tooltip" title="Insira aqui o que você fazia na empresa, ou seja suas funções - Exemplo: Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos." data-placement="right"><strong>Descrição Cargo</strong></label><br/>
 							<textarea id="descCargo2"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
+							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
+						</div>
+					</div>
+				</div>
+				<h3>Terceira Empresa</h3>
+
+				<div class="row"> <!-- quinta linha, com cargo3, empresa3 e cidade3 -->
+					<div class="col"> <!-- quinta linha, primeira coluna - Cargo3 -->
+						<div class="form-group">
+							<label for="cargo3" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a sua função na empresa" data-placement="right" ><strong>Cargo</strong></label>
+							<input id="cargo3" type="text" name="cargo3" class="form-control" maxlength="50" />
+						</div>
+					</div>
+					<div class="col"> <!-- quinta linha, segunda coluna - Empresa3 -->
+						<div class="form-group">
+							<label for="empresa3" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a empresa" data-placement="right" ><strong>Empresa</strong></label>
+							<input id="empresa3" type="text" name="empresa3" class="form-control" maxlength="40" />
+						</div>
+					</div>
+					<div class="col"> <!-- quinta linha, terceira coluna - Cidade3 -->
+						<div class="form-group">
+							<label for="cidade3" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a cidade da empresa" data-placement="right" ><strong>Cidade</strong></label>
+							<input id="cidade3" type="text" name="cidade3" class="form-control" maxlength="30" />
+						</div>
+					</div>
+				</div>
+				<div class="row"> <!-- sexta linha com dataEnt3, DataSai3 e DescCargo3 -->
+					<div class="col"> <!-- sexta linha, primeira coluna - dataEnt3 -->
+						<div class="form-group">
+							<label for="dataEnt3" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
+							<input id="dataEnt3" type="text" name="dataEnt3" class="form-control"  />
+						</div>
+					</div>
+					<div class="col"> <!-- sexta linha, segunda coluna - dataSai3 -->
+						<div class="form-group">
+							<label for="dataSai3" class="label" style="color:green;" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
+							<input id="dataSai3" type="text" name="dataSai3" class="form-control"  />
+						</div>
+					</div>
+					<div class="col"> <!-- sexta linha, terceira coluna - descCargo3 -->
+						<div class="form-group">
+							<label class="label" style="color:green;" for="descCargo3" data-toggle="tooltip" title="Insira aqui o que você fazia na empresa, ou seja suas funções - Exemplo: Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos." data-placement="right"><strong>Descrição Cargo</strong></label><br/>
+							<textarea id="descCargo3"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
 							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
 						</div>
 					</div>
@@ -208,9 +251,6 @@
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="assets/js/javascript.js"></script>
 	
-	
-
-
 	
 </html>
 
