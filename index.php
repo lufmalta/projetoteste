@@ -108,10 +108,11 @@
 					<label class="label" style="color:red;" for="habilidades" data-toggle="tooltip" title="Insira aqui as suas habilidades - Exemplo: Liderança, Pro-ativo, Responsável, HTML5, Criativo, Comunicativo." data-placement="right"><strong>Habilidades</strong></label>
 					<input id="habilidades" type="text" name="habilidades" class="w-100 form-control" maxlength="200" />
 				</div> -->
+				<hr/>
 				<h4 style="margin-top:20px;">Experiência</h4>
-
+				
 				<h3>Primeira Empresa</h3>
-
+				<hr/>
 				<div class="row"> <!-- primeira linha, com cargo1, empresa1 e cidade1 -->
 					<div class="col"> <!-- primeira linha, primeira coluna - Cargo1 -->
 						<div class="form-group">
@@ -153,8 +154,9 @@
 						</div>
 					</div>
 				</div>
-
+				<hr/>
 				<h3>Segunda Empresa</h3>
+				<hr/>
 
 				<div class="row"> <!-- terceira linha, com cargo2, empresa2 e cidade2 -->
 					<div class="col"> <!-- terceira linha, primeira coluna - Cargo2 -->
@@ -197,8 +199,9 @@
 						</div>
 					</div>
 				</div>
+				<hr/>
 				<h3>Terceira Empresa</h3>
-
+				<hr/>
 				<div class="row"> <!-- quinta linha, com cargo3, empresa3 e cidade3 -->
 					<div class="col"> <!-- quinta linha, primeira coluna - Cargo3 -->
 						<div class="form-group">
@@ -240,7 +243,7 @@
 						</div>
 					</div>
 				</div>
-				
+				<hr/>
 			</form>
 		</div>
 	</main>
