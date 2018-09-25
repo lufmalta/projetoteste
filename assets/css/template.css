@@ -39,3 +39,9 @@ main .colHabilidades {
 	height:5px;
 	background-color:#ddd;
 }
+
+@media only screen and (max-width:471px){
+	header .topoint h2 {
+		font-size:22px;
+	}
+}
