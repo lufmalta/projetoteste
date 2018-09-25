@@ -13,6 +13,7 @@ $(function(){
 	$('#telefone').mask('+(00) (00) 0.0000-0000');
 	$('.dataEnt').mask('00/00/0000');
 	$('.dataSai').mask('00/00/0000');
+	$('#anoConc').mask('0000');
 	$('.habilidades').attr('title','Exemplo de habilidade: HTML5, Liderança, Responsável, Pro-ativo, jQuery.');
 	$('.objPro').attr('title', 'Insira aqui seu objetivo profissional- Exemplo: Assistente Administrativo, Área Tecnológica,'
 		+' Vendas, também pode colocar o seu perfil profissional. Max-caracteres: 300');
@@ -20,8 +21,74 @@ $(function(){
 	$('.empresas').attr('title', 'Aqui você coloca o nome da empresa. Max-caracteres: 40');
 	$('.cidades').attr('title', 'Aqui você coloca o nome da cidade que fica a empresa. Max-caracteres: 30');
 	$('.descCargos').attr('title', 'Insira aqui o que você fazia na empresa, ou seja suas funções - Exemplo:'+
-		' Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos. Max-caracteres: 500')
+		' Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos. Max-caracteres: 500');
+	$('.formacao').attr('title', "Aqui você ira colocar a sua graduação - Exemplo: Ciencias Contábeis,"+
+		' Hístoria, Educação física. Max-caracteres: 40');
+	$('.institu').attr('title', 'Aqui você ira colocar a instituição da graduação. Max-caracteres: 40');
+	$('.instituCidade').attr('title', 'Aqui você ira colocar a cidade da instituição. Max-caracteres: 30');
+	$('.anoConc').attr('title', 'Aqui coloca-se o ano de conclusao, Exemplo: 2018');
+	$('.cursos').attr('title','Aqui você insere os cursos que ja fez e a especificação deles.'+
+		' Exemplo: Curso de Manutenção em microcomputadores - SENAC - 20 horas');
 	$('[data-toggle = "tooltip"]').tooltip();
 	
 });
+// var carac = 0; 
+// // console.log(carac);
+// var keycode = 0;
+// var quatCarac = 499;
+// var contCarac = 0;
+// function contarCarac(t){
 
+// 	carac = document.getElementById('cursos').value;
+// 	keycode = t.keyCode;
+// 	if(keycode == 8){
+// 		contCarac = carac.length--;
+// 		console.log(--contCarac);
+		
+// 	}else {
+// 		console.log(carac.length);
+// 	}
+	
+
+
+
+
+
+
+
+
+
+// // 	carac = document.getElementById('cursos').value;
+// // 	carac.length;
+// // 	keycode = t.keyCode;
+// // 	if(keycode == 8){
+// // 		if(carac.length == 0){
+// // 			//console.log('Caracteres digitados: '+contCarac);
+// // 		}else {
+// // 			if(carac.length == 0){
+// // 				carac.length = 1;
+// // 				contCarac = carac.length;
+// // 				console.log('Caracteres digitados: '+contCarac);
+// // 			}else {
+// // 				contCarac = carac.length;
+// // 				console.log('Caracteres digitados: '+contCarac);
+// // 			}
+			
+// // 		}
+		
+		
+// // 	}else {
+// // 		if(contCarac == 500){
+// // 			console.log("Ja digitou o maximo de caracteres"+contCarac);
+// // 		}else {
+// // 			contCarac = carac.length ;
+// // 			console.log('Caracteres digitados: '+contCarac);
+// // 		}
+		
+// // 	}
+// // 	//console.log(t.keyCode);
+	
+// // 	//if()
+// // }
+
+// }

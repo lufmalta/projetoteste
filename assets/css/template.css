@@ -23,13 +23,19 @@ header .topoint {
 	max-width:1080px;
 	line-height:50px;
 	text-align:center;
+	color:green;
 }
 main h3 {
 	text-align:center;
 }
 main .container label {
 	text-align:center;
-
+}
+main .label1 {
+	color:red;
+}
+main .label2 {
+	color:green;
 }
 main .colHabilidades {
 	color:green;
