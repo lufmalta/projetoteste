@@ -11,8 +11,8 @@
 
 $(function(){
 	$('#telefone').mask('+(00) (00) 0.0000-0000');
-	$('.dataEnt').mask('00/00/0000');
-	$('.dataSai').mask('00/00/0000');
+	$('.dataEnt').mask('0000/00/00');
+	$('.dataSai').mask('0000/00/00');
 	$('#anoConc').mask('0000');
 	$('.habilidades').attr('title','Exemplo de habilidade: HTML5, Liderança, Responsável, Pro-ativo, jQuery.');
 	$('.objPro').attr('title', 'Insira aqui seu objetivo profissional- Exemplo: Assistente Administrativo, Área Tecnológica,'
@@ -29,21 +29,22 @@ $(function(){
 	$('.anoConc').attr('title', 'Aqui coloca-se o ano de conclusao, Exemplo: 2018');
 	$('.cursos').attr('title','Aqui você insere os cursos que ja fez e a especificação deles.'+
 		' Exemplo: Curso de Manutenção em microcomputadores - SENAC - 20 horas');
+	$('.dataEntrada').attr('title', 'Aqui você coloca a data de entrada na empresa em ano/mes/dia');
+	$('.dataSaida').attr('title', 'Aqui você coloca a data de saida na empresa em ano/mes/dia');
 	$('[data-toggle = "tooltip"]').tooltip();
 
 
 	// $("#form").bind('submit', function(e){
 	// 	e.preventDefault();
 	// 	var txt = $(this).serialize();
-	// 	console.log(txt[1]);
 		
 	// 	$.ajax({
 
 	// 		type: 'POST',
-	// 		url: 'curriculo.php',
+	// 		url: 'receberDados.php',
 	// 		data: txt,
 	// 		success:function(){
-	// 			console.log("sucesso");
+	// 			console.log(txt);
 	// 		}, error:function(){
 	// 			console.log("erro");
 	// 		}

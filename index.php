@@ -1,3 +1,6 @@
+<?php
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,20 +142,20 @@
 				<div class="row"> <!-- segunda linha com dataEnt1, DataSai1 e DescCargo1 -->
 					<div class="col"> <!-- segunda linha, primeira coluna - dataEnt1 -->
 						<div class="form-group">
-							<label for="dataEnt1" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
+							<label for="dataEnt1" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
 							<input id="dataEnt1" type="text" name="dataEnt1" class="form-control dataEnt"  />
 						</div>
 					</div>
 					<div class="col"> <!-- segunda linha, segunda coluna - dataSai1 -->
 						<div class="form-group">
-							<label for="dataSai1" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
+							<label for="dataSai1" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
 							<input id="dataSai1" type="text" name="dataSai1" class="form-control dataSai"  />
 						</div>
 					</div>
 					<div class="col"> <!-- segunda linha, terceira coluna - descCargo1 -->
 						<div class="form-group">
 							<label class="label2 descCargos" for="descCargo1" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea id="descCargo1"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
+							<textarea name="descCargo1" id="descCargo1"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
 							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
 						</div>
 					</div>
@@ -184,20 +187,20 @@
 				<div class="row"> <!-- quarta linha com dataEnt2, dataSai2 e descCargo2 -->
 					<div class="col"> <!-- quarta linha, primeira coluna - dataEnt2 -->
 						<div class="form-group">
-							<label for="dataEnt2" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
+							<label for="dataEnt2" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
 							<input id="dataEnt2" type="text" name="dataEnt2" class="form-control dataEnt"  />
 						</div>
 					</div>
 					<div class="col"> <!-- quarta linha, segunda coluna - dataSai2 -->
 						<div class="form-group">
-							<label for="dataSai2" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
+							<label for="dataSai2" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
 							<input id="dataSai2" type="text" name="dataSai2" class="form-control dataSai"  />
 						</div>
 					</div>
 					<div class="col"> <!-- quarta linha, terceira coluna - descCargo2 -->
 						<div class="form-group">
 							<label class="label2 descCargos" for="descCargo2" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea id="descCargo2"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
+							<textarea name="descCargo2" id="descCargo2"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
 							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
 						</div>
 					</div>
@@ -228,20 +231,20 @@
 				<div class="row"> <!-- sexta linha com dataEnt3, DataSai3 e DescCargo3 -->
 					<div class="col"> <!-- sexta linha, primeira coluna - dataEnt3 -->
 						<div class="form-group">
-							<label for="dataEnt3" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
+							<label for="dataEnt3" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
 							<input id="dataEnt3" type="text" name="dataEnt3" class="form-control dataEnt"  />
 						</div>
 					</div>
 					<div class="col"> <!-- sexta linha, segunda coluna - dataSai3 -->
 						<div class="form-group">
-							<label for="dataSai3" class="label2" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
+							<label for="dataSai3" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
 							<input id="dataSai3" type="text" name="dataSai3" class="form-control dataSai"  />
 						</div>
 					</div>
 					<div class="col"> <!-- sexta linha, terceira coluna - descCargo3 -->
 						<div class="form-group">
 							<label class="label2 descCargos" for="descCargo3" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea id="descCargo3"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
+							<textarea name="descCargo3" id="descCargo3"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
 							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
 						</div>
 					</div>
