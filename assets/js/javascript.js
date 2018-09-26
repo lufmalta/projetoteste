@@ -22,9 +22,9 @@ $(function(){
 	$('.cidades').attr('title', 'Aqui você coloca o nome da cidade que fica a empresa. Max-caracteres: 30');
 	$('.descCargos').attr('title', 'Insira aqui o que você fazia na empresa, ou seja suas funções - Exemplo:'+
 		' Manutenção dos laboratórios, limpeza dos banheiros, estoque de produtos. Max-caracteres: 500');
-	$('.formacao').attr('title', "Aqui você ira colocar a sua graduação - Exemplo: Ciencias Contábeis,"+
-		' Hístoria, Educação física. Max-caracteres: 40');
-	$('.institu').attr('title', 'Aqui você ira colocar a instituição da graduação. Max-caracteres: 40');
+	$('.formacao').attr('title', "Aqui você ira colocar a sua formação - Exemplo: Ciencias Contábeis,"+
+		' Hístoria, Educação física, Ensino médio Completo. Max-caracteres: 40');
+	$('.institu').attr('title', 'Aqui você ira colocar a instituição da sua formação. Max-caracteres: 40');
 	$('.instituCidade').attr('title', 'Aqui você ira colocar a cidade da instituição. Max-caracteres: 30');
 	$('.anoConc').attr('title', 'Aqui coloca-se o ano de conclusao, Exemplo: 2018');
 	$('.cursos').attr('title','Aqui você insere os cursos que ja fez e a especificação deles.'+

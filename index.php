@@ -257,30 +257,30 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label class="label2 formacao" for="graduacao" data-toggle="tooltip"
-							data-placement="right"><strong>Graduação</strong></label>
-							<input id="graduacao" type="text" name="graduacao" maxlength="40" class="form-control">
+							<label class="label1 formacao" for="formacao" data-toggle="tooltip"
+							data-placement="right"><strong>Formação</strong></label>
+							<input id="formacao" type="text" name="formacao" maxlength="40" class="form-control" required>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label class="label2 institu" for="instituicao" data-toggle="tooltip"
+							<label class="label1 institu" for="instituicao" data-toggle="tooltip"
 							data-placement="right"><strong>Instituicao</strong></label>
-							<input id="instituicao" type="text" name="instituicao" maxlength="40" class="form-control">
+							<input id="instituicao" type="text" name="instituicao" maxlength="40" class="form-control" required>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group">
-							<label class="label2 instituCidade" for="instituCidade" data-toggle="tooltip"
+							<label class="label1 instituCidade" for="instituCidade" data-toggle="tooltip"
 							data-placement="right"><strong>Cidade</strong></label>
-							<input id="instituCidade" type="text" name="instituCidade" maxlength="30" class="form-control">
+							<input id="instituCidade" type="text" name="instituCidade" maxlength="30" class="form-control" required>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group">
-							<label class="label2 anoConc" for="anoConc" data-toggle="tooltip"
+							<label class="label1 anoConc" for="anoConc" data-toggle="tooltip"
 							data-placement="top"><strong>Ano Conclusão</strong></label>
-							<input id="anoConc" type="text" name="anoConc" maxlength="4" class="form-control">
+							<input id="anoConc" type="text" name="anoConc" maxlength="4" class="form-control" required>
 						</div>
 					</div>
 				</div>
@@ -289,7 +289,7 @@
 						<div class="form-group">
 							<label class="label2 cursos" for="cursos" data-toggle="tooltip"
 							data-placement="right"><strong>Outros Cursos</strong></label><br/>
-							<textarea id="cursos"  maxlength="500" rows="5" cols="45" placeholder="Digite aqui seus outros cursos, no caso, mini-cursos" ></textarea>
+							<textarea name="cursos" id="cursos"  maxlength="500" rows="5" cols="45" placeholder="Digite aqui seus outros cursos, no caso, mini-cursos" ></textarea>
 						</div>
 					</div>					
 				</div>		

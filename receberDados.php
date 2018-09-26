@@ -1,4 +1,5 @@
 <?php
+require 'banco.php';
 /* Developed by Luiz Fernando Malta Martins
 
 /* Aqui esta a pagina do receberDados.php, onde pega os dados do index.php
@@ -10,32 +11,99 @@
 /* @author Luiz Fernando - lufmalta@gmail.com
 
 */
-$priEmp;
-$segEmp;
-$terEmp; 
+$priEmp; //define a primeira empresa onde ira colocar o array
+$segEmp; //define a segunda empresa onde ira colocar o array
+$terEmp; //define a terceira empresa onde ira colocar o array
 
-for ($i=0; $i < 10 ; $i++) { 
-	$habilidades[$i] = '';
-}
+$con = new Banco(); // dentro de $con esta o '$pdo', ou seja é só usar ele quando for chamar outras classes, enviar ele como parâmetro.
+
+
 
 // Primeiro verifica se esses valores foram setados e se não estao vazios
 if(isset($_POST['nome']) && !empty($_POST['nome'])
  && (isset($_POST['email']) && !empty($_POST['email']))
   &&  (isset($_POST['endereco']) && !empty($_POST['endereco']))
     && (isset($_POST['telefone']) && !empty($_POST['telefone']))
-	  && (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
+    	&& (isset($_POST['formacao']) && !empty($_POST['formacao']))
+    		&& (isset($_POST['instituicao']) && !empty($_POST['instituicao']))
+    			&& (isset($_POST['instituCidade']) && !empty($_POST['instituCidade']))
+    				&& (isset($_POST['anoConc']) && !empty($_POST['anoConc']))
+	  				&& (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
 
 	// Depois armazena os valores obrigatorios em variaveis
 
-	// Dados Pessoais
+	// DADOS PESSOAIS / EDUCACAO - armazenando os dados em variaveis
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
 	$endereco = addslashes($_POST['endereco']);
 	$telefone = addslashes($_POST['telefone']);
 	$objetivo = addslashes($_POST['objetivo']);
+	$formacao = addslashes($_POST['formacao']);
+	$instituicao = addslashes($_POST['instituicao']);
+	$instituCidade = addslashes($_POST['instituCidade']);
+	$anoConc = addslashes($_POST['anoConc']);
+
+	if(isset($_POST['cursos']) && !empty($_POST['cursos'])){
+		$cursos = addslashes($_POST['cursos']);
+	}
 
 
-	// Experiência
+
+
+	
+
+
+	// DADOS PESSOAIS - HABILIDADES
+	for ($i=0; $i < 10 ; $i++) { 
+	$habilidades[$i] = '';
+	}
+	//Dentro do for ira pegar todas as habilidades e colocar em um array
+	for ($i=0; $i < 10; $i++) { 
+		if($i == 0){
+			if(($_POST['habilidade1'] == '')){
+				
+			}else {
+				$habilidades[$i] = addslashes($_POST[('habilidade1')]);
+			}
+			
+			//echo $habilidades[$i];
+		}else {
+			if($_POST[('habilidade'.($i+1))] == '') {
+				
+			}else {				
+				$habilidades[$i] = (addslashes($_POST[('habilidade'.($i+1))]));
+			}
+			
+			//echo $habilidades[$i];
+		}	
+
+		//echo $habilidades[0];
+	}
+	
+	$todasHabili = '';
+	//Dentro desse for ira pegar as habilidades no array e colocar todas em uma só variavel, separando elas por uma vírgula.
+
+	for ($i=0; $i< 10; $i++) { 
+		if($habilidades[$i] == ''){
+			$todasHabili = $todasHabili.',VAZIO'.$habilidades[$i];
+		}else{
+			$todasHabili = $todasHabili.','.$habilidades[$i];
+		}
+		
+	}
+
+
+	echo $todasHabili.'<br/>'.$nome.'<br/>'.$email.'<br/>'.$endereco.'<br/>'.$telefone.'<br/>'.$objetivo;
+
+
+	// $dados = addslashes($_POST['habilidade1']).','.addslashes($_POST['habilidade2']).','.addslashes($_POST['habilidade3']).','.addslashes($_POST['habilidade4']).','.addslashes($_POST['habilidade5']).','.addslashes($_POST['habilidade6']).','.addslashes($_POST['habilidade7']).','.addslashes($_POST['habilidade8']).','.addslashes($_POST['habilidade9']).','.addslashes($_POST['habilidade10']);
+	// echo $dados; //assim também funciona, mas do outro jeito usa menas linha de codigo, apesar do outro fazer mais execuções.
+
+	//FIM DADOS PESSOAIS
+
+
+	// EXPERIÊNCIA
+
 	$cargo[0] = addslashes($_POST['cargo1']);
 	$cargo[1] = addslashes($_POST['cargo2']);
 	$cargo[2] = addslashes($_POST['cargo3']);
@@ -61,6 +129,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	$descCargo[2] = addslashes($_POST['descCargo3']);;
 
 
+
 	// Nesse if ira verificar se todos os valores da primeira empresa foram preenchidos, caso não sejam, então priEmp vai ficar vazia.
 	if($cargo[0] != '' && $empresa[0] != '' && $cidade[0] != '' && $dataEnt[0] != '' && $dataSai[0] != '' && $descCargo[0] != ''){
 
@@ -75,8 +144,8 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		// 	echo $priEmp[$i].'<br/>';
 		// }
 	}else {
-		echo "Algum campo da empresa 1 não foi preenchido";
-		exit;
+		// echo "Algum campo da empresa 1 não foi preenchido";
+		
 	}
 
 	if($cargo[1] != '' && $empresa[1] != '' && $cidade[1] != '' && $dataEnt[1] != '' && $dataSai[1] != '' && $descCargo[1] != ''){
@@ -92,7 +161,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		// 	echo $segEmp[$i].'<br/>';
 		// }
 	}else {
-		echo "Algum campo da empresa 2 não foi preenchido";
+		// echo "Algum campo da empresa 2 não foi preenchido";
 	}
 
 	if($cargo[2] != '' && $empresa[2] != '' && $cidade[2] != '' && $dataEnt[2] != '' && $dataSai[2] != '' && $descCargo[2] != ''){
@@ -108,66 +177,40 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		// 	echo $terEmp[$i].'<br/>';
 		// }
 	}else {
-		echo "Algum campo da empresa 3 não foi preenchido";
-		exit;
+		// echo "Algum campo da empresa 3 não foi preenchido";
 	}
 
+	//FIM EXPERIÊNCIA
 
 
+	// EDUCAÇÃO
 
 
+	if(isset($_POST['formacao']) && !empty($_POST['formacao']) &&
+		(isset($_POST['instituicao']) && !empty($_POST['instituicao'])) &&
+		(isset($_POST['instituCidade']) && !empty($_POST['instituCidade'])) &&
+		(isset($_POST['anoConc']) && !empty($_POST['anoConc']))){
 
-
-
-
-
-
-
-
-
-
-	//Dentro do for ira pegar todas as habilidades e colocar em um array
-	for ($i=0; $i < 10; $i++) { 
-		if($i == 0){
-			if(($_POST['habilidade1'] == '')){
-				
-			}else {
-				$habilidades[$i] = addslashes($_POST[('habilidade1')]);
-			}
-			
-			//echo $habilidades[$i];
-		}else {
-			if($_POST[('habilidade'.($i+1))] == '') {
-				
-			}else {				
-				$habilidades[$i] = (addslashes($_POST[('habilidade'.($i+1))]));
-			}
-			
-			//echo $habilidades[$i];
-		}	
-
-		//echo $habilidades[0];
-	}
-	
-	$valorMin = 10;
-	$todasHabili = '';
-	//Dentro desse for ira pegar as habilidades no array e colocar todas em uma só variavel, separando elas por uma vírgula.
-
-	for ($i=0; $i< 10; $i++) { 
-		if($habilidades[$i] == ''){
-			$todasHabili = $todasHabili.',VAZIO'.$habilidades[$i];
-		}else{
-			$todasHabili = $todasHabili.','.$habilidades[$i];
-		}
 		
+
 	}
 
 
-	echo $todasHabili.'<br/>'.$nome.'<br/>'.$email.'<br/>'.$endereco.'<br/>'.$telefone.'<br/>'.$objetivo;
 
 
-	// $dados = addslashes($_POST['habilidade1']).','.addslashes($_POST['habilidade2']).','.addslashes($_POST['habilidade3']).','.addslashes($_POST['habilidade4']).','.addslashes($_POST['habilidade5']).','.addslashes($_POST['habilidade6']).','.addslashes($_POST['habilidade7']).','.addslashes($_POST['habilidade8']).','.addslashes($_POST['habilidade9']).','.addslashes($_POST['habilidade10']);
-	// echo $dados; //assim também funciona, mas do outro jeito usa menas linha de codigo, apesar do outro fazer mais execuções.
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 // Esse else é referente ao primeiro if que valida se tem os campos obrigatorios
