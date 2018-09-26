@@ -1,14 +1,17 @@
-<?php
+<?php 
 
-$id = 1;
+/* Developed by Luiz Fernando Malta Martins
 
-if($id == ''){
-	exit;
-}
+/* Aqui esta a pagina do curriculo.php, onde será gerado um curriculo para imprimir
+/* ou baixar
+
+/* @author Luiz Fernando - lufmalta@gmail.com
+
+*/
+?>
 
 
 
- ?>
 
 
 <!DOCTYPE html>

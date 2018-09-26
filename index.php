@@ -14,7 +14,7 @@
 	</header>
 	<main>		
 		<div class="container">
-			<form method="POST" style="margin-bottom:200px;"> <!-- inicio do formulario -->
+			<form  id="form" method="POST" action="receberDados.php"> <!-- inicio do formulario -->
 				<h4 style="margin-top:20px;">Dados Pessoais</h4>
 				<div class="separaDiv"></div>
 
@@ -100,7 +100,7 @@
 					<div class="col"> <!-- aqui esta o form-group de objetivo profissional -->
 						<div class="form-group">
 							<label class="label1 objPro" for="objetivo" data-toggle="tooltip" data-placement="right"><strong>Objetivo Profissional</strong></label><br/>
-							<textarea id="objetivo"  maxlength="200" rows="4" cols="40" placeholder="Digite aqui seu objetivo profissional..." required></textarea>
+							<textarea name="objetivo" id="objetivo"  maxlength="200" rows="4" cols="40" placeholder="Digite aqui seu objetivo profissional..." required></textarea>
 							<!-- <input id="objetivo" type="text" name="objetivo" class="w-100 form-control" maxlength="50" /> -->
 						</div>
 						
@@ -286,9 +286,18 @@
 						<div class="form-group">
 							<label class="label2 cursos" for="cursos" data-toggle="tooltip"
 							data-placement="right"><strong>Outros Cursos</strong></label><br/>
-							<textarea id="cursos"  maxlength="500" rows="5" cols="45" placeholder="Digite aqui seus outros cursos, no caso, mini-cursos" required ></textarea>
+							<textarea id="cursos"  maxlength="500" rows="5" cols="45" placeholder="Digite aqui seus outros cursos, no caso, mini-cursos" ></textarea>
 						</div>
-					</div>
+					</div>					
+				</div>		
+				<div class="separaDiv"></div>		
+				<div class="form-group"><!-- botao para envira o curriculo --><br/>
+					<input class="btn btn-info form-control" type="submit" value="Gerar Curriculo">
+						<div class="legendas">
+							<span><strong style="color:blue;">Legendas </strong></span><br/>
+							<span><strong style="color:red;">- Campos Obrigatorios</strong></span><br/>
+							<span><strong style="color:green;">- Campos Opcionais</strong></span>
+						</div>
 				</div>
 			</form >
 		</div>
@@ -299,11 +308,7 @@
 	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="assets/js/javascript.js"></script>
-	
-	
+		
 </html>
 
-	<!-- botao para envira o curriculo -->
-	<!-- <div class="form-group">
-		<input class="btn btn-success" type="submit" value="Gerar Curriculo">		
-	</div> -->
+	

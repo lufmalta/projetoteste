@@ -30,7 +30,25 @@ $(function(){
 	$('.cursos').attr('title','Aqui você insere os cursos que ja fez e a especificação deles.'+
 		' Exemplo: Curso de Manutenção em microcomputadores - SENAC - 20 horas');
 	$('[data-toggle = "tooltip"]').tooltip();
-	
+
+
+	// $("#form").bind('submit', function(e){
+	// 	e.preventDefault();
+	// 	var txt = $(this).serialize();
+	// 	console.log(txt[1]);
+		
+	// 	$.ajax({
+
+	// 		type: 'POST',
+	// 		url: 'curriculo.php',
+	// 		data: txt,
+	// 		success:function(){
+	// 			console.log("sucesso");
+	// 		}, error:function(){
+	// 			console.log("erro");
+	// 		}
+	// 	});
+	// }); // mais pra frente vou tentar usar o ajax
 });
 // var carac = 0; 
 // // console.log(carac);
