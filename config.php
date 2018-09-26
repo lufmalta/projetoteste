@@ -9,13 +9,23 @@ class Banco{
 			try{
 				$this->pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
 				$this->pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-				return $this->pdo;
-
 			}catch(PDOException $e){
 				echo "Erro!!".$e->getMessage();
 			}
 		}
 
-}
+		public function getPDO(){
+			return $this->pdo;
+		}
+
+} // nao estou conseguindo fazer funcionar, entao vou fazer de outra maneira
+
+
+// try{
+// 	$pdo = new PDO("mysql:dbname=projeto_curriculo_site;host=localhost","root","");
+// 	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+// }catch(PDOException $e){
+// 	echo "Erro Conexão".$e->getMessage();
+// }
 
 ?>

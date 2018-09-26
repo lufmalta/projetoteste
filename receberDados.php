@@ -1,5 +1,6 @@
 <?php
-require 'banco.php';
+require 'config.php';
+require 'classes/dadosPessoais.class.php';
 /* Developed by Luiz Fernando Malta Martins
 
 /* Aqui esta a pagina do receberDados.php, onde pega os dados do index.php
@@ -93,7 +94,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	}
 
 
-	echo $todasHabili.'<br/>'.$nome.'<br/>'.$email.'<br/>'.$endereco.'<br/>'.$telefone.'<br/>'.$objetivo;
+	// echo $todasHabili.'<br/>'.$nome.'<br/>'.$email.'<br/>'.$endereco.'<br/>'.$telefone.'<br/>'.$objetivo;
 
 
 	// $dados = addslashes($_POST['habilidade1']).','.addslashes($_POST['habilidade2']).','.addslashes($_POST['habilidade3']).','.addslashes($_POST['habilidade4']).','.addslashes($_POST['habilidade5']).','.addslashes($_POST['habilidade6']).','.addslashes($_POST['habilidade7']).','.addslashes($_POST['habilidade8']).','.addslashes($_POST['habilidade9']).','.addslashes($_POST['habilidade10']);
@@ -186,13 +187,27 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	// EDUCAÇÃO
 
 
-	if(isset($_POST['formacao']) && !empty($_POST['formacao']) &&
-		(isset($_POST['instituicao']) && !empty($_POST['instituicao'])) &&
-		(isset($_POST['instituCidade']) && !empty($_POST['instituCidade'])) &&
-		(isset($_POST['anoConc']) && !empty($_POST['anoConc']))){
 
-		
 
+
+
+
+
+
+
+
+	//Inserindo dados pessoais na classe dadosPessoais
+
+	// Criando uma instancia da classe dadosPessoais e enviando como parâmetro a conexão com o banco '$pdo'
+	
+	$dadosPessoais = new dadosPessoais();
+	if($dadosPessoais->verificarEmail($email) == false){ // Caso não exista este email no banco, ele ira entrar aqui
+		$dadosPessoais->inserirDadosObj($nome, $email, $endereco, $telefone, $objetivo,
+		 $todasHabili);
+		//$dadosPessoais->listarDados();
+		//$dadosPessoais->inserirDadosBanco();
+	}else {
+		echo "Existe email no banco"; // se exister este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
 	}
 
 
