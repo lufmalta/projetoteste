@@ -1,6 +1,7 @@
+
 <?php
-require 'config.php';
-require 'classes/dadosPessoais.class.php';
+
+
 /* Developed by Luiz Fernando Malta Martins
 
 /* Aqui esta a pagina do receberDados.php, onde pega os dados do index.php
@@ -12,11 +13,19 @@ require 'classes/dadosPessoais.class.php';
 /* @author Luiz Fernando - lufmalta@gmail.com
 
 */
-$priEmp; //define a primeira empresa onde ira colocar o array
-$segEmp; //define a segunda empresa onde ira colocar o array
-$terEmp; //define a terceira empresa onde ira colocar o array
 
-$con = new Banco(); // dentro de $con esta o '$pdo', ou seja é só usar ele quando for chamar outras classes, enviar ele como parâmetro.
+
+
+require 'config.php';
+require 'classes/dadosPessoais.class.php';
+require 'classes/experiencia.class.php';
+//require 'classes/educacao.class.php';
+
+$priEmp = ''; //define a primeira empresa onde ira colocar o array
+$segEmp = ''; //define a segunda empresa onde ira colocar o array
+$terEmp = ''; //define a terceira empresa onde ira colocar o array
+
+// $con = new Banco(); // dentro de $con esta o '$pdo', ou seja é só usar ele quando for chamar outras classes, enviar ele como parâmetro.
 
 
 
@@ -132,7 +141,8 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 
 	// Nesse if ira verificar se todos os valores da primeira empresa foram preenchidos, caso não sejam, então priEmp vai ficar vazia.
-	if($cargo[0] != '' && $empresa[0] != '' && $cidade[0] != '' && $dataEnt[0] != '' && $dataSai[0] != '' && $descCargo[0] != ''){
+	if($cargo[0] != '' && $empresa[0] != '' && $cidade[0] != '' && $dataEnt[0] != '' && 
+		$dataSai[0] != '' && $descCargo[0] != ''){
 
 		$priEmp[0] = $cargo[0];
 		$priEmp[1] = $empresa[0];
@@ -200,14 +210,51 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 	// Criando uma instancia da classe dadosPessoais e enviando como parâmetro a conexão com o banco '$pdo'
 	
-	$dadosPessoais = new dadosPessoais();
+	$dadosPessoais = new dadosPessoais($pdo);
+	//$experiencia = new experiencia();
+
 	if($dadosPessoais->verificarEmail($email) == false){ // Caso não exista este email no banco, ele ira entrar aqui
-		$dadosPessoais->inserirDadosObj($nome, $email, $endereco, $telefone, $objetivo,
+
+		// Primeiro insere os dados no objeto de dadosPessoais
+
+		$dadosPessoais->inserirDadosObjPessoa($nome, $email, $endereco, $telefone, $objetivo,
 		 $todasHabili);
 		//$dadosPessoais->listarDados();
-		//$dadosPessoais->inserirDadosBanco();
+
+		// Depois insere no banco de dados de Pessoas e pega o id_pessoa
+
+		$dadosPessoais->inserirDadosBanco();
+		$id_pessoa = $dadosPessoais->getId_Pessoa();
+
+		// Primeiro chama um objeto da classe experiencia
+		$experiencia = new experiencia($id_pessoa,$pdo);
+
+		// verifica se a priEmp tem dados, caso tenha, insere eles.
+		if(!empty($priEmp)){
+			$experiencia->inserirPriEmp($priEmp);
+			$experiencia->inserirPriEmpBanco();
+		}
+		// verifica se a segEmp tem dados, caso tenha, insere eles.
+		if(!empty($segEmp)){
+			$experiencia->inserirSegEmp($segEmp);
+			$experiencia->inserirSegEmpBanco();
+		}
+		// verifica se a terEmp tem dados, caso tenha, insere eles.
+		if(!empty($terEmp)){
+			$experiencia->inserirTerEmp($terEmp);
+			$experiencia->inserirTerEmpBanco();
+		}
+		// $experiencia->inserirDadosObjExp($priEmp);
+		// $experiencia->verificaExistencia();
+		//$experiencia->inserirDadosBanco();
+		
+
+		
+
+
 	}else {
-		echo "Existe email no banco"; // se exister este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
+		echo "Existe email no banco"; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
+
 	}
 
 

@@ -1,6 +1,9 @@
 <?php 
+
 //require 'config.php';
-class dadosPessoais extends Banco{
+class dadosPessoais{
+	private $pdo;
+	private $id_pessoa;
 	private $nome;
 	private $email;
 	private $endereco;
@@ -8,10 +11,13 @@ class dadosPessoais extends Banco{
 	private $descricao;
 	private $habilidades;
 
+	public function __construct($pdo){
+		$this->pdo = $pdo;
+	}
 
 	public function verificarEmail($ema){
 		$sql = "SELECT * FROM pessoas WHERE email = :email";
-		$sql = $this->getPdo()->prepare($sql);
+		$sql = $this->pdo->prepare($sql);
 		$sql->bindValue(':email', $ema);
 		$sql->execute();
 
@@ -22,8 +28,10 @@ class dadosPessoais extends Banco{
 		}
 	}
 
-	public function inserirDadosObj($new_nome, $new_email, $new_endereco,
+	//aqui insere os dados nesse objeto
+	public function inserirDadosObjPessoa($new_nome, $new_email, $new_endereco,
 	 $new_telefone, $new_objetivo, $new_todasHabili){
+
 
 		$this->setNome($new_nome);
 		$this->setEmail($new_email);
@@ -31,6 +39,25 @@ class dadosPessoais extends Banco{
 		$this->setTelefone($new_telefone);
 		$this->setDescricao($new_objetivo);
 		$this->setHabilidades($new_todasHabili);
+	}
+
+	//aqui insere os dados no banco de dados.
+	public function inserirDadosBanco(){
+	  	
+	  	$sql = "INSERT INTO pessoas SET nome = :nome, email = :email, endereco = :endereco, telefone = :telefone, descricao = :descricao, habilidades = :habilidades ";
+	  	$sql = $this->pdo->prepare($sql);
+	  	$sql->bindValue(":nome", $this->getNome());
+	  	$sql->bindValue(":email", $this->getEmail());
+	  	$sql->bindValue(":endereco", $this->getEndereco());
+	  	$sql->bindValue(":telefone", $this->getTelefone());
+	  	$sql->bindValue(":descricao", $this->getDescricao());
+	  	$sql->bindValue(":habilidades", $this->getHabilidades());
+	  	$sql->execute();	  	
+
+	  	$this->pegarID($this->getEmail());
+
+
+
 	}
 
 	public function listarDados(){
@@ -60,6 +87,9 @@ class dadosPessoais extends Banco{
 	public function getHabilidades(){
 		return $this->habilidades;
 	}
+	public function getId_Pessoa(){
+		return $this->id_pessoa;
+	}
 	public function setNome($novo_nome){
 		$this->nome = $novo_nome;
 	}
@@ -77,6 +107,22 @@ class dadosPessoais extends Banco{
 	}
 	public function setHabilidades($nova_habilidades){
 		$this->habilidades = $nova_habilidades;
+	}
+
+	private function pegarID($email){
+
+		$sql = "SELECT id_pessoa FROM pessoas WHERE email = :email";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":email", $email);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+
+			$sql = $sql->fetch();
+			$this->id_pessoa = $sql['id_pessoa'];
+			//echo $this->id_pessoa; 
+
+		}
 	}
 
 }
