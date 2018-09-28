@@ -192,7 +192,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	}
 
 	//FIM EXPERIÊNCIA
-
+	
 
 	// EDUCAÇÃO
 
@@ -225,25 +225,26 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 		$dadosPessoais->inserirDadosBanco();
 		$id_pessoa = $dadosPessoais->getId_Pessoa();
-
-		// Primeiro chama um objeto da classe experiencia
 		$experiencia = new experiencia($id_pessoa,$pdo);
+		// Primeiro chama um objeto da classe experiencia
+		
+			if(!empty($priEmp)){
+				$experiencia->inserirEmp($priEmp);
+				$experiencia->inserirEmpBanco();
+				}//fim if priEmp
+			// verifica se a segEmp tem dados, caso tenha, insere eles.
+			if(!empty($segEmp)){
+				$experiencia->inserirEmp($segEmp);
+				$experiencia->inserirEmpBanco();
+				}//fim if segEmp
+			// verifica se a terEmp tem dados, caso tenha, insere eles.
+			if(!empty($terEmp)){
+				$experiencia->inserirEmp($terEmp);
+				$experiencia->inserirEmpBanco();
+				}//fim if terEmp
 
 		// verifica se a priEmp tem dados, caso tenha, insere eles.
-		if(!empty($priEmp)){
-			$experiencia->inserirEmp($priEmp);
-			$experiencia->inserirEmpBanco();
-		}
-		// verifica se a segEmp tem dados, caso tenha, insere eles.
-		if(!empty($segEmp)){
-			$experiencia->inserirEmp($segEmp);
-			$experiencia->inserirEmpBanco();
-		}
-		// verifica se a terEmp tem dados, caso tenha, insere eles.
-		if(!empty($terEmp)){
-			$experiencia->inserirEmp($terEmp);
-			$experiencia->inserirEmpBanco();
-		}
+		
 		// $experiencia->inserirDadosObjExp($priEmp);
 		// $experiencia->verificaExistencia();
 		//$experiencia->inserirDadosBanco();
