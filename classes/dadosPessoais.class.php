@@ -1,4 +1,11 @@
-<?php 
+<?php
+/* Developed by Luiz Fernando Malta Martins
+
+/* Aqui esta o arquivo da classe dadosPesssoas.class.php, onde ira guardar todos os dados pessoais da pessoa, logo ira inserir no banco de dados, e guardar o id_pessoa, para depois as outras classes inserirem os dados no banco com o id_pessoa dessa classe.
+
+/* @author Luiz Fernando - lufmalta@gmail.com
+
+*/ 
 
 //require 'config.php';
 class dadosPessoais{

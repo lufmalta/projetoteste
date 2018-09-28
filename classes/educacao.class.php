@@ -1,4 +1,12 @@
 <?php 
+/* Developed by Luiz Fernando Malta Martins
+
+/* Aqui esta o arquivo da classe educacao.class.php, onde ira inserir os dados da educacao da pessoa, guardando os dados da sua formaçao e de outros cursos que tenha feito.
+
+/* @author Luiz Fernando - lufmalta@gmail.com
+
+*/
+
 
 class Educacao{
 	private $pdo;

@@ -1,4 +1,16 @@
 <?php 
+/* Developed by Luiz Fernando Malta Martins
+
+/* Aqui esta o arquivo da classe experiencia.class.php, nesta classe pega-se os dados
+/* de experiencia da pessoa, no caso os cargos que ele trabalhou, a empresa, entre outros
+/* dados que tem na empresa.
+
+/* @author Luiz Fernando - lufmalta@gmail.com
+
+*/
+
+
+
 
 //require 'config.php';
 class Experiencia{
