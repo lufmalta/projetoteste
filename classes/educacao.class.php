@@ -7,7 +7,7 @@
 
 */
 
-
+//require 'config.php'; // DADOS TESTE BANCO
 class Educacao{
 	private $pdo;
 	private $id_edu;
@@ -18,9 +18,9 @@ class Educacao{
 	private $anoConcl;
 	private $cursos;
 
-	public function __construct($new_id_pessoa, $pdo){
+	public function __construct($new_id_pessoa){
 		$this->id_pessoa = $new_id_pessoa;
-		$this->pdo = $pdo;
+		$this->pdo = '';
 	}
 
 	public function inserirEducacaoObj($new_formacao, $new_instituicao, $new_instituCidade,
@@ -34,8 +34,10 @@ class Educacao{
 	}
 
 	public function inserirEducacaoObjBanco(){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
 		$sql = "INSERT INTO educacao SET id_pessoa = :id_pessoa, formacao = :formacao, descEducacao = :descEducacao, instituicao = :instituicao, cidade = :instituCidade, anoConcl = :anoConcl";
-		$sql = $this->pdo->prepare($sql);
+		$sql = $pdo->prepare($sql);
 		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
 		$sql->bindValue(":formacao", $this->getFormacao());
 		$sql->bindValue(":descEducacao", $this->getCursos());
@@ -45,7 +47,8 @@ class Educacao{
 		$sql->execute();
 
 		echo "Parabéns inserido educacao com sucesso!".'<br/>';	
-		$this->pegarIDEdu($this->getFormacao(), $this->getId_Pessoa());
+		$this->pdo = $pdo;
+		$this->pegarIDEdu($this->getFormacao(), $this->getId_Pessoa(), $pdo);
 	}
 	public function getId_Pessoa(){
 		return $this->id_pessoa;
@@ -65,9 +68,9 @@ class Educacao{
 	public function getCursos(){
 		return $this->cursos;
 	}
-	private function pegarIDEdu($formacao, $id_pessoa){
+	private function pegarIDEdu($formacao, $id_pessoa, $pdo){
 		$sql = "SELECT id_edu FROM educacao WHERE formacao = :formacao AND id_pessoa = :id_pessoa";
-		$sql = $this->pdo->prepare($sql);
+		$sql = $pdo->prepare($sql);
 		$sql->bindValue(':formacao', $formacao);
 		$sql->bindValue(':id_pessoa', $id_pessoa);
 		$sql->execute();

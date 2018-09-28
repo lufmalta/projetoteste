@@ -12,7 +12,7 @@
 
 
 
-//require 'config.php';
+//require 'config.php';// DADOS TESTE BANCO
 class Experiencia{
 	private $pdo;
 	private $dadosEmpresa;
@@ -25,9 +25,9 @@ class Experiencia{
 	private $dataEnt;
 	private $dataSai;
 
-	public function __construct($new_id_pessoa, $pdo){
+	public function __construct($new_id_pessoa){
 		$this->id_pessoa = $new_id_pessoa;
-		$this->pdo = $pdo;
+		$this->pdo = '';
 	}
 	// public function inserirDadosObjExp($new_priEmp){
 	// 	$this->setPriEmp($new_priEmp);
@@ -49,16 +49,19 @@ class Experiencia{
 	}
 
 	public function inserirEmpObjBanco(){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
 		$this->dadosEmpresa[6] = $this->getId_Pessoa(); // insere o id da pessoa nos dadosEmpresa
 		$sql = "INSERT INTO experiencia SET id_pessoa = ?, cargo = ?, descCargo = ?, empresa = ?, cidade = ?, dataEnt = ?, dataSai = ? ";
-		$sql = $this->pdo->prepare($sql);
+		$sql = $pdo->prepare($sql);
 		$sql->execute(array($this->getId_Pessoa(), $this->getCargo(), $this->getDescCargo(), $this->getEmpresa(), $this->getCidade(), $this->getDataEnt(), $this->getDataSai()));
 		
 		// $sql->fetch();
 		// $sql = $sql['cargo'];
 		
 		echo "Parabéns inserido empresa com sucesso!".'<br/>';
-		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa());// pega o cargo, para fazer a consulta no banco do id_exp
+		$this->pdo = $pdo;
+		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa(), $pdo);// pega o cargo, para fazer a consulta no banco do id_exp
 	}
 
 	public function getId_Pessoa(){
@@ -86,9 +89,9 @@ class Experiencia{
 		$this->dadosEmpresa = $new_dadosEmpresa;
 	}
 	
-	private function pegarIDExp($cargo, $id_pessoa){
+	private function pegarIDExp($cargo, $id_pessoa, $pdo){
 		$sql = "SELECT id_exp FROM experiencia WHERE cargo = :cargo AND id_pessoa = :id_pessoa";
-		$sql = $this->pdo->prepare($sql);
+		$sql = $pdo->prepare($sql);
 		$sql->bindParam(":cargo", $cargo);
 		$sql->bindValue(":id_pessoa", $id_pessoa);
 		$sql->execute();

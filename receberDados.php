@@ -16,10 +16,11 @@
 
 
 
-require 'config.php';
+//require 'config.php'; // por enquanto deixa ele em comentario no TESTE BANCO
 require 'classes/dadosPessoais.class.php';
 require 'classes/experiencia.class.php';
 require 'classes/educacao.class.php';
+
 
 $priEmp = ''; //define a primeira empresa onde ira colocar o array
 $segEmp = ''; //define a segunda empresa onde ira colocar o array
@@ -210,7 +211,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	// Criando uma instancia da classe dadosPessoais e enviando como parâmetro a conexão com o banco '$pdo'
 
 	// Primeira etapa - chama um objeto da classe dadosPessoais
-	$dadosPessoais = new dadosPessoais($pdo);
+	$dadosPessoais = new dadosPessoais();
 	//$experiencia = new experiencia();
 
 	//Aqui dentro, primeiro ira verificar se existe o email, caso não exista, então ira fazer a inserção tanto na classe como no banco dos dadosPessoais, Depois dos dados de Experiencia, e por último dos dados de Educação.
@@ -229,7 +230,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 
 		// Segunda etapa - chama um objeto da classe experiencia
-		$experiencia = new Experiencia($id_pessoa,$pdo);
+		$experiencia = new Experiencia($id_pessoa);
 
 		
 
@@ -251,7 +252,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		// verifica se a priEmp tem dados, caso tenha, insere eles.
 
 		// Terceira etapa - chama um objeto da classe educação
-		$educacao = new Educacao($id_pessoa,$pdo);	
+		$educacao = new Educacao($id_pessoa);	
 		$educacao->inserirEducacaoObj($formacao, $instituicao, $instituCidade,
 		 $anoConcl, $cursos);	
 		$educacao->inserirEducacaoObjBanco();

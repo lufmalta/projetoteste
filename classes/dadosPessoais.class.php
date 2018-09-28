@@ -6,8 +6,7 @@
 /* @author Luiz Fernando - lufmalta@gmail.com
 
 */ 
-
-//require 'config.php';
+require 'config.php'; // DADOS TESTE BANCO
 class dadosPessoais{
 	private $pdo;
 	private $id_pessoa;
@@ -18,15 +17,18 @@ class dadosPessoais{
 	private $descricao;
 	private $habilidades;
 
-	public function __construct($pdo){
-		$this->pdo = $pdo;
+	public function __construct(){
+		$this->pdo = '';
 	}
 
 	public function verificarEmail($ema){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
 		$sql = "SELECT * FROM pessoas WHERE email = :email";
-		$sql = $this->pdo->prepare($sql);
+		$sql = $pdo->prepare($sql);
 		$sql->bindValue(':email', $ema);
 		$sql->execute();
+		$this->pdo = $pdo;
 
 		if($sql->rowCount() > 0){
 			return true;
@@ -38,8 +40,6 @@ class dadosPessoais{
 	//aqui insere os dados nesse objeto
 	public function inserirDadosObjPessoa($new_nome, $new_email, $new_endereco,
 	 $new_telefone, $new_objetivo, $new_todasHabili){
-
-
 		$this->setNome($new_nome);
 		$this->setEmail($new_email);
 		$this->setEndereco($new_endereco);
