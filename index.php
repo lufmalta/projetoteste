@@ -1,6 +1,4 @@
-<?php
 
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -278,9 +276,9 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group">
-							<label class="label1 anoConc" for="anoConc" data-toggle="tooltip"
+							<label class="label1 anoConcl" for="anoConcl" data-toggle="tooltip"
 							data-placement="top"><strong>Ano Conclusão</strong></label>
-							<input id="anoConc" type="text" name="anoConc" maxlength="4" class="form-control" required>
+							<input id="anoConcl" type="text" name="anoConcl" maxlength="4" class="form-control" required>
 						</div>
 					</div>
 				</div>

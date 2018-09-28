@@ -1,7 +1,7 @@
 <?php 
 
 //require 'config.php';
-class experiencia{
+class Experiencia{
 	private $pdo;
 	private $dadosEmpresa;
 	private $id_exp;
@@ -23,7 +23,7 @@ class experiencia{
 	// 	$this->setTerEmp($new_terEmp);
 	// }
 
-	public function inserirEmp($new_dadosEmpresa){
+	public function inserirEmpObj($new_dadosEmpresa){
 		$this->cargo = $new_dadosEmpresa[0];
 		$this->empresa = $new_dadosEmpresa[1];
 		$this->cidade = $new_dadosEmpresa[2];
@@ -33,11 +33,12 @@ class experiencia{
 		$this->dadosEmpresa = $new_dadosEmpresa;
 	}
 
-	public function inserirEmpBanco(){
+	public function inserirEmpObjBanco(){
+		$this->dadosEmpresa[6] = $this->getId_Pessoa(); // insere o id da pessoa nos dadosEmpresa
 		$sql = "INSERT INTO experiencia SET id_pessoa = ?, cargo = ?, descCargo = ?, empresa = ?, cidade = ?, dataEnt = ?, dataSai = ? ";
 		$sql = $this->pdo->prepare($sql);
-		$sql->execute(array($this->id_pessoa, $this->cargo, $this->descCargo, $this->empresa, $this->cidade, $this->dataEnt, $this->dataSai));
-		$this->dadosEmpresa[6] = $this->id_pessoa; // insere o id da pessoa nos dadosEmpresa
+		$sql->execute(array($this->getId_Pessoa(), $this->getCargo(), $this->getDescCargo(), $this->getEmpresa(), $this->getCidade(), $this->getDataEnt(), $this->getDataSai()));
+		
 		// $sql->fetch();
 		// $sql = $sql['cargo'];
 		
@@ -87,4 +88,3 @@ class experiencia{
 
 }
 
-?>

@@ -19,7 +19,7 @@
 require 'config.php';
 require 'classes/dadosPessoais.class.php';
 require 'classes/experiencia.class.php';
-//require 'classes/educacao.class.php';
+require 'classes/educacao.class.php';
 
 $priEmp = ''; //define a primeira empresa onde ira colocar o array
 $segEmp = ''; //define a segunda empresa onde ira colocar o array
@@ -37,7 +37,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
     	&& (isset($_POST['formacao']) && !empty($_POST['formacao']))
     		&& (isset($_POST['instituicao']) && !empty($_POST['instituicao']))
     			&& (isset($_POST['instituCidade']) && !empty($_POST['instituCidade']))
-    				&& (isset($_POST['anoConc']) && !empty($_POST['anoConc']))
+    				&& (isset($_POST['anoConcl']) && !empty($_POST['anoConcl']))
 	  				&& (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
 
 	// Depois armazena os valores obrigatorios em variaveis
@@ -51,7 +51,8 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	$formacao = addslashes($_POST['formacao']);
 	$instituicao = addslashes($_POST['instituicao']);
 	$instituCidade = addslashes($_POST['instituCidade']);
-	$anoConc = addslashes($_POST['anoConc']);
+	$anoConcl = addslashes($_POST['anoConcl']);
+	$cursos = '';
 
 	if(isset($_POST['cursos']) && !empty($_POST['cursos'])){
 		$cursos = addslashes($_POST['cursos']);
@@ -192,9 +193,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	}
 
 	//FIM EXPERIÊNCIA
-	
 
-	// EDUCAÇÃO
 
 
 
@@ -209,14 +208,16 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	//Inserindo dados pessoais na classe dadosPessoais
 
 	// Criando uma instancia da classe dadosPessoais e enviando como parâmetro a conexão com o banco '$pdo'
-	
+
+	// Primeira etapa - chama um objeto da classe dadosPessoais
 	$dadosPessoais = new dadosPessoais($pdo);
 	//$experiencia = new experiencia();
 
+	//Aqui dentro, primeiro ira verificar se existe o email, caso não exista, então ira fazer a inserção tanto na classe como no banco dos dadosPessoais, Depois dos dados de Experiencia, e por último dos dados de Educação.
 	if($dadosPessoais->verificarEmail($email) == false){ // Caso não exista este email no banco, ele ira entrar aqui
 
-		// Primeiro insere os dados no objeto de dadosPessoais
-
+		
+		//insere os dados no objeto de dadosPessoais
 		$dadosPessoais->inserirDadosObjPessoa($nome, $email, $endereco, $telefone, $objetivo,
 		 $todasHabili);
 		//$dadosPessoais->listarDados();
@@ -225,33 +226,35 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 		$dadosPessoais->inserirDadosBanco();
 		$id_pessoa = $dadosPessoais->getId_Pessoa();
-		$experiencia = new experiencia($id_pessoa,$pdo);
-		// Primeiro chama um objeto da classe experiencia
+
+
+		// Segunda etapa - chama um objeto da classe experiencia
+		$experiencia = new Experiencia($id_pessoa,$pdo);
+
 		
+
 			if(!empty($priEmp)){
-				$experiencia->inserirEmp($priEmp);
-				$experiencia->inserirEmpBanco();
+				$experiencia->inserirEmpObj($priEmp);
+				$experiencia->inserirEmpObjBanco();
 				}//fim if priEmp
 			// verifica se a segEmp tem dados, caso tenha, insere eles.
 			if(!empty($segEmp)){
-				$experiencia->inserirEmp($segEmp);
-				$experiencia->inserirEmpBanco();
+				$experiencia->inserirEmpObj($segEmp);
+				$experiencia->inserirEmpObjBanco();
 				}//fim if segEmp
 			// verifica se a terEmp tem dados, caso tenha, insere eles.
 			if(!empty($terEmp)){
-				$experiencia->inserirEmp($terEmp);
-				$experiencia->inserirEmpBanco();
+				$experiencia->inserirEmpObj($terEmp);
+				$experiencia->inserirEmpObjBanco();
 				}//fim if terEmp
 
 		// verifica se a priEmp tem dados, caso tenha, insere eles.
-		
-		// $experiencia->inserirDadosObjExp($priEmp);
-		// $experiencia->verificaExistencia();
-		//$experiencia->inserirDadosBanco();
-		
 
-		
-
+		// Terceira etapa - chama um objeto da classe educação
+		$educacao = new Educacao($id_pessoa,$pdo);	
+		$educacao->inserirEducacaoObj($formacao, $instituicao, $instituCidade,
+		 $anoConcl, $cursos);	
+		$educacao->inserirEducacaoObjBanco();
 
 	}else {
 		echo "Existe email no banco"; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
@@ -260,28 +263,10 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
 // Esse else é referente ao primeiro if que valida se tem os campos obrigatorios
 }else {
 	header("Location: index.php");
-	exit;
 }
 
 
 
-?>

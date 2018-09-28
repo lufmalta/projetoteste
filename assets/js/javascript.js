@@ -13,7 +13,7 @@ $(function(){
 	$('#telefone').mask('+(00) (00) 0.0000-0000');
 	$('.dataEnt').mask('0000/00/00');
 	$('.dataSai').mask('0000/00/00');
-	$('#anoConc').mask('0000');
+	$('#anoConcl').mask('0000');
 	$('.habilidades').attr('title','Exemplo de habilidade: HTML5, Liderança, Responsável, Pro-ativo, jQuery.');
 	$('.objPro').attr('title', 'Insira aqui seu objetivo profissional- Exemplo: Assistente Administrativo, Área Tecnológica,'
 		+' Vendas, também pode colocar o seu perfil profissional. Max-caracteres: 300');
@@ -26,7 +26,7 @@ $(function(){
 		' Hístoria, Educação física, Ensino médio Completo. Max-caracteres: 40');
 	$('.institu').attr('title', 'Aqui você ira colocar a instituição da sua formação. Max-caracteres: 40');
 	$('.instituCidade').attr('title', 'Aqui você ira colocar a cidade da instituição. Max-caracteres: 30');
-	$('.anoConc').attr('title', 'Aqui coloca-se o ano de conclusao, Exemplo: 2018');
+	$('.anoConcl').attr('title', 'Aqui coloca-se o ano de conclusao, Exemplo: 2018');
 	$('.cursos').attr('title','Aqui você insere os cursos que ja fez e a especificação deles.'+
 		' Exemplo: Curso de Manutenção em microcomputadores - SENAC - 20 horas');
 	$('.dataEntrada').attr('title', 'Aqui você coloca a data de entrada na empresa em ano/mes/dia');
