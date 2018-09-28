@@ -27,8 +27,11 @@ class Experiencia{
 		$this->cargo = $new_dadosEmpresa[0];
 		$this->empresa = $new_dadosEmpresa[1];
 		$this->cidade = $new_dadosEmpresa[2];
-		$this->dataEnt = $new_dadosEmpresa[3];
-		$this->dataSai = $new_dadosEmpresa[4];
+		//Cria uma variável para guardar a data que esta em d/m/Y e mudar para padrao americano que é Y/m/d
+		$dataEntEmEUA = explode("/", $new_dadosEmpresa[3]);
+		$this->dataEnt = $dataEntEmEUA[2]."/".$dataEntEmEUA[1]."/".$dataEntEmEUA[0];
+		$dataSaiEmEUA = explode("/", $new_dadosEmpresa[4]);
+		$this->dataSai = $dataSaiEmEUA[2]."/".$dataSaiEmEUA[1]."/".$dataSaiEmEUA[0];
 		$this->descCargo = $new_dadosEmpresa[5];
 		$this->dadosEmpresa = $new_dadosEmpresa;
 	}

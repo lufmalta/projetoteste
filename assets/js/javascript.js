@@ -11,8 +11,8 @@
 
 $(function(){
 	$('#telefone').mask('+(00) (00) 0.0000-0000');
-	$('.dataEnt').mask('0000/00/00');
-	$('.dataSai').mask('0000/00/00');
+	$('.dataEnt').mask('00/00/0000');
+	$('.dataSai').mask('00/00/0000');
 	$('#anoConcl').mask('0000');
 	$('.habilidades').attr('title','Exemplo de habilidade: HTML5, Liderança, Responsável, Pro-ativo, jQuery.');
 	$('.objPro').attr('title', 'Insira aqui seu objetivo profissional- Exemplo: Assistente Administrativo, Área Tecnológica,'
