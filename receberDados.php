@@ -231,18 +231,18 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 		// verifica se a priEmp tem dados, caso tenha, insere eles.
 		if(!empty($priEmp)){
-			$experiencia->inserirPriEmp($priEmp);
-			$experiencia->inserirPriEmpBanco();
+			$experiencia->inserirEmp($priEmp);
+			$experiencia->inserirEmpBanco();
 		}
 		// verifica se a segEmp tem dados, caso tenha, insere eles.
 		if(!empty($segEmp)){
-			$experiencia->inserirSegEmp($segEmp);
-			$experiencia->inserirSegEmpBanco();
+			$experiencia->inserirEmp($segEmp);
+			$experiencia->inserirEmpBanco();
 		}
 		// verifica se a terEmp tem dados, caso tenha, insere eles.
 		if(!empty($terEmp)){
-			$experiencia->inserirTerEmp($terEmp);
-			$experiencia->inserirTerEmpBanco();
+			$experiencia->inserirEmp($terEmp);
+			$experiencia->inserirEmpBanco();
 		}
 		// $experiencia->inserirDadosObjExp($priEmp);
 		// $experiencia->verificaExistencia();
