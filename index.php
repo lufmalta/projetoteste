@@ -11,8 +11,54 @@
 </head>
 <body>
 	<header>
-		<div class="topoint"><h2><strong>Construindo seu Currículo</strong></h2></div>
+		<div class="topoint" style="display:flex;justify-content: space-around; ">
+			<div class="topoleft">
+				<h2><strong>Criando seu Currículo</strong></h2>
+			</div>
+			
+			<div class="toporight">
+				<a href="#" style="color:#CCC;" data-toggle="modal" data-target="#modal">Fazer Login</a> -  
+				<a href="#" style="color:#CCC;">Esqueci a senha</a>
+			</div>
+		</div>
 	</header>
+	<section>
+		<div class="container">
+			<div class="modal fade modal-dismissible" id="modal" role="modal" >
+				<div class="modal-dialog" >
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3><strong>Formulário de Login</strong></h3>
+						</div>
+						<div class="modal-body">
+							<form id="form_login" method="POST" action="login.php">
+								<div class="form-group">
+									<!-- <h2 style="color:#FF0000">Usuário ou senha invalidos</h2> isso fazer parte da requisicao ajax --> 
+									<label for="usuario"><strong>Usuario</strong></label>
+									<input id="usuario" type="text" name="usuario" maxlength="15" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="senha" ><strong>Senha</strong></label>
+									<input id="senha" type="password" name="senha" maxlength="15" class="form-control">
+								</div>
+								<div class="form-group">
+									<button class="btn btn-success w-100" type="submit">Fazer Login</button>
+								</div>
+								<div class="form-group">
+									
+								</div>
+								
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger w-100" data-dismiss="modal">Fechar Janela</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	</section>
 	<main>		
 		<div class="container">
 			<form  id="form" method="POST" action="receberDados.php"> <!-- inicio do formulario -->
@@ -303,6 +349,12 @@
 			</form >
 		</div>
 	</main>
+	<footer>
+		<div class="container">
+			<h3>Desenvolvido por Luiz Fernando Malta Martins</h3>
+			<h4>Contato: lufmalta@gmail.com</h4>
+		</div>
+	</footer>
 </body>
 
 	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>

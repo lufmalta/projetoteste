@@ -34,40 +34,43 @@ $(function(){
 	$('[data-toggle = "tooltip"]').tooltip();
 
 
-	// $("#form").bind('submit', function(e){
-	// 	e.preventDefault();
-	// 	var txt = $(this).serialize();
-		
-	// 	$.ajax({
+	//Depois tento resolver isso
+	// $('#form_login h2').hide(); // ja começa como escondido, só aparece quando entrar
 
+	// $('#form_login').bind('submit' ,function(e){
+	// 	e.preventDefault();
+
+	// 	var login = $('#usuario').val();
+	// 	var senha = $('#senha').val();
+	// 	console.log(login)+'<br/>';
+	// 	console.log(senha);
+
+
+	// 	$.ajax({
 	// 		type: 'POST',
-	// 		url: 'receberDados.php',
-	// 		data: txt,
-	// 		success:function(){
-	// 			console.log(txt);
-	// 		}, error:function(){
+	// 		url: 'login.php',
+	// 		data: login+'e'+senha,
+	// 		success:function(result){
+	// 			if(result != ''){
+	// 				console.log(result);
+	// 				$('#form_login h2').show();
+	// 			}else{
+	// 				$('#form_login h2').hide()
+	// 			}
+	// 			$('#usuario').val('');
+	// 			$('#senha').val('');
+	// 			//$('#senha').html('');
+	// 		}, error:function(result){
 	// 			console.log("erro");
 	// 		}
+
 	// 	});
-	// }); // mais pra frente vou tentar usar o ajax
+
+	// });
+
+
+	
 });
-// var carac = 0; 
-// // console.log(carac);
-// var keycode = 0;
-// var quatCarac = 499;
-// var contCarac = 0;
-// function contarCarac(t){
-
-// 	carac = document.getElementById('cursos').value;
-// 	keycode = t.keyCode;
-// 	if(keycode == 8){
-// 		contCarac = carac.length--;
-// 		console.log(--contCarac);
-		
-// 	}else {
-// 		console.log(carac.length);
-// 	}
-	
 
 
 
@@ -76,38 +79,3 @@ $(function(){
 
 
 
-
-// // 	carac = document.getElementById('cursos').value;
-// // 	carac.length;
-// // 	keycode = t.keyCode;
-// // 	if(keycode == 8){
-// // 		if(carac.length == 0){
-// // 			//console.log('Caracteres digitados: '+contCarac);
-// // 		}else {
-// // 			if(carac.length == 0){
-// // 				carac.length = 1;
-// // 				contCarac = carac.length;
-// // 				console.log('Caracteres digitados: '+contCarac);
-// // 			}else {
-// // 				contCarac = carac.length;
-// // 				console.log('Caracteres digitados: '+contCarac);
-// // 			}
-			
-// // 		}
-		
-		
-// // 	}else {
-// // 		if(contCarac == 500){
-// // 			console.log("Ja digitou o maximo de caracteres"+contCarac);
-// // 		}else {
-// // 			contCarac = carac.length ;
-// // 			console.log('Caracteres digitados: '+contCarac);
-// // 		}
-		
-// // 	}
-// // 	//console.log(t.keyCode);
-	
-// // 	//if()
-// // }
-
-// }
