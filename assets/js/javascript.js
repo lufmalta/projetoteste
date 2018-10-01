@@ -38,12 +38,10 @@ $(function(){
 	// $('#form_login h2').hide(); // ja começa como escondido, só aparece quando entrar
 
 	// $('#form_login').bind('submit' ,function(e){
-	// 	e.preventDefault();
+	// 	//e.preventDefault();
 
 	// 	var login = $('#usuario').val();
 	// 	var senha = $('#senha').val();
-	// 	console.log(login)+'<br/>';
-	// 	console.log(senha);
 
 
 	// 	$.ajax({
@@ -51,15 +49,16 @@ $(function(){
 	// 		url: 'login.php',
 	// 		data: login+'e'+senha,
 	// 		success:function(result){
-	// 			if(result != ''){
-	// 				console.log(result);
-	// 				$('#form_login h2').show();
-	// 			}else{
-	// 				$('#form_login h2').hide()
-	// 			}
-	// 			$('#usuario').val('');
-	// 			$('#senha').val('');
-	// 			//$('#senha').html('');
+	// 			// if(result == 1){
+	// 			// 	window.location.assign('curriculo.php');
+	// 			// 	// $('#form_login h2').show();
+	// 			// }else if(result == 0){
+	// 			// 	window.location.href('index.php');
+	// 			// 	// $('#form_login h2').hide()
+	// 			// }
+	// 			// // $('#usuario').val('');
+	// 			// // $('#senha').val('');
+	// 			// //$('#senha').html('');
 	// 		}, error:function(result){
 	// 			console.log("erro");
 	// 		}

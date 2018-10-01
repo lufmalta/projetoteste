@@ -35,11 +35,11 @@
 								<div class="form-group">
 									<!-- <h2 style="color:#FF0000">Usuário ou senha invalidos</h2> isso fazer parte da requisicao ajax --> 
 									<label for="usuario"><strong>Usuario</strong></label>
-									<input id="usuario" type="text" name="usuario" maxlength="15" class="form-control">
+									<input id="usuario" type="email" name="usuario" maxlength="50" class="form-control" placeholder="email@algo.com">
 								</div>
 								<div class="form-group">
 									<label for="senha" ><strong>Senha</strong></label>
-									<input id="senha" type="password" name="senha" maxlength="15" class="form-control">
+									<input id="senha" type="password" name="senha" maxlength="32" class="form-control">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success w-100" type="submit">Fazer Login</button>

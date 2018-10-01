@@ -8,6 +8,12 @@
 /* @author Luiz Fernando - lufmalta@gmail.com
 
 */
+
+session_start();
+if(empty($_SESSION['logado'])){
+	header("Location: index.php");
+}
+$email = $_SESSION['logado'];
 ?>
 
 
