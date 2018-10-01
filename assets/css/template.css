@@ -26,7 +26,10 @@ header .topoint {
 }
 section	.modal-header h3,
 .modal-body label{
-	color:green;
+	color:#BBB;
+}
+section .modal-header{
+	padding-left:25%;
 }
 
 
@@ -67,6 +70,5 @@ footer .container {
 	header .topoint h2 {
 		font-size:15px;
 	}
-	header 
 	
 }
