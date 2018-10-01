@@ -27,14 +27,14 @@ class usuarios{
 	}
 
 	public function verificarUsuSenha($new_email, $new_senha){
-		$con = new Banco();
-		$pdo = $con->conectar($this->pdo);
+		//$con = new Banco();
+		//$pdo = $con->conectar($this->pdo);
 		$sql = "SELECT * FROM usuarios WHERE email = :email and senha = :senha";
-		$sql = $pdo->prepare($sql);
+		$sql = $this->pdo->prepare($sql);
 		$sql->bindValue(':email', $new_email);
 		$sql->bindValue(':senha', $new_senha);
 		$sql->execute();
-		$this->pdo = $pdo;
+		//$this->pdo = $pdo;
 
 		if($sql->rowCount() > 0){
 			$sql = $sql->fetch();

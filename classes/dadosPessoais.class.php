@@ -16,9 +16,11 @@ class dadosPessoais{
 	private $telefone;
 	private $descricao;
 	private $habilidades;
+	private $dados;
 
 	public function __construct(){
 		$this->pdo = '';
+		$this->dados = '';
 	}
 
 	public function verificarEmail($ema){
@@ -50,7 +52,6 @@ class dadosPessoais{
 
 	//aqui insere os dados no banco de dados.
 	public function inserirDadosBanco(){
-	  	
 	  	$sql = "INSERT INTO pessoas SET nome = :nome, email = :email, endereco = :endereco, telefone = :telefone, descricao = :descricao, habilidades = :habilidades ";
 	  	$sql = $this->pdo->prepare($sql);
 	  	$sql->bindValue(":nome", $this->getNome());
@@ -66,14 +67,34 @@ class dadosPessoais{
 
 
 	}
-
 	public function listarDados(){
-		echo $this->getNome().'<br/>'.
+		$this->getNome().'<br/>'.
 		$this->getEmail().'<br/>'.
 		$this->getEndereco().'<br/>'.
 		$this->getTelefone().'<br/>'.
 		$this->getDescricao().'<br/>'.
 		$this->getHabilidades();
+	}
+	public function setarObjComBanco($new_email){
+		$sql = "SELECT * FROM pessoas WHERE email = :email";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(':email',$new_email);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$sql = $sql->fetch();
+			$this->dados = $sql;
+			$this->id_pessoa = $sql['id_pessoa'];
+			$this->setNome($sql['nome']);
+			$this->setEmail($sql['email']);
+			$this->setEndereco($sql['endereco']);
+			$this->setTelefone($sql['telefone']);
+			$this->setDescricao($sql['descricao']);
+			$this->setHabilidades($sql['habilidades']);
+		}
+	}
+	public function pegarDados(){
+		return $this->dados;
 	}
 
 	public function getNome(){

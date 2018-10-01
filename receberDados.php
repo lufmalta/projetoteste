@@ -227,6 +227,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 		$dadosPessoais->inserirDadosBanco();
 		$id_pessoa = $dadosPessoais->getId_Pessoa();
+		$_SESSION['dadosPessoais'] = $dadosPessoais->getNome();
 
 
 		// Segunda etapa - chama um objeto da classe experiencia

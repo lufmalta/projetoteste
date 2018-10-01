@@ -1,4 +1,8 @@
-
+<?php
+ if(!empty($_SESSION['logado'])){
+ 	$email = $_SESSION['logado'];
+ }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<div class="topoint" style="display:flex;justify-content: space-around; ">
+		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<div class="topoleft">
 				<h2><strong>Criando seu Currículo</strong></h2>
 			</div>
@@ -39,7 +43,7 @@
 								</div>
 								<div class="form-group">
 									<label for="senha" ><strong>Senha</strong></label>
-									<input id="senha" type="password" name="senha" maxlength="32" class="form-control">
+									<input id="senha" type="password" name="senha" maxlength="32" class="form-control" required>
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success w-100" type="submit">Fazer Login</button>

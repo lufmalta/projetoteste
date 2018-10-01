@@ -1,6 +1,10 @@
 <?php 
-
+if(empty($_POST['usuario']) && empty($_POST['senha'])){
+	header("Location: index.php");
+	exit;
+}
 require 'classes/usuarios.class.php';
+
 
 $email = addslashes($_POST['usuario']);
 $senha = md5(addslashes($_POST['senha']));
