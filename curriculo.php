@@ -25,6 +25,10 @@ if(!empty($_SESSION['logado'])){
 		$educacao = $_SESSION['educacao']; 
 		//recebe os dados do objeto de dadosPessoais
 		$dadosPessoais = $_SESSION['dadosPessoais'];
+		$img = '';
+		$img = $dadosPessoais['img'];
+		// echo $img;
+		// exit;
 		//Pega as habilidades que estao separadas por virgula e coloca numa variavel.
 		$habilidades = explode (',', $dadosPessoais['habilidades'] );
 		// pega a quantidade de habilidades que tem em habilidades, tanto os espaços vazios, quanto os que tem algo.
@@ -51,10 +55,14 @@ if(!empty($_SESSION['logado'])){
 
 		//Caso a experiencia também esteja preenchidas, entre aqui.
 		if(!empty($_SESSION['experiencia'])){
+			require 'classes/experiencia.class.php';
 			//agora tenho que pegar os dados de experiencia no banco...
-			$experiencia = $_SESSION['experiencia']; //aqui ele guarda o valor da ultima empresa inserida no banco. No caso pode ser a primeira empresa, se houver inserido apenas ela, pode ser a segunda empresa, se estiver inserido somente ela, pode ser a terceira empresa se houver inserido somente ela, e pode ser a terceira empresa, no caso de ter inserido as 3 empresas. Também pode ser a segunda empresa, no caso de ter inserido a primeira e segunda empresa.
-			echo $experiencia[0];
+			$qtEmp = $_SESSION['experiencia']; //aqui ele guarda o valor da ultima empresa inserida no banco. No caso pode ser a primeira empresa, se houver inserido apenas ela, pode ser a segunda empresa, se estiver inserido somente ela, pode ser a terceira empresa se houver inserido somente ela, e pode ser a terceira empresa, no caso de ter inserido as 3 empresas. Também pode ser a segunda empresa, no caso de ter inserido a primeira e segunda empresa.
+			//echo $experiencia[0];
+			$qtEmp--;
+			$experiencia = new Experiencia($dadosPessoais['id_pessoa']);
 		}else {
+			$semExperiencia = $_SESSION['experiencia'];
 			//echo "Esta vazio experiencia";
 		}
 		
@@ -89,7 +97,7 @@ if(!empty($_SESSION['logado'])){
 	<header>
 		<div class="container">
 			<div id="areaObj">
-				<h2><img src="assets/images/foto perfil.jpg" height="150"/><?=$dadosPessoais['nome']?></h2><br/>
+				<h2><img src="<?php echo $img ?>" height="150"/><?=$dadosPessoais['nome']?></h2><br/>
 				<h4 style="text-align:center;"><?= $dadosPessoais['descricao'] ?></h4>	
 			</div>			
 		</div>		
@@ -104,59 +112,27 @@ if(!empty($_SESSION['logado'])){
 			<div class="borda">
 				
 				<div class="ConteudoExp">
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6>Charlotte Casa de Dança</h6>
-							<h6>Goiânia, GO</h6>
-							<h6>Junho - 2018</h6>
-							<h6>Agosto - 2018</h6>
+					<?php
+						$experienciaAtual = $experiencia->pegarExp();
+						for ($i=0; $i <= $qtEmp ; $i++):
+							//echo $experienciaAtual[$i]['id_exp'].'<br/>';
+						 ?>
+
+						<div class="row">
+							<div class="col-sm-3 col3" >
+								<h6><?= $experienciaAtual[$i]['empresa'] ?></h6>
+								<h6><?= $experienciaAtual[$i]['cidade'] ?></h6>
+								<h6><?= $experienciaAtual[$i]['dataEnt'] ?></h6>
+								<h6><?= $experienciaAtual[$i]['dataSai'] ?></h6>
+							</div>
+							<div class="col-sm-9 col9">
+								<h4><img src="assets/images/star.png"/><?= $experienciaAtual[$i]['cargo'] ?></h4>
+								<span><?= $experienciaAtual[$i]['descCargo'] ?></span>
+							</div>						
 						</div>
-						<div class="col-sm-9 col9">
-							<h4><img src="assets/images/star.png"/>Diretor Executivo</h4>
-							<span>Compra de produtos para venda no dia do evento, seja alimento, bebidas, gelo, materiais de limpeza, copos descartáveis. Reserva de mesas para evento, organizar a limpeza do galpão. No dia do evento, ser o responsável pelo caixa de entradas e fichas.</span>
-						</div>						
-					</div>
-					<br/>					
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6>Edíficio Dj.Oliveira</h6>
-							<h6>Goiânia, GO</h6>
-							<h6>Maio - 2018</h6>
-							<h6>Julho - 2018</h6>
-						</div>
-						<div class="col-sm-9 col9">
-							<h4><img src="assets/images/star.png"/>Porteiro Noturno</h4>
-							<span>Organização da guarita, fechamento dos portões da garagem, abertura do portão de entrada para
-							moradores, documentação de rotina diária, recebimento de correspondências e entrega
-							das mesmas. Vigilância de câmeras, entrega de recados e/ou utensílios de moradores.</span>
-						</div>						
-					</div>
-					<br/>
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6>Hinode</h6>
-							<h6>Goiânia, GO</h6>
-							<h6>Maio - 2016</h6>
-							<h6>Julho - 2018</h6>
-						</div>
-						<div class="col-sm-9 col9">
-							<h4><img src="assets/images/star.png"/>Consultor Executivo</h4>
-							<span>Vendas diretas de produtos, seja cosméticos, perfumes, shampoos, cremes corporais e faciais.</span>
-						</div>						
-					</div>
-					<br/>
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6>Universidade Salgado de Oliveira</h6>
-							<h6>Goiânia, GO</h6>
-							<h6>Maio - 2014</h6>
-							<h6>Maio - 2016</h6>
-						</div>
-						<div class="col-sm-9 col9">
-							<h4><img src="assets/images/star.png"/>Assistente de Laboratório</h4>
-							<span>Manutenção de laboratórios de informática, formatação de computadores, atendimento à alunos na matricula, no início e fim de semestre.</span>
-						</div>						
-					</div>
+						<br/>
+					 <?php endfor; ?>
+					
 
 				</div>
 			</div> <!-- borda -->
@@ -192,9 +168,14 @@ if(!empty($_SESSION['logado'])){
 					<h6>Habilidades</h6>
 					<ul>
 						<?php
-							for($i = 0;$i <= $qtNovasHab; $i++ ):	?>
+							for($i = 0;$i <= $qtNovasHab; $i++ ):
+								if($novasHab[$i] != 'VAZIO'):
+
+								
+								?>
 							<li><?= $novasHab[$i] ?></li>
 							<?php
+							endif;
 							endfor;
 							 ?>
 					</ul>
@@ -211,14 +192,15 @@ if(!empty($_SESSION['logado'])){
 				<div class="ConteudoExp">
 					<div class="row">
 						<div class="col-sm-3 col3" >
-							<h6>Universidade Salgado de Oliveira</h6>
-							<h6>Setor Sul, Goiânia</h6>
-							<h6>2016</h6>							
+							<h6><?= $educacao['instituicao'] ?></h6>
+							<h6><?= $educacao['instituCidade'] ?></h6>
+							<h6><?= $educacao['anoConcl'] ?></h6>							
 						</div>
 						<div class="col-sm-9 col9">							
-							<h4><img src="assets/images/star.png"/>Analise e Desenvolvimento de Sistemas</h4>
-							<span>Curso PHP - Zero ao profissional - Professor Bonieky Lacerda(Sênior PHP) - (Cursando). Certificados já adquiridos: Banco de dados(MySql) - 10 horas, Bootstrap Básico - 10 horas, Fundamentos PHP - 20 horas, HTML5 e CSS3 - 20 horas, Javascript - 25 horas. Módulos concluídos: 14 módulos, total de 405 aulas concluídas. </span>
-							<a id="a" href="https://github.com/lufmalta/" target="_blank"></a>
+							<h4><img src="assets/images/star.png"/>
+								<?= $educacao['formacao'] ?></h4>
+							<span><?= $educacao['cursos'] ?></span><br/>
+							<a id="a" href="https://github.com/lufmalta/" target="_blank">Experiência - </a>
 						</div>						
 					</div>					
 					<br/>	

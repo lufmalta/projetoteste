@@ -64,6 +64,27 @@ class Experiencia{
 		$this->pdo = $pdo;
 		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa(), $pdo);// pega o cargo, para fazer a consulta no banco do id_exp
 	}
+	public function pegarExp(){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "SELECT * FROM experiencia WHERE id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$qt = $sql->rowCount(); // aqui coloca o numero de linhas encontradas.
+			$qt--; // aqui subtrai por 1, porque o array começa na posição 0 e não na 1.
+			$arrayEmp = array($qt); // aqui seja um array com o numero de empresas no banco dessa pessoa.
+			$i = $qt; // aqui o $i recebe esse numero de empresas;
+			//Dentro desse foreach, ira pegar o arrayEmp na posição final, pode ser nesse caso 2 a posiçao final, e insere dentro dele os dados dessa empresa, logo, diminui 1 do $i, para pegar o proximo dado da empresa e colocar dentro do arrayEmp na posição debaixo.
+			foreach($sql->fetchAll() as $empresas){
+				$arrayEmp[$i] = $empresas;
+				$i--;
+			}
+			return $arrayEmp;
+		}
+	}
 	public function getDadosEmpresa(){
 		return $this->dadosEmpresa;
 	}

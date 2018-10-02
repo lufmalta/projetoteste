@@ -17,10 +17,12 @@ class dadosPessoais{
 	private $descricao;
 	private $habilidades;
 	private $dados;
+	private $img;
 
 	public function __construct(){
 		$this->pdo = '';
 		$this->dados = '';
+		$this->img = '';
 	}
 
 	public function verificarEmail($ema){
@@ -41,18 +43,19 @@ class dadosPessoais{
 
 	//aqui insere os dados nesse objeto
 	public function inserirDadosObjPessoa($new_nome, $new_email, $new_endereco,
-	 $new_telefone, $new_objetivo, $new_todasHabili){
+	 $new_telefone, $new_objetivo, $new_todasHabili, $new_img){
 		$this->setNome($new_nome);
 		$this->setEmail($new_email);
 		$this->setEndereco($new_endereco);
 		$this->setTelefone($new_telefone);
 		$this->setDescricao($new_objetivo);
 		$this->setHabilidades($new_todasHabili); 
+		$this->setImg($new_img);
 	}
 
 	//aqui insere os dados no banco de dados.
 	public function inserirDadosBanco(){
-	  	$sql = "INSERT INTO pessoas SET nome = :nome, email = :email, endereco = :endereco, telefone = :telefone, descricao = :descricao, habilidades = :habilidades ";
+	  	$sql = "INSERT INTO pessoas SET nome = :nome, email = :email, endereco = :endereco, telefone = :telefone, descricao = :descricao, habilidades = :habilidades, img = :img ";
 	  	$sql = $this->pdo->prepare($sql);
 	  	$sql->bindValue(":nome", $this->getNome());
 	  	$sql->bindValue(":email", $this->getEmail());
@@ -60,6 +63,7 @@ class dadosPessoais{
 	  	$sql->bindValue(":telefone", $this->getTelefone());
 	  	$sql->bindValue(":descricao", $this->getDescricao());
 	  	$sql->bindValue(":habilidades", $this->getHabilidades());
+	  	$sql->bindValue(":img", $this->getImg());
 	  	$sql->execute();	  	
 
 	  	$this->pegarID($this->getEmail());
@@ -122,6 +126,9 @@ class dadosPessoais{
 	public function getId_Pessoa(){
 		return $this->id_pessoa;
 	}
+	public function getImg(){
+		return $this->img;
+	}
 	public function setNome($novo_nome){
 		$this->nome = $novo_nome;
 	}
@@ -139,6 +146,9 @@ class dadosPessoais{
 	}
 	public function setHabilidades($nova_habilidades){
 		$this->habilidades = $nova_habilidades;
+	}
+	public function setImg($new_img){
+		$this->img = $new_img;
 	}
 
 	private function pegarID($email){
@@ -159,7 +169,8 @@ class dadosPessoais{
 				'endereco' => $this->getEndereco(),
 				'telefone' => $this->getTelefone(),
 				'descricao' => $this->getDescricao(),
-				'habilidades' => $this->getHabilidades()
+				'habilidades' => $this->getHabilidades(),
+				'img' => $this->getImg()
 			 );
 			$this->dados = $dadosarray;
 			//echo $this->id_pessoa; 

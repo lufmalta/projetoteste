@@ -22,6 +22,7 @@ require 'classes/experiencia.class.php';
 require 'classes/educacao.class.php';
 
 
+$qtEmp = 0;
 $priEmp = ''; //define a primeira empresa onde ira colocar o array
 $segEmp = ''; //define a segunda empresa onde ira colocar o array
 $terEmp = ''; //define a terceira empresa onde ira colocar o array
@@ -54,6 +55,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	$instituCidade = addslashes($_POST['instituCidade']);
 	$anoConcl = addslashes($_POST['anoConcl']);
 	$cursos = '';
+	$img = 'assets/images/star.png';
 
 	if(isset($_POST['cursos']) && !empty($_POST['cursos'])){
 		$cursos = addslashes($_POST['cursos']);
@@ -220,7 +222,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		
 		//insere os dados no objeto de dadosPessoais
 		$dadosPessoais->inserirDadosObjPessoa($nome, $email, $endereco, $telefone, $objetivo,
-		 $todasHabili);
+		 $todasHabili, $img);
 		//$dadosPessoais->listarDados();
 
 		// Depois insere no banco de dados de Pessoas e pega o id_pessoa
@@ -238,16 +240,19 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 			if(!empty($priEmp)){
 				$experiencia->inserirEmpObj($priEmp);
 				$experiencia->inserirEmpObjBanco();
+				$qtEmp += 1;
 				}//fim if priEmp
 			// verifica se a segEmp tem dados, caso tenha, insere eles.
 			if(!empty($segEmp)){
 				$experiencia->inserirEmpObj($segEmp);
 				$experiencia->inserirEmpObjBanco();
+				$qtEmp += 1;
 				}//fim if segEmp
 			// verifica se a terEmp tem dados, caso tenha, insere eles.
 			if(!empty($terEmp)){
 				$experiencia->inserirEmpObj($terEmp);
 				$experiencia->inserirEmpObjBanco();
+				$qtEmp += 1;
 				}//fim if terEmp
 
 		// verifica se a priEmp tem dados, caso tenha, insere eles.
@@ -265,7 +270,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		if($experiencia->getDadosEmpresa() == ''){
 			$_SESSION['experiencia'] = '';
 		}else {
-			$_SESSION['experiencia'] = $experiencia->getDadosEmpresa();
+			$_SESSION['experiencia'] = $qtEmp;
 		}
 		$_SESSION['educacao'] = $educacao->getDadosEdu();
 		header("Location: curriculo.php");
