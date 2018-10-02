@@ -69,6 +69,7 @@ footer .container {
 @media only screen and (max-width:550px){
 	header .topoint h2 {
 		font-size:15px;
+		line-height:50px;
 	}
 	
 }

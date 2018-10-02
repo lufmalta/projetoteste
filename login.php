@@ -5,7 +5,7 @@ if(empty($_POST['usuario']) && empty($_POST['senha'])){
 }
 require 'classes/usuarios.class.php';
 
-
+session_start();
 $email = addslashes($_POST['usuario']);
 $senha = md5(addslashes($_POST['senha']));
 $pdo = '';
@@ -15,7 +15,8 @@ $pdo = '';
 $usuarios = new usuarios();
 if($usuarios->verificarExisteUsuario($email) == true){
 	if($usuarios->verificarUsuSenha($email, $senha) == true){
-		header("Location: curriculo.php");
+		$_SESSION['logado'] = $email;
+		header("Location: areaRestrita.php");
 	}else {
 		echo "Usuario e/ou senha invalidos";
 	}// caso a senha ou usuario estejam invalidos

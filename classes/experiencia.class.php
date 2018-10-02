@@ -28,6 +28,7 @@ class Experiencia{
 	public function __construct($new_id_pessoa){
 		$this->id_pessoa = $new_id_pessoa;
 		$this->pdo = '';
+		$this->dadosEmpresa = '';
 	}
 	// public function inserirDadosObjExp($new_priEmp){
 	// 	$this->setPriEmp($new_priEmp);
@@ -63,7 +64,9 @@ class Experiencia{
 		$this->pdo = $pdo;
 		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa(), $pdo);// pega o cargo, para fazer a consulta no banco do id_exp
 	}
-
+	public function getDadosEmpresa(){
+		return $this->dadosEmpresa;
+	}
 	public function getId_Pessoa(){
 		return $this->id_pessoa;
 	}

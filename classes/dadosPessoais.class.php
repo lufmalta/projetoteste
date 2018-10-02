@@ -47,7 +47,7 @@ class dadosPessoais{
 		$this->setEndereco($new_endereco);
 		$this->setTelefone($new_telefone);
 		$this->setDescricao($new_objetivo);
-		$this->setHabilidades($new_todasHabili);
+		$this->setHabilidades($new_todasHabili); 
 	}
 
 	//aqui insere os dados no banco de dados.
@@ -75,24 +75,28 @@ class dadosPessoais{
 		$this->getDescricao().'<br/>'.
 		$this->getHabilidades();
 	}
-	public function setarObjComBanco($new_email){
-		$sql = "SELECT * FROM pessoas WHERE email = :email";
-		$sql = $this->pdo->prepare($sql);
-		$sql->bindValue(':email',$new_email);
-		$sql->execute();
 
-		if($sql->rowCount() > 0){
-			$sql = $sql->fetch();
-			$this->dados = $sql;
-			$this->id_pessoa = $sql['id_pessoa'];
-			$this->setNome($sql['nome']);
-			$this->setEmail($sql['email']);
-			$this->setEndereco($sql['endereco']);
-			$this->setTelefone($sql['telefone']);
-			$this->setDescricao($sql['descricao']);
-			$this->setHabilidades($sql['habilidades']);
-		}
-	}
+
+	//depois uso isso para se precisar colocar os dados dentro do obj.
+
+	// public function setarObjComBanco($new_email){
+	// 	$sql = "SELECT * FROM pessoas WHERE email = :email";
+	// 	$sql = $this->pdo->prepare($sql);
+	// 	$sql->bindValue(':email',$new_email);
+	// 	$sql->execute();
+
+	// 	if($sql->rowCount() > 0){
+	// 		$sql = $sql->fetch();
+	// 		$this->dados = $sql;
+	// 		$this->id_pessoa = $sql['id_pessoa'];
+	// 		$this->setNome($sql['nome']);
+	// 		$this->setEmail($sql['email']);
+	// 		$this->setEndereco($sql['endereco']);
+	// 		$this->setTelefone($sql['telefone']);
+	// 		$this->setDescricao($sql['descricao']);
+	// 		$this->setHabilidades($sql['habilidades']);
+	// 	}
+	// }
 	public function pegarDados(){
 		return $this->dados;
 	}
@@ -148,6 +152,16 @@ class dadosPessoais{
 
 			$sql = $sql->fetch();
 			$this->id_pessoa = $sql['id_pessoa'];
+			$dadosarray = array(
+				'id_pessoa' => $sql['id_pessoa'],
+				'nome' => $this->getNome(),
+				'email' => $this->getEmail(),
+				'endereco' => $this->getEndereco(),
+				'telefone' => $this->getTelefone(),
+				'descricao' => $this->getDescricao(),
+				'habilidades' => $this->getHabilidades()
+			 );
+			$this->dados = $dadosarray;
 			//echo $this->id_pessoa; 
 
 		}

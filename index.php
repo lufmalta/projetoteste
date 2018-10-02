@@ -1,7 +1,10 @@
 <?php
- if(!empty($_SESSION['logado'])){
- 	$email = $_SESSION['logado'];
- }
+// Vou inserir isso quando for colocar o email no lugar de login na pagina index.php
+// session_start();
+//  if(!empty($_SESSION['logado'])){
+//  	$email = $_SESSION['logado'];
+//  	//echo "<span>$email</span>";
+//  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
 
 </head>
-<body>
+<body style="margin-top:15px;">
 	<header>
 		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<div class="topoleft">
@@ -66,7 +69,7 @@
 	<main>		
 		<div class="container">
 			<form  id="form" method="POST" action="receberDados.php"> <!-- inicio do formulario -->
-				<h4 style="margin-top:20px;">Dados Pessoais</h4>
+				<h4 style="margin-top:20px;"><strong>Dados Pessoais</strong></h4>
 				<div class="separaDiv"></div>
 
 				<div class="row"> <!-- aqui fica o form-group de nome e de email -->
@@ -161,7 +164,7 @@
 					<label class="label" style="color:red;" for="habilidades" data-toggle="tooltip" title="Insira aqui as suas habilidades - Exemplo: Liderança, Pro-ativo, Responsável, HTML5, Criativo, Comunicativo." data-placement="right"><strong>Habilidades</strong></label>
 					<input id="habilidades" type="text" name="habilidades" class="w-100 form-control" maxlength="200" />
 				</div> -->
-				<h4 style="margin-top:20px;">Experiência</h4>
+				<h4 style="margin-top:20px;"><strong>Experiência</strong></h4>
 				<div class="separaDiv"></div>
 				
 				
@@ -298,7 +301,7 @@
 					</div>
 				</div>
 				
-				<h4 style="margin-top:20px;">Educação</h4>
+				<h4 style="margin-top:20px;"><strong>Educação</strong></h4>
 				<div class="separaDiv"></div>
 				<h3>Formação</h3>
 				<div class="separaDiv"></div>

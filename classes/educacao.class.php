@@ -17,10 +17,12 @@ class Educacao{
 	private $instituCidade;
 	private $anoConcl;
 	private $cursos;
+	private $dadosEdu;
 
 	public function __construct($new_id_pessoa){
 		$this->id_pessoa = $new_id_pessoa;
 		$this->pdo = '';
+		$this->dadosEdu = '';
 	}
 
 	public function inserirEducacaoObj($new_formacao, $new_instituicao, $new_instituCidade,
@@ -50,6 +52,9 @@ class Educacao{
 		$this->pdo = $pdo;
 		$this->pegarIDEdu($this->getFormacao(), $this->getId_Pessoa(), $pdo);
 	}
+	public function getDadosEdu(){
+		return $this->dadosEdu;
+	}
 	public function getId_Pessoa(){
 		return $this->id_pessoa;
 	}
@@ -78,6 +83,15 @@ class Educacao{
 		if($sql->rowCount() > 0){
 			$sql = $sql->fetch();
 			$this->id_edu = $sql['id_edu'];
+			$dadosarray = array(
+				'id_edu' => $sql['id_edu'],
+				'formacao' => $this->getFormacao(),
+				'instituicao' => $this->getInstituicao(),
+				'instituCidade' => $this->getInstituCidade(),
+				'anoConcl' => $this->getAnoConc(),
+				'cursos' => $this->getCursos()
+			 );
+			$this->dadosEdu = $dadosarray;
 		}
 	}
 }

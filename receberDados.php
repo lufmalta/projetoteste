@@ -42,7 +42,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	  				&& (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
 
 	// Depois armazena os valores obrigatorios em variaveis
-
+	session_start();
 	// DADOS PESSOAIS / EDUCACAO - armazenando os dados em variaveis
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
@@ -227,7 +227,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 
 		$dadosPessoais->inserirDadosBanco();
 		$id_pessoa = $dadosPessoais->getId_Pessoa();
-		$_SESSION['dadosPessoais'] = $dadosPessoais->getNome();
+		//$_SESSION['dadosPessoais'] = $dadosPessoais->getNome();
 
 
 		// Segunda etapa - chama um objeto da classe experiencia
@@ -258,8 +258,22 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 		 $anoConcl, $cursos);	
 		$educacao->inserirEducacaoObjBanco();
 
+
+
+		//Guarda aqui as instancias desses objetos e depois redireciona para o curriculo.php
+		$_SESSION['dadosPessoais'] = $dadosPessoais->pegarDados();
+		if($experiencia->getDadosEmpresa() == ''){
+			$_SESSION['experiencia'] = '';
+		}else {
+			$_SESSION['experiencia'] = $experiencia->getDadosEmpresa();
+		}
+		$_SESSION['educacao'] = $educacao->getDadosEdu();
+		header("Location: curriculo.php");
+		exit;
+
+
 	}else {
-		echo "Existe email no banco"; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
+		echo "Existe cadastro no banco"; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
 
 	}
 

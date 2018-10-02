@@ -1,12 +1,4 @@
-<?php 
-// try{
-// 	$pdo = new PDO("mysql:dbname=projeto_curriculo_site;host=localhost","root","");
-// 	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-// }catch(PDOException $e){
-// 	echo "Erro!!!".$e->getMessage();
-// } // consegui arrumar pra funcionar pela classe, estava dando um erro de redeclare banco
-// para arrumar este problema foi só tirar os require config.php das classes educacao.php e experiencia.php
-?>
+
 <?php
 // DADOS TESTE BANCO
 class Banco{
