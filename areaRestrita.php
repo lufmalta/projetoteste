@@ -112,6 +112,60 @@ require 'validandoDados.php';
 					 		endif; ?>
 				
 		</table>
+		<table class="table table-light" border="5"  width="1200" >
+				<tr>
+					<th style="width:200px;">Formacao</th>	
+					<th style="width:200px;">Instituicao</th>
+					<th style="width:200px;">Cidade</th>				
+					<th style="width:150px;">Ano Conclusao</th>
+					<th style="width:120px;">Cursos</th>		
+				</tr>
+				<?php if($qtEdu >= 0):
+						$educacao  = $educacao->pegarEdu();
+						for ($i=0; $i <= $qtEdu ; $i++):
+							
+						
+					 ?>
+					<tr>
+						<td>							
+							<?= $educacao[$i]['formacao'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['instituicao'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['cidade'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['anoConcl'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['descEducacao'] ?>
+						</td>
+												
+					</tr>											
+				<?php   endfor; ?>
+				<?php else: ?>					
+					<tr>
+						<td>							
+							<?= $educacao[$i]['formacao'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['instituicao'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['cidade'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['anoConcl'] ?>
+						</td>
+						<td>							
+							<?= $educacao[$i]['descEducacao'] ?>
+						</td>												
+					</tr>
+
+				 		<?php endif; ?>
+		</table>
 	</div>
 <footer>
 		<div class="container">
