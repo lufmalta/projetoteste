@@ -5,6 +5,10 @@
 //  	$email = $_SESSION['logado'];
 //  	//echo "<span>$email</span>";
 //  }
+if(isset($_SESSION['logado']) && !empty($_SESSION['logado'])){
+	header("Location: areaRestrita.php");
+	exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
