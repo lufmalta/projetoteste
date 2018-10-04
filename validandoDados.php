@@ -1,7 +1,7 @@
 <?php
-session_start();
+
 require 'classes/experiencia.class.php';
-//Caso a pessoa esteja logada, entrar√° aqui
+//Caso a pessoa esteja logada, entrar· aqui
 if(!empty($_SESSION['logado'])){
 	$email = $_SESSION['logado'];
 	$dadosPessoais = new dadosPessoais();
@@ -17,9 +17,9 @@ if(!empty($_SESSION['logado'])){
 		$habilidades = explode (',', $dadosPessoais['habilidades'] );
 		$qtHab = count($habilidades);
 		for($i = 0; $i < $qtHab; $i++){
-			// Caso a posi√ßao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
+			// Caso a posiÁao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
 			if(empty($habilidades[$i])){
-				// caso esteja vazio, n√£o fa√ßa nada, apenas pule isso
+				// caso esteja vazio, n„o faÁa nada, apenas pule isso
 				//echo "VAZIO".'</br>';
 			}else{
 				//echo $habilidades[$i].'</br>';
@@ -54,13 +54,13 @@ if(!empty($_SESSION['logado'])){
 		// exit;
 		//Pega as habilidades que estao separadas por virgula e coloca numa variavel.
 		$habilidades = explode (',', $dadosPessoais['habilidades'] );
-		// pega a quantidade de habilidades que tem em habilidades, tanto os espa√ßos vazios, quanto os que tem algo.
+		// pega a quantidade de habilidades que tem em habilidades, tanto os espaÁos vazios, quanto os que tem algo.
 		$qtHab = count($habilidades);
 
 		for($i = 0; $i < $qtHab; $i++){
-			// Caso a posi√ßao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
+			// Caso a posiÁao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
 			if(empty($habilidades[$i])){
-				// caso esteja vazio, n√£o fa√ßa nada, apenas pule isso
+				// caso esteja vazio, n„o faÁa nada, apenas pule isso
 				//echo "VAZIO".'</br>';
 			}else{
 				//echo $habilidades[$i].'</br>';
@@ -69,18 +69,18 @@ if(!empty($_SESSION['logado'])){
 			}
 			
 		}
-		//Aqui ele conta quantas habilidades tem dentro do array novasHab, no caso aqui s√≥ tem as habilidades que nao estao vazias
+		//Aqui ele conta quantas habilidades tem dentro do array novasHab, no caso aqui sÛ tem as habilidades que nao estao vazias
 		$qtNovasHab = count($novasHab);
-		// diminui um valor, porque apesar de ter '10' habilidades, quando for setar dentro dos campos ira do valor 0-9, e o 10 nao entra, ent√£o diminuir 1 da quantidade.
+		// diminui um valor, porque apesar de ter '10' habilidades, quando for setar dentro dos campos ira do valor 0-9, e o 10 nao entra, ent„o diminuir 1 da quantidade.
 		$qtNovasHab = $qtNovasHab - 1;
 		//echo $qtNovasHab;
 
 
-		//Caso a experiencia tamb√©m esteja preenchidas, entre aqui.
+		//Caso a experiencia tambÈm esteja preenchidas, entre aqui.
 		if(!empty($_SESSION['experiencia'])){
 			//require 'classes/experiencia.class.php';
 			//agora tenho que pegar os dados de experiencia no banco...
-			$qtEmp = $_SESSION['experiencia']; //aqui ele guarda o valor da ultima empresa inserida no banco. No caso pode ser a primeira empresa, se houver inserido apenas ela, pode ser a segunda empresa, se estiver inserido somente ela, pode ser a terceira empresa se houver inserido somente ela, e pode ser a terceira empresa, no caso de ter inserido as 3 empresas. Tamb√©m pode ser a segunda empresa, no caso de ter inserido a primeira e segunda empresa.
+			$qtEmp = $_SESSION['experiencia']; //aqui ele guarda o valor da ultima empresa inserida no banco. No caso pode ser a primeira empresa, se houver inserido apenas ela, pode ser a segunda empresa, se estiver inserido somente ela, pode ser a terceira empresa se houver inserido somente ela, e pode ser a terceira empresa, no caso de ter inserido as 3 empresas. TambÈm pode ser a segunda empresa, no caso de ter inserido a primeira e segunda empresa.
 			//echo $experiencia[0];
 			$qtEmp--;
 			$experiencia = new Experiencia($dadosPessoais['id_pessoa']);

@@ -10,6 +10,7 @@
 */
 //$dadosPessoais = '';
 require 'classes/dadosPessoais.class.php';
+session_start();
 require "validandoDados.php";
 
 

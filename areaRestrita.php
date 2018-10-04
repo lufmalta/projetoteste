@@ -6,7 +6,8 @@ if(empty($_SESSION['logado'])){
 }
 
 $email = $_SESSION['logado'];
-
+require 'classes/dadosPessoais.class.php';
+require 'validandoDados.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,10 +33,97 @@ $email = $_SESSION['logado'];
 		</div>
 	</header>
 	<div class="container" style="margin-top:10px;">
-		<a href="">Alterar Curriculo</a>
+		<h1 style="color:#CCC;">DadosPessoais</h1>
+		<table class="table table-light" border="5"  width="1200" >
+				<tr>
+					<th style="width:200px;">Nome</th>	
+					<th style="width:200px;">Email</th>
+					<th style="width:200px;">Objetivo Profissional</th>				
+					<th style="width:200px;">Endereco</th>
+					<th style="width:200px;">Telefone</th>
+					<th style="width:200px;">Habilidades</th>
+				</tr>
+				<tr>
+					<td><?= $dadosPessoais['nome'] ?></td>
+					<td><?= $dadosPessoais['email'] ?></td>
+					<td><?= $dadosPessoais['descricao'] ?></td>
+					<td><?= $dadosPessoais['endereco'] ?></td>
+					<td><?= $dadosPessoais['telefone'] ?></td>
+					<td>
+						<ul>
+						<?php
+							for($i = 0;$i <= $qtNovasHab; $i++ ):
+								if($novasHab[$i] != 'VAZIO'):
+
+								
+								?>
+							<li><?= $novasHab[$i] ?></li>
+							<?php
+							endif;
+							endfor;
+							 ?>
+					</ul>
+					</td>
+				</tr>
+		</table>
+		<h1 style="color:#CCC;">Experiencia</h1>
+		<table class="table table-light" border="5"  width="1200" >
+				<tr>
+					<th style="width:200px;">Empresa</th>	
+					<th style="width:200px;">Cargo</th>
+					<th style="width:200px;">Descricao Cargo</th>				
+					<th style="width:150px;">Cidade</th>
+					<th style="width:120px;">Data Entrada</th>
+					<th style="width:120px;">Data Saida</th>
+				</tr>
+				<?php
+						if(isset($semExperiencia)):
+
+						else:
+							$experienciaAtual = $experiencia->pegarExp();
+							$qtEmp = $experiencia->qtExp();
+							$qtEmp--;
+							
+						for ($i=0; $i <= $qtEmp ; $i++):
+							//echo $experienciaAtual[$i]['id_exp'].'<br/>';
+						 ?>
+
+						<tr>
+							<td>							
+								<?= $experienciaAtual[$i]['empresa'] ?>
+							</td>	
+							<td>							
+								<?= $experienciaAtual[$i]['cargo'] ?>
+							</td>
+							<td>							
+								<?= $experienciaAtual[$i]['descCargo'] ?>
+							</td>
+							<td>							
+								<?= $experienciaAtual[$i]['cidade'] ?>
+							</td>
+							<td>							
+								<?= $experienciaAtual[$i]['dataEnt'] ?>
+							</td>
+							<td>							
+								<?= $experienciaAtual[$i]['dataSai'] ?>
+							</td>					
+						</tr>
+					 <?php endfor;
+					 		endif; ?>
+				
+		</table>
 	</div>
-	
-	
-<?php
-	require "pages/footer.php";
- ?>
+<footer>
+		<div class="container">
+			<h3>Desenvolvido por Luiz Fernando Malta Martins</h3>
+			<h4>Contato: lufmalta@gmail.com</h4>
+		</div>
+</footer>
+</body>
+
+	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="assets/js/javascript.js"></script>
+		
+</html>
