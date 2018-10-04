@@ -30,10 +30,9 @@ $terEmp = ''; //define a terceira empresa onde ira colocar o array
 // $con = new Banco(); // dentro de $con esta o '$pdo', ou seja é só usar ele quando for chamar outras classes, enviar ele como parâmetro.
 
 
-
+//(isset($_POST['nome']) && !empty($_POST['nome'])
 // Primeiro verifica se esses valores foram setados e se não estao vazios
-if(isset($_POST['nome']) && !empty($_POST['nome'])
- && (isset($_POST['email']) && !empty($_POST['email']))
+if (isset($_POST['email']) && !empty($_POST['email'])
   &&  (isset($_POST['endereco']) && !empty($_POST['endereco']))
     && (isset($_POST['telefone']) && !empty($_POST['telefone']))
     	&& (isset($_POST['formacao']) && !empty($_POST['formacao']))
@@ -43,7 +42,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])
 	  				&& (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
 
 	// Depois armazena os valores obrigatorios em variaveis
-	session_start();
+	//session_start();
 	// DADOS PESSOAIS / EDUCACAO - armazenando os dados em variaveis
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);

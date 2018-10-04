@@ -11,6 +11,8 @@
 //$dadosPessoais = '';
 require 'classes/dadosPessoais.class.php';
 require "validandoDados.php";
+
+
 ?>
 
 
@@ -48,7 +50,12 @@ require "validandoDados.php";
 				
 				<div class="ConteudoExp">
 					<?php
-						$experienciaAtual = $experiencia->pegarExp();
+						if(isset($semExperiencia)):
+
+						else:
+							$experienciaAtual = $experiencia->pegarExp();
+						
+						
 						for ($i=0; $i <= $qtEmp ; $i++):
 							//echo $experienciaAtual[$i]['id_exp'].'<br/>';
 						 ?>
@@ -66,7 +73,8 @@ require "validandoDados.php";
 							</div>						
 						</div>
 						<br/>
-					 <?php endfor; ?>
+					 <?php endfor;
+					 		endif; ?>
 					
 
 				</div>

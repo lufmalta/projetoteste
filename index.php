@@ -9,7 +9,11 @@ session_start();
 if(!empty($_SESSION['logado'])){
 	header("Location: areaRestrita.php");
 	exit;
+}else if(isset($_POST['nome']) && !empty($_POST['nome'])){
+	require "receberDados.php";
+	//o else debaixo é no caso do $_POST['nome'] estiver vazio.
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +77,7 @@ if(!empty($_SESSION['logado'])){
 	</section>
 	<main>		
 		<div class="container">
-			<form  id="form" method="POST" action="receberDados.php"> <!-- inicio do formulario -->
+			<form  id="form" method="POST" action="index.php"> <!-- inicio do formulario -->
 				<h4 style="margin-top:20px;"><strong>Dados Pessoais</strong></h4>
 				<div class="separaDiv"></div>
 
