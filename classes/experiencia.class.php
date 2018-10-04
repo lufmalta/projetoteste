@@ -64,6 +64,17 @@ class Experiencia{
 		$this->pdo = $pdo;
 		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa(), $pdo);// pega o cargo, para fazer a consulta no banco do id_exp
 	}
+	public function qtExp(){
+		$con = new Banco();
+		$sql = "SELECT * FROM experiencia WHERE id_pessoa = :id_pessoa";
+		$pdo = $con->conectar($this->pdo);
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+		if($sql->rowCount() > 0){
+			return $sql->rowCount();
+		}
+	}
 	public function pegarExp(){
 		$con = new Banco();
 		$pdo = $con->conectar($this->pdo);
@@ -85,6 +96,7 @@ class Experiencia{
 			return $arrayEmp;
 		}
 	}
+
 	public function getDadosEmpresa(){
 		return $this->dadosEmpresa;
 	}

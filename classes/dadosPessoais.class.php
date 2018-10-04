@@ -67,8 +67,17 @@ class dadosPessoais{
 	  	$sql->execute();	  	
 
 	  	$this->pegarID($this->getEmail());
+	}
+	public function pegarDadosPessoaisBanco($buscar_email){
+		$sql = "SELECT * FROM pessoas WHERE email = :email";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":email" , $buscar_email);
+		$sql->execute();
 
-
+		if($sql->rowCount() > 0){
+			$sql = $sql->fetch();
+			return $sql;
+		}
 
 	}
 	public function listarDados(){

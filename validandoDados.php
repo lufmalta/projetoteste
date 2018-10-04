@@ -1,9 +1,42 @@
 <?php
 session_start();
+require 'classes/experiencia.class.php';
 //Caso a pessoa esteja logada, entrará aqui
 if(!empty($_SESSION['logado'])){
-	echo "Existe usuario logado";
-	exit;
+	$email = $_SESSION['logado'];
+	$dadosPessoais = new dadosPessoais();
+	if($dadosPessoais->verificarEmail($email) == true){
+		$dadosPessoais = $dadosPessoais->pegarDadosPessoaisBanco($email);
+		$id_pessoa = $dadosPessoais['id_pessoa'];
+		if($dadosPessoais['img'] != ''){
+			$img = $dadosPessoais['img'];
+		}else {
+			$img = '';
+		}
+		$experiencia = new Experiencia($id_pessoa);
+		$habilidades = explode (',', $dadosPessoais['habilidades'] );
+		$qtHab = count($habilidades);
+		for($i = 0; $i < $qtHab; $i++){
+			// Caso a posiçao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
+			if(empty($habilidades[$i])){
+				// caso esteja vazio, não faça nada, apenas pule isso
+				//echo "VAZIO".'</br>';
+			}else{
+				//echo $habilidades[$i].'</br>';
+				// caso tenha algo, entao coloque no array novasHab o valor da habilidade.
+				$novasHab[] = $habilidades[$i];
+			}
+			
+		}
+		$qtNovasHab = count($novasHab);
+		$qtNovasHab = $qtNovasHab - 1;
+		require "classes/educacao.class.php";
+		$educacao = new Educacao($id_pessoa);
+		$qtEdu = $educacao->qtEdu();
+		$qtEdu--;
+
+	}
+
 	//Com o email, aqui ira fazer o preenchimento dos dados para inserir no curriculo.
 
 
@@ -16,6 +49,7 @@ if(!empty($_SESSION['logado'])){
 		$dadosPessoais = $_SESSION['dadosPessoais'];
 		$img = '';
 		$img = $dadosPessoais['img'];
+		$qtEdu = -1;
 		// echo $img;
 		// exit;
 		//Pega as habilidades que estao separadas por virgula e coloca numa variavel.
@@ -44,7 +78,7 @@ if(!empty($_SESSION['logado'])){
 
 		//Caso a experiencia também esteja preenchidas, entre aqui.
 		if(!empty($_SESSION['experiencia'])){
-			require 'classes/experiencia.class.php';
+			//require 'classes/experiencia.class.php';
 			//agora tenho que pegar os dados de experiencia no banco...
 			$qtEmp = $_SESSION['experiencia']; //aqui ele guarda o valor da ultima empresa inserida no banco. No caso pode ser a primeira empresa, se houver inserido apenas ela, pode ser a segunda empresa, se estiver inserido somente ela, pode ser a terceira empresa se houver inserido somente ela, e pode ser a terceira empresa, no caso de ter inserido as 3 empresas. Também pode ser a segunda empresa, no caso de ter inserido a primeira e segunda empresa.
 			//echo $experiencia[0];

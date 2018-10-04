@@ -54,7 +54,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 	$instituCidade = addslashes($_POST['instituCidade']);
 	$anoConcl = addslashes($_POST['anoConcl']);
 	$cursos = '';
-	$img = 'assets/images/star.png';
+	$img = '';
 
 	if(isset($_POST['cursos']) && !empty($_POST['cursos'])){
 		$cursos = addslashes($_POST['cursos']);

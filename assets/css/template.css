@@ -2,7 +2,7 @@
 
 /* Developed by Luiz Fernando Malta Martins
 
-/* Aqui esta todo os estilo da pagina index.php
+/* Aqui esta todo os estilo da pagina index.php e do areaRestrita.php
 
 /* @author Luiz Fernando - lufmalta@gmail.com
 */
@@ -65,11 +65,17 @@ footer .container {
 	padding-top:30px;
 	text-align: center;
 }
-
+@media only screen and (max-width: 700px ){
+	header .topoleft h3 {
+		font-size:15px;
+		line-height:50px;
+	}
+}
 @media only screen and (max-width:550px){
 	header .topoint h2 {
 		font-size:15px;
 		line-height:50px;
 	}
+	
 	
 }

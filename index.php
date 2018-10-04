@@ -72,8 +72,7 @@ if(!empty($_SESSION['logado'])){
 					</div>
 				</div>
 			</div>
-		</div>
-			
+		</div>	
 	</section>
 	<main>		
 		<div class="container">

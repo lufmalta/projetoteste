@@ -52,6 +52,39 @@ class Educacao{
 		$this->pdo = $pdo;
 		$this->pegarIDEdu($this->getFormacao(), $this->getId_Pessoa(), $pdo);
 	}
+	public function qtEdu(){
+		$con = new Banco();
+		$sql = "SELECT * FROM educacao WHERE id_pessoa = :id_pessoa";
+		$pdo = $con->conectar($this->pdo);
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+		if($sql->rowCount() > 0){			
+			return $sql->rowCount();
+		}
+	}
+	public function pegarEdu(){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "SELECT * FROM educacao WHERE id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_pessoa", $this->id_pessoa);
+		$sql->execute();
+
+		if($sql->rowCount() > 0 ){
+			$qtEdu = $sql->rowCount();
+			$qtEdu--;
+
+			$arrayEdu = array($qtEdu); 
+			$i = $qtEdu;
+
+			foreach($sql->fetchAll() as $educacoes){
+				$arrayEdu[$i] = $educacoes;
+				$i--;
+			}
+			return $arrayEdu;
+		}
+	}
 	public function getDadosEdu(){
 		return $this->dadosEdu;
 	}

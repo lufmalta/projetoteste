@@ -54,8 +54,9 @@ require "validandoDados.php";
 
 						else:
 							$experienciaAtual = $experiencia->pegarExp();
-						
-						
+							$qtEmp = $experiencia->qtExp();
+							$qtEmp--;
+							
 						for ($i=0; $i <= $qtEmp ; $i++):
 							//echo $experienciaAtual[$i]['id_exp'].'<br/>';
 						 ?>
@@ -133,6 +134,30 @@ require "validandoDados.php";
 			<h5><strong>Formação</strong></h5><br/>
 			<div class="fotmargen">
 				<div class="ConteudoExp">
+					<?php if($qtEdu >= 0):
+						$educacao  = $educacao->pegarEdu();
+						for ($i=0; $i <= $qtEdu ; $i++):
+							
+						
+					 ?>
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6><?= $educacao[$i]['instituicao'] ?></h6>
+							<h6><?= $educacao[$i]['cidade'] ?></h6>
+							<h6><?= $educacao[$i]['anoConcl'] ?></h6>							
+						</div>
+						<div class="col-sm-9 col9">							
+							<h4><img src="assets/images/star.png"/>
+								<?= $educacao[$i]['formacao'] ?></h4>
+							<span><?= $educacao[$i]['descEducacao'] ?></span><br/>
+							<a id="a" href="" target="_blank">Experiência - </a>
+						</div>						
+					</div>
+					<br/>
+					
+				</div>
+				<?php   endfor; ?>
+				<?php else: ?>					
 					<div class="row">
 						<div class="col-sm-3 col3" >
 							<h6><?= $educacao['instituicao'] ?></h6>
@@ -143,12 +168,11 @@ require "validandoDados.php";
 							<h4><img src="assets/images/star.png"/>
 								<?= $educacao['formacao'] ?></h4>
 							<span><?= $educacao['cursos'] ?></span><br/>
-							<a id="a" href="https://github.com/lufmalta/" target="_blank">Experiência - </a>
+							<a id="a" href="" target="_blank">Experiência - </a>
 						</div>						
-					</div>					
-					<br/>	
+					</div>
 
-				</div>
+				 		<?php endif; ?>
 			</div>
 
 		</div>

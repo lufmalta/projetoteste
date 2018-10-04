@@ -7,7 +7,6 @@ if(empty($_SESSION['logado'])){
 
 $email = $_SESSION['logado'];
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +22,7 @@ $email = $_SESSION['logado'];
 	<header>
 		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<div class="topoleft">
-				<h2><strong>Usuario Logado - <?= $email ?></strong></h2>
+				<h3 style="line-height: 40px;"><strong>Usuario Logado - <?= $email ?></strong></h3>
 			</div>
 			
 			<div class="toporight">
@@ -32,6 +31,11 @@ $email = $_SESSION['logado'];
 			</div>
 		</div>
 	</header>
+	<div class="container" style="margin-top:10px;">
+		<a href="">Alterar Curriculo</a>
+	</div>
+	
+	
 <?php
 	require "pages/footer.php";
  ?>
