@@ -32,44 +32,69 @@ $(function(){
 	$('.dataEntrada').attr('title', 'Aqui você coloca a data de entrada na empresa em ano/mes/dia');
 	$('.dataSaida').attr('title', 'Aqui você coloca a data de saida na empresa em ano/mes/dia');
 	$('[data-toggle = "tooltip"]').tooltip();
+	//depois tento isso de novo
+	//$('#errolog').hide(); //Esconde o elemento com id errolog
 
+	//nao estou conseguindo usar isso
+	// $('#form_login').bind('submit', function(e){
+	// 	e.preventDefault();
+	// 	txt = $(this).serialize();
+	// 	console.log(txt);
 
-	//Depois tento resolver isso
-	// $('#form_login h2').hide(); // ja começa como escondido, só aparece quando entrar
-
-	// $('#form_login').bind('submit' ,function(e){
-	// 	//e.preventDefault();
-
-	// 	var login = $('#usuario').val();
-	// 	var senha = $('#senha').val();
-
-
-	// 	$.ajax({
+	// 	$.ajax ({
+	// 		dataType: 'json',
 	// 		type: 'POST',
+	// 		data: txt,
 	// 		url: 'login.php',
-	// 		data: login+'e'+senha,
-	// 		success:function(result){
-	// 			// if(result == 1){
-	// 			// 	window.location.assign('curriculo.php');
-	// 			// 	// $('#form_login h2').show();
-	// 			// }else if(result == 0){
-	// 			// 	window.location.href('index.php');
-	// 			// 	// $('#form_login h2').hide()
-	// 			// }
-	// 			// // $('#usuario').val('');
-	// 			// // $('#senha').val('');
-	// 			// //$('#senha').html('');
-	// 		}, error:function(result){
-	// 			console.log("erro");
+	// 		success:function(resultado){
+	// 			console.log('sucesso');
+	// 			if(resultado == true){
+	// 				$('#errolog').css('display', 'none');
+	// 				location.href('areaRestrita.php');
+	// 			}else if(resultado == false){
+	// 				session_start();
+	// 				var resposta = $_SESSION['invalido'];
+	// 				window.location.href('index.php');
+	// 				$('#errolog').css('display', 'block');
+	// 				$('#errolog').html(resposta);
+	// 			}
 	// 		}
-
 	// 	});
+		
+
 
 	// });
+	// fazendo de outra maneira
 
+// 	$(document).ready(function(){
+	
+	
 
 	
 });
+//ate esta funcionando, mas se enviar errado, ira escrever na tela que o usuario ou senha
+//esta invalido, mas apos isto o formulario não ira funcionar mais clicando.
+// $('.btn').bind('click', function(){ //Ao submeter formulário
+
+
+// 		var usuario=$('#usuario').val();	//Pega valor do campo email
+// 		var senha=$('#senha').val();	//Pega valor do campo senha
+// 		$.ajax({			//Função AJAX
+// 			url:"login.php",			//Arquivo php
+// 			type:"POST",				//Método de envio
+// 			data: "usuario="+usuario+"&senha="+senha,	//Dados
+//    			success: function (result){			//Sucesso no AJAX
+//                 		if(result==1){						
+//                 			location.href='areaRestrita.php';	//Redireciona
+//                 		}else{
+
+//                 			$('#errolog').html("Usuario ou senha invalidos");
+//                 			$('#errolog').show();		//Informa o erro
+//                 		}
+//             		}
+// 		})
+// 		return false;	//Evita que a página seja atualizada
+// 	});
 
 
 

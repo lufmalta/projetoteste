@@ -11,9 +11,10 @@ if(!empty($_SESSION['logado'])){
 	exit;
 }else if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	require "receberDados.php";
+	
 	//o else debaixo é no caso do $_POST['nome'] estiver vazio.
 }
-
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,8 +47,8 @@ if(!empty($_SESSION['logado'])){
 						<div class="modal-header">
 							<h3><strong>Formulário de Login</strong></h3>
 						</div>
-						<div class="modal-body">
-							<form id="form_login" method="POST" action="login.php">
+						<div class="modal-body">							
+							<form id="form_login" method="POST" action="login.php" >
 								<div class="form-group">
 									<!-- <h2 style="color:#FF0000">Usuário ou senha invalidos</h2> isso fazer parte da requisicao ajax --> 
 									<label for="usuario"><strong>Usuario</strong></label>
@@ -76,6 +77,8 @@ if(!empty($_SESSION['logado'])){
 	</section>
 	<main>		
 		<div class="container">
+			<!-- ainda não estou conseguindo fazer funcionar isso -->
+			<!-- <div id="errolog" class="alert alert-warning"></div> -->
 			<form  id="form" method="POST" action="index.php"> <!-- inicio do formulario -->
 				<h4 style="margin-top:20px;"><strong>Dados Pessoais</strong></h4>
 				<div class="separaDiv"></div>

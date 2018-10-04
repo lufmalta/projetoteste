@@ -16,14 +16,20 @@ $usuarios = new usuarios();
 if($usuarios->verificarExisteUsuario($email) == true){
 	if($usuarios->verificarUsuSenha($email, $senha) == true){
 		$_SESSION['logado'] = $email;
+		$_SESSION['invalido'] = '';
 		header("Location: areaRestrita.php");
+		exit;
 	}else {
-		echo "Usuario e/ou senha invalidos";
+		$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
+		header("Location: index.php");
+		exit;
 	}// caso a senha ou usuario estejam invalidos
 
 //fim do verificar se existe esse usuario no banco	
 }else {
-	echo "Usuario nao cadastrado no sistema";
+	$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
+		header("Location: index.php");
+		exit;
 } 
 
 //$dadosPessoas->
