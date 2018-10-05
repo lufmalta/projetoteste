@@ -96,7 +96,7 @@ require "validandoDados.php";
 				<div class="col">
 					<p></p>
 					<span>Endereço</span><br/>
-					<span><?= $dadosPessoais['endereco']; ?></span>
+					<span style="word-wrap:break-word;"><?= $dadosPessoais['endereco']; ?></span>
 					<span></span>
 				</div>
 				<div class="col">
