@@ -36,7 +36,7 @@ require "validandoDados.php";
 		<div class="container">
 			<div id="areaObj">
 				<h2><img src="<?php echo $img ?>" height="150"/><?=$dadosPessoais['nome']?></h2><br/>
-				<h4 style="text-align:center;"><?= $dadosPessoais['descricao'] ?></h4>	
+				<h4 style="margin-left:20px;text-align:center;"><?= $dadosPessoais['descricao'] ?></h4>	
 			</div>			
 		</div>		
 	</header>

@@ -32,9 +32,36 @@ require 'validandoDados.php';
 			</div>
 		</div>
 	</header>
+	<div style="background-color:#CCC;" class="jumbotron">
+		<table border="0" class='table'>
+			<tr>
+				<h2>Dados Pessoais</h2>
+			</tr>
+			<tr>
+				<td>
+					<a href="#">Alterar Nome </a>
+				</td>
+				<td>
+					<a href="#">Alterar Objetivo Profissional </a>
+				</td>
+				<td>
+					<a href="#">Alterar Endereço </a>
+				</td>
+				<td>
+					<a href="#">Alterar Telefone </a>
+				</td>
+				<td>
+					<a href="#">Alterar Habilidades </a>
+				</td>
+			</tr>	
+				
+		</table>
+		
+	</div>
+	
 	<div class="container" style="margin-top:10px;">
 		<h1 style="color:#CCC;">DadosPessoais</h1>
-		<table class="table table-light" border="5"  width="1200" >
+		<table class="table table-light" border="5"  width="1400" >
 				<tr>
 					<th style="width:200px;">Nome</th>	
 					<th style="width:200px;">Email</th>
@@ -66,6 +93,22 @@ require 'validandoDados.php';
 					</td>
 				</tr>
 		</table>
+		<div style="background-color:#CCC;" class="jumbotron">
+			<table border="0" class='table'>
+				<tr>
+					<h2>Experiencia - Educacao</h2>
+				</tr>
+				<tr>
+					<td>
+						<a href="#">Adicionar Experiencia</a>
+					</td>
+					<td>
+						<a href="#">Adicionar Educacao</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
 		<h1 style="color:#CCC;">Experiencia</h1>
 		<table class="table table-light" border="5"  width="1200" >
 				<tr>
@@ -75,6 +118,8 @@ require 'validandoDados.php';
 					<th style="width:150px;">Cidade</th>
 					<th style="width:120px;">Data Entrada</th>
 					<th style="width:120px;">Data Saida</th>
+					<th style="width:100px;">Editar Empresa</th>
+					<th style="width:100px;">Excluir Empresa</th>
 				</tr>
 				<?php
 						if(isset($semExperiencia)):
@@ -106,12 +151,19 @@ require 'validandoDados.php';
 							</td>
 							<td>							
 								<?= $experienciaAtual[$i]['dataSai'] ?>
-							</td>					
+							</td>	
+							<td>
+								<a href="#">Editar</a><br/><br/><br/><br/>		
+							</td>	
+							<td>
+								<a href="#">Excluir</a>
+							</td>		
 						</tr>
 					 <?php endfor;
 					 		endif; ?>
 				
 		</table>
+		<h1 style="color:#CCC;">Educacao</h1>
 		<table class="table table-light" border="5"  width="1200" >
 				<tr>
 					<th style="width:200px;">Formacao</th>	
