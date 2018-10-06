@@ -151,7 +151,8 @@ require "validandoDados.php";
 							<h4><img src="assets/images/star.png"/>
 								<?= $educacao[$i]['formacao'] ?></h4>
 							<span><?= $educacao[$i]['descEducacao'] ?></span><br/>
-							<a id="a" href="" target="_blank">Experiência - </a>
+							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank">Experiência - Projeto-Curriculo </a><br/>
+							<a id="b" href="https://github.com/lufmalta/projetoteste2" target="_blank">Outros Projetos - </a>
 						</div>						
 					</div>
 					<br/>
