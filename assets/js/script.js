@@ -2,7 +2,8 @@
 
 /* Developed by Luiz Fernando Malta Martins
 
-/* Aqui esta os código javascript e jQuery da pagina curriculo.php
+/* Aqui esta os código javascript e jQuery da pagina curriculo.php e da areaRestrita.php
+
 
 /* @author Luiz Fernando - lufmalta@gmail.com
 

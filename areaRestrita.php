@@ -39,19 +39,19 @@ require 'validandoDados.php';
 			</tr>
 			<tr>
 				<td>
-					<a href="#">Alterar Nome </a>
+					<a href="novosDados.php?dado=nome">Alterar Nome</a>
 				</td>
 				<td>
-					<a href="#">Alterar Objetivo Profissional </a>
+					<a href="novosDados.php?dado=objPro">Alterar Objetivo Profissional </a>
 				</td>
 				<td>
-					<a href="#">Alterar Endereço </a>
+					<a href="novosDados.php?dado=endereco">Alterar Endereço </a>
 				</td>
 				<td>
-					<a href="#">Alterar Telefone </a>
+					<a href="novosDados.php?dado=telefone">Alterar Telefone </a>
 				</td>
 				<td>
-					<a href="#">Alterar Habilidades </a>
+					<a href="novosDados.php?dado=habilidades">Alterar Habilidades </a>
 				</td>
 			</tr>	
 				
