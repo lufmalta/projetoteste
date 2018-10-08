@@ -32,6 +32,7 @@ if($dado != ''){
 	<meta charset="utf-8">
 	<title>AlterandoDados</title>
 	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
 	<script type="text/javascript">
 		function voltar(){
 		location.assign('areaRestrita.php');
@@ -59,7 +60,9 @@ if($dado != ''){
 				 		<label for="nome"><strong>Nome</strong></label>
 				 		<input id="nome" type="text" name="nome" required/>	
 				 	</div>
-			 			 	
+			 	<?php 
+				require "pages/footer.php";
+	 			?>		 	
 		
 			 <?php 
 			  	endif; if($dado == 'objPro'):
@@ -68,7 +71,9 @@ if($dado != ''){
 					  	<label for="objPro"><strong>Objetivo Profissional</strong></label>
 					 	<textarea name="objPro" id="objPro"  maxlength="200" rows="4" cols="40" placeholder="Digite aqui seu objetivo profissional..." required class="form-control"></textarea>
 					</div>
-			  				 
+			  	<?php 
+				require "pages/footer.php";
+	 			?>			 
 			
 			 <?php 
 			  	endif; if($dado == 'endereco'):
@@ -77,7 +82,9 @@ if($dado != ''){
 			  			<label for="endereco"><strong>Endereco</strong></label>
 			 			<input id="endereco" type="text" name="endereco" required/>	
 			  		</div>
-			  			 	
+			  	<?php 
+				require "pages/footer.php";
+	 			?>		 	
 			
 			 <?php 
 			  	endif; if($dado == 'telefone'):
@@ -86,7 +93,9 @@ if($dado != ''){
 			  		<label for="telefone"><strong>Telefone</strong></label>
 			 		<input id="telefone" type="text" name="telefone" required class="form-control" style="max-width:200px;"/>
 			  	</div>
-			  	
+			  	<?php 
+				require "pages/footer.php";
+	 			?>
 			 			
 			 <?php 
 			  	endif; if($dado == 'habilidades'):
@@ -140,7 +149,12 @@ if($dado != ''){
 							</div> <!-- aqui encerra a col das 5 ultimas habilidades -->
 						</div>	 <!-- aqui encerra a linha que esta todas as 10 habilidades	 -->							
 					</div> <!-- aqui esta a coluna que dentro tem a linha das habilidades -->	
-			  	
+			  		<footer style="position:absolute;left:0px;right:0px;bottom:-60px;">
+						<div class="container">
+							<h3>Desenvolvido por Luiz Fernando Malta Martins</h3>
+							<h4>Contato: lufmalta@gmail.com</h4>
+						</div>
+					</footer>
 			  	
 			  
 			  	
@@ -159,6 +173,7 @@ if($dado != ''){
 		</form>
 
 	</div>
+	
 
 	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>

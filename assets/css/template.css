@@ -53,6 +53,10 @@ main .colHabilidades {
 	height:5px;
 	background-color:#ddd;
 }
+.tabelas-scroll{
+	overflow:scroll;
+	max-height:500px;
+}
 footer {
 	background-color:rgba(0, 0, 0, 0.5);
 	height:100px;

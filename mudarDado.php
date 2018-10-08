@@ -80,6 +80,10 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	}
 	$dado = $todasHabili;
 	$dadoAlt = "habilidades";
+	if($dado == "VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO"){
+		header("Location: index.php");
+		exit;
+	}
 	$dadosPessoais->setHabilidades($dado);
 	
 }

@@ -12,7 +12,7 @@
 
 
 
-//require 'config.php';// DADOS TESTE BANCO
+require_once 'config.php';// DADOS TESTE BANCO
 class Experiencia{
 	private $pdo;
 	private $dadosEmpresa;

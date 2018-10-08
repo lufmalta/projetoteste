@@ -77,7 +77,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 	
 	<div class="container" style="margin-top:10px;">
 		<h1 style="color:#CCC;">DadosPessoais</h1>
-		<table class="table table-light" border="5"  width="1400" >
+		<table class="table table-light" border="5"  width="1400">
 				<tr>
 					<th style="width:200px;">Nome</th>	
 					<th style="width:200px;">Email</th>
@@ -112,16 +112,17 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		
 		
 		<h1 style="color:#CCC;">Experiencia</h1>
-		<table class="table table-light" border="5"  width="1200" >
+		<div class="tabelas-scroll">
+			<table class="table table-light" border="5"    >
 				<tr>
-					<th style="width:200px;">Empresa</th>	
-					<th style="width:200px;">Cargo</th>
-					<th style="width:200px;">Descricao Cargo</th>				
-					<th style="width:150px;">Cidade</th>
-					<th style="width:120px;">Data Entrada</th>
-					<th style="width:120px;">Data Saida</th>
-					<th style="width:100px;">Editar Experiência</th>
-					<th style="width:100px;">Excluir Experiência</th>
+					<th >Empresa</th>	
+					<th >Cargo</th>
+					<th>Descricao Cargo</th>				
+					<th >Cidade</th>
+					<th >Data Entrada</th>
+					<th >Data Saida</th>
+					<th >Editar Experiência</th>
+					<th >Excluir Experiência</th>
 				</tr>
 				<?php
 						if(isset($semExperiencia)):
@@ -136,12 +137,12 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 						 ?>
 
 						<tr>
-							<td>							
+							<td >							
 								<?= $experienciaAtual[$i]['empresa'] ?>
 							</td>	
 							<td>							
 								<?= $experienciaAtual[$i]['cargo'] ?>
-							</td>
+							</td>					
 							<td>							
 								<?= $experienciaAtual[$i]['descCargo'] ?>
 							</td>
@@ -165,6 +166,8 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					 		endif; ?>
 				
 		</table>
+		</div>
+		
 		<h1 style="color:#CCC;">Educacao</h1>
 		<table class="table table-light" border="5"  width="1200" >
 				<tr>
@@ -172,7 +175,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					<th style="width:200px;">Instituicao</th>
 					<th style="width:200px;">Cidade</th>				
 					<th style="width:150px;">Ano Conclusao</th>
-					<th style="width:120px;">Cursos</th>	
+					<th style="width:350px;">Cursos</th>	
 					<th style="width:100px;">Editar Educacao</th>	
 				</tr>
 				<?php if($qtEdu >= 0):
