@@ -98,9 +98,19 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 
 	for ($i=0; $i< 10; $i++) { 
 		if($habilidades[$i] == ''){
-			$todasHabili = $todasHabili.',VAZIO'.$habilidades[$i];
+			if($i == 0){
+				$todasHabili = $todasHabili.'VAZIO';//.$habilidades[$i];
+			}else{
+				$todasHabili = $todasHabili.',VAZIO';//.$habilidades[$i];
+			}
+			
 		}else{
-			$todasHabili = $todasHabili.','.$habilidades[$i];
+			if($i == 0){
+				$todasHabili = $todasHabili.$habilidades[$i];
+			}else {
+				$todasHabili = $todasHabili.','.$habilidades[$i];
+			}
+			
 		}
 		
 	}
@@ -277,7 +287,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 
 
 	}else {
-		echo "Existe cadastro no banco"; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
+		$_SESSION['invalido'] = "Ja existe cadastro no banco, faça seu login."; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
 
 	}
 

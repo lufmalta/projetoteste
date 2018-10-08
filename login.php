@@ -1,11 +1,8 @@
 <?php 
-if(empty($_POST['usuario']) && empty($_POST['senha'])){
-	header("Location: index.php");
-	exit;
-}
+
 require 'classes/usuarios.class.php';
 
-session_start();
+//session_start();
 $email = addslashes($_POST['usuario']);
 $senha = md5(addslashes($_POST['senha']));
 $pdo = '';
@@ -20,16 +17,18 @@ if($usuarios->verificarExisteUsuario($email) == true){
 		header("Location: areaRestrita.php");
 		exit;
 	}else {
+		//$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
 		$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
-		header("Location: index.php");
-		exit;
+		//header("Location: index.php");
+		//exit;
 	}// caso a senha ou usuario estejam invalidos
 
 //fim do verificar se existe esse usuario no banco	
 }else {
-	$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
-		header("Location: index.php");
-		exit;
+	//$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
+		$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
+		//header("Location: index.php");
+		//exit;
 } 
 
 //$dadosPessoas->

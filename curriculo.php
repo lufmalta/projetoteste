@@ -111,7 +111,7 @@ require "validandoDados.php";
 			<div class="habilidades">
 				<div class="hab-conteudo ">
 					<h6>Habilidades</h6>
-					<ul>
+					<ul style="padding-inline-start: 10px;">
 						<?php
 							for($i = 0;$i <= $qtNovasHab; $i++ ):
 								if($novasHab[$i] != 'VAZIO'):

@@ -23,19 +23,19 @@ require 'validandoDados.php';
 	<header>
 		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<div class="topoleft">
-				<h3 style="line-height: 40px;"><strong>Usuario Logado - <?= $email ?></strong></h3>
+				<h3 style="line-height: 40px;"><strong>Usuario logado - <?= $email ?></strong></h3>
 			</div>
 			
 			<div class="toporight">
-				<a href="curriculo.php" style="color:#CCC;">Visualizar Curriculo</a> -  
-				<a href="sair.php" style="color:#CCC;">Sair</a>
+				<a href="curriculo.php" style="color:#AAA;">Visualizar Curriculo</a> -  
+				<a href="sair.php" style="color:#AAA;">Sair</a>
 			</div>
 		</div>
 	</header>
 	<div style="background-color:#CCC;" class="jumbotron">
 		<table border="0" class='table'>
 			<tr>
-				<h2>Dados Pessoais</h2>
+				<h2 style="color:#EEE;">Dados Pessoais</h2>
 			</tr>
 			<tr>
 				<td>
@@ -55,9 +55,23 @@ require 'validandoDados.php';
 				</td>
 			</tr>	
 				
-		</table>
-		
+		</table>		
 	</div>
+	<div style="background-color:#CCC;" class="jumbotron">
+			<table border="0" class='table'>
+				<tr>
+					<h2 style="color:#EEE;">Experiencia - Educacao</h2>
+				</tr>
+				<tr>
+					<td>
+						<a href="#">Adicionar Experiencia</a>
+					</td>
+					<td>
+						<a href="#">Adicionar Educacao</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	
 	<div class="container" style="margin-top:10px;">
 		<h1 style="color:#CCC;">DadosPessoais</h1>
@@ -93,21 +107,7 @@ require 'validandoDados.php';
 					</td>
 				</tr>
 		</table>
-		<div style="background-color:#CCC;" class="jumbotron">
-			<table border="0" class='table'>
-				<tr>
-					<h2>Experiencia - Educacao</h2>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">Adicionar Experiencia</a>
-					</td>
-					<td>
-						<a href="#">Adicionar Educacao</a>
-					</td>
-				</tr>
-			</table>
-		</div>
+		
 		
 		<h1 style="color:#CCC;">Experiencia</h1>
 		<table class="table table-light" border="5"  width="1200" >

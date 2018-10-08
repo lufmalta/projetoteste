@@ -5,12 +5,16 @@ if(empty($_SESSION['logado'])){
 	exit;
 }
 $email = $_SESSION['logado'];
-$dado = $_GET['dado'];
+$dado = $_GET['dado']; // aqui recebe qual o dado sera alterado dos dadosPessoais
+//aqui tem um array com todos os dados possiveis, se não for nenhum deles, ira sair desta pagina.
+
+
 $dadosPossiveis = array('nome','objPro','endereco','telefone','habilidades');
+
 
 if($dado != ''){
 	if(in_array($dado, $dadosPossiveis)){
-
+		
 	}else {
 		header("Location: index.php");
 		exit;
@@ -34,8 +38,19 @@ if($dado != ''){
 		}
 	</script>
 </head>
-<body>
-	<div class="container-fluid" >
+<body style="">
+	<header style="margin-top:10px;">
+		<div class="topoint" style="display:flex;justify-content: space-around;background-color:#EEE;">
+			<div class="topoleft">
+				<h3 style="line-height: 40px;color:#CCC;"><strong>Usuario Logado - <?= $email ?></strong></h3>
+			</div>
+			
+			<div class="toporight">				
+				<a href="sair.php" style="color:#CCC;line-height: 50px;">Sair</a>
+			</div>
+		</div>
+	</header>
+	<div class="container" style="margin-top:10px;" >
 		<form method="POST" action="mudarDado.php">
 			<?php
 				if($dado == 'nome'):

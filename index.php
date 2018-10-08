@@ -5,13 +5,21 @@
 //  	$email = $_SESSION['logado'];
 //  	//echo "<span>$email</span>";
 //  }
+$erro = '';
 session_start();
 if(!empty($_SESSION['logado'])){
 	header("Location: areaRestrita.php");
 	exit;
+}else if(!empty($_POST['usuario']) && (!empty($_POST['senha']))){
+	require "login.php";
+	if($_SESSION['invalido'] != '' ){
+		$erro = $_SESSION['invalido'];
+	}
 }else if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	require "receberDados.php";
-	
+	if($_SESSION['invalido'] != '' ){
+		$erro = $_SESSION['invalido'];
+	}	
 	//o else debaixo é no caso do $_POST['nome'] estiver vazio.
 }
 	
@@ -48,11 +56,11 @@ if(!empty($_SESSION['logado'])){
 							<h3><strong>Formulário de Login</strong></h3>
 						</div>
 						<div class="modal-body">							
-							<form id="form_login" method="POST" action="login.php" >
+							<form id="form_login" method="POST" action="index.php" >
 								<div class="form-group">
 									<!-- <h2 style="color:#FF0000">Usuário ou senha invalidos</h2> isso fazer parte da requisicao ajax --> 
 									<label for="usuario"><strong>Usuario</strong></label>
-									<input id="usuario" type="email" name="usuario" maxlength="50" class="form-control" placeholder="email@algo.com">
+									<input id="usuario" type="email" name="usuario" maxlength="50" class="form-control" placeholder="email@algo.com" required>
 								</div>
 								<div class="form-group">
 									<label for="senha" ><strong>Senha</strong></label>
@@ -82,7 +90,18 @@ if(!empty($_SESSION['logado'])){
 			<form  id="form" method="POST" action="index.php"> <!-- inicio do formulario -->
 				<h4 style="margin-top:20px;"><strong>Dados Pessoais</strong></h4>
 				<div class="separaDiv"></div>
-
+				<?php
+				if($erro != ''):
+				?>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">	
+					<h4 style="color:#000;"><?= $erro ?></h4>
+					<button class="close" data-dismiss="alert">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<?php
+				endif;
+				 ?>
 				<div class="row"> <!-- aqui fica o form-group de nome e de email -->
 					<div class="col"> <!-- aqui dentro esta o form-group de nome -->
 						<div class="form-group">
