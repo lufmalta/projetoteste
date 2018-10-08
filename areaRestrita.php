@@ -5,9 +5,11 @@ if(empty($_SESSION['logado'])){
 	exit;
 }
 
+
 $email = $_SESSION['logado'];
 require 'classes/dadosPessoais.class.php';
 require 'validandoDados.php';
+$_SESSION['id_pessoa'] = $id_pessoa;
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +66,7 @@ require 'validandoDados.php';
 				</tr>
 				<tr>
 					<td>
-						<a href="#">Adicionar Experiencia</a>
+						<a href="novaExp.php">Adicionar Experiencia</a>
 					</td>
 					<td>
 						<a href="#">Adicionar Educacao</a>
