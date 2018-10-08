@@ -80,6 +80,32 @@ class dadosPessoais{
 		}
 
 	}
+	//nessa funcao ele pega o dado que sera alterado no banco e altera com o dado que ja esta dentro do objeto.
+	public function alterarDadoBanco($dadoBanco, $email){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		if($dadoBanco == 'nome'){
+			$dado = $this->getNome();
+		}else if($dadoBanco == 'descricao'){
+			$dado = $this->getDescricao();
+		}else if($dadoBanco == 'endereco'){
+			$dado = $this->getEndereco();
+		}else if($dadoBanco == 'telefone'){
+			$dado = $this->getTelefone();
+		}else if($dadoBanco == 'habilidades'){
+			$dado = $this->getHabilidades();
+		}
+		$sql = "UPDATE pessoas SET $dadoBanco = :dado WHERE email = :email";
+		$sql = $pdo->prepare($sql);
+		//$sql->bindValue(":dadoBanco", $dadoBanco);
+		$sql->bindValue(":dado", $dado);
+		$sql->bindValue(":email", $email);
+		$sql->execute();
+		$this->pdo = $pdo;
+		header("Location: index.php");
+		exit;
+
+	}
 	public function listarDados(){
 		$this->getNome().'<br/>'.
 		$this->getEmail().'<br/>'.

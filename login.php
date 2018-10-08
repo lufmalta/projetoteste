@@ -1,7 +1,10 @@
 <?php 
 
 require 'classes/usuarios.class.php';
-
+if(empty($_POST['usuario'])){
+	header("Location: index.php");
+	exit;
+}
 //session_start();
 $email = addslashes($_POST['usuario']);
 $senha = md5(addslashes($_POST['senha']));
