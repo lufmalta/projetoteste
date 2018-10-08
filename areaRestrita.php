@@ -118,8 +118,8 @@ require 'validandoDados.php';
 					<th style="width:150px;">Cidade</th>
 					<th style="width:120px;">Data Entrada</th>
 					<th style="width:120px;">Data Saida</th>
-					<th style="width:100px;">Editar Empresa</th>
-					<th style="width:100px;">Excluir Empresa</th>
+					<th style="width:100px;">Editar Experiência</th>
+					<th style="width:100px;">Excluir Experiência</th>
 				</tr>
 				<?php
 						if(isset($semExperiencia)):
@@ -170,7 +170,8 @@ require 'validandoDados.php';
 					<th style="width:200px;">Instituicao</th>
 					<th style="width:200px;">Cidade</th>				
 					<th style="width:150px;">Ano Conclusao</th>
-					<th style="width:120px;">Cursos</th>		
+					<th style="width:120px;">Cursos</th>	
+					<th style="width:100px;">Editar Educacao</th>	
 				</tr>
 				<?php if($qtEdu >= 0):
 						$educacao  = $educacao->pegarEdu();
@@ -193,6 +194,9 @@ require 'validandoDados.php';
 						</td>
 						<td>							
 							<?= $educacao[$i]['descEducacao'] ?>
+						</td>
+						<td>
+							<a href="#">Editar</a><br/><br/><br/><br/>		
 						</td>
 												
 					</tr>											
