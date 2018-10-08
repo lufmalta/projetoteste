@@ -17,7 +17,6 @@ if($usuarios->verificarExisteUsuario($email) == true){
 		header("Location: areaRestrita.php");
 		exit;
 	}else {
-		//$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
 		$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
 		//header("Location: index.php");
 		//exit;
@@ -25,7 +24,6 @@ if($usuarios->verificarExisteUsuario($email) == true){
 
 //fim do verificar se existe esse usuario no banco	
 }else {
-	//$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
 		$_SESSION['invalido'] = "Usuario nao cadastrado no sistema";
 		//header("Location: index.php");
 		//exit;
