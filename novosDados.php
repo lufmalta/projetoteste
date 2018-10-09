@@ -56,9 +56,9 @@ if($dado != ''){
 			<?php
 				if($dado == 'nome'):
 			 ?>
-				 	<div class="form-group">
+				 	<div class="form-group forms">
 				 		<label for="nome"><strong>Nome</strong></label>
-				 		<input id="nome" type="text" name="nome" required/>	
+				 		<input id="nome" type="text" name="nome" required class="form-control"/ maxlength="50">	
 				 	</div>
 			 	<?php 
 				require "pages/footer.php";
@@ -67,7 +67,7 @@ if($dado != ''){
 			 <?php 
 			  	endif; if($dado == 'objPro'):
 			  ?>
-					<div class="form-group">
+					<div class="form-group forms">
 					  	<label for="objPro"><strong>Objetivo Profissional</strong></label>
 					 	<textarea name="objPro" id="objPro"  maxlength="200" rows="4" cols="40" placeholder="Digite aqui seu objetivo profissional..." required class="form-control"></textarea>
 					</div>
@@ -78,9 +78,9 @@ if($dado != ''){
 			 <?php 
 			  	endif; if($dado == 'endereco'):
 			  ?>	
-			  		<div class="form-group">
+			  		<div class="form-group forms">
 			  			<label for="endereco"><strong>Endereco</strong></label>
-			 			<input id="endereco" type="text" name="endereco" required/>	
+			 			<input id="endereco" type="text" name="endereco" required class="form-control" maxlength="80"/>	
 			  		</div>
 			  	<?php 
 				require "pages/footer.php";
@@ -89,7 +89,7 @@ if($dado != ''){
 			 <?php 
 			  	endif; if($dado == 'telefone'):
 			  ?>
-			  	<div class="form-group">
+			  	<div class="form-group forms">
 			  		<label for="telefone"><strong>Telefone</strong></label>
 			 		<input id="telefone" type="text" name="telefone" required class="form-control" style="max-width:200px;"/>
 			  	</div>

@@ -2,7 +2,8 @@
 
 /* Developed by Luiz Fernando Malta Martins
 
-/* Aqui esta todo os estilo da pagina index.php e do areaRestrita.php
+/* Aqui esta todo os estilo da pagina index.php e da
+ areaRestrita.php(seus respectivos arquivos)
 
 /* @author Luiz Fernando - lufmalta@gmail.com
 */
@@ -57,6 +58,9 @@ main .colHabilidades {
 	overflow:scroll;
 	max-height:500px;
 }
+.forms {
+	margin-top:100px;
+}
 footer {
 	background-color:rgba(0, 0, 0, 0.5);
 	height:100px;
@@ -80,6 +84,17 @@ footer .container {
 		font-size:15px;
 		line-height:50px;
 	}
+	.jumbotron h2 {
+		font-size:20px;
+	}
+	.jumbotron a {
+		font-size:11px;
+	}
+	.topoleft h3 strong,
+	.toporight a {
+		font-size:11px;
+	}
+
 	
 	
 }
