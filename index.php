@@ -360,7 +360,7 @@ if(!empty($_SESSION['logado'])){
 					<div class="col-sm-2">
 						<div class="form-group">
 							<label class="label1 anoConcl" for="anoConcl" data-toggle="tooltip"
-							data-placement="top"><strong>Ano Conclusão</strong></label>
+							data-placement="top"><strong>AnoConcl</strong></label>
 							<input id="anoConcl" type="text" name="anoConcl" maxlength="4" class="form-control" required>
 						</div>
 					</div>

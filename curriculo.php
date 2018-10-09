@@ -135,12 +135,16 @@ require "validandoDados.php";
 			<h5><strong>Formação</strong></h5><br/>
 			<div class="fotmargen">
 				<div class="ConteudoExp">
-					<?php if($qtEdu >= 0):
+					<?php
+						
+					 if($qtEdu >= 0):
 						$educacao  = $educacao->pegarEdu();
 						for ($i=0; $i <= $qtEdu ; $i++):
 							
 						
 					 ?>
+			
+				
 					<div class="row">
 						<div class="col-sm-3 col3" >
 							<h6><?= $educacao[$i]['instituicao'] ?></h6>
@@ -151,30 +155,21 @@ require "validandoDados.php";
 							<h4><img src="assets/images/star.png"/>
 								<?= $educacao[$i]['formacao'] ?></h4>
 							<span><?= $educacao[$i]['descEducacao'] ?></span><br/>
+							<?php
+								if($educacao[$i]['id_pessoa'] == 1):
+							 ?>
 							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank">Experiência - Projeto-Curriculo </a><br/>
 							<a id="b" href="https://github.com/lufmalta/projetoteste2" target="_blank">Outros Projetos - </a>
+						<?php endif; ?>
 						</div>						
 					</div>
-					<br/>
-					
-				</div>
-				<?php   endfor; ?>
-				<?php else: ?>					
-					<div class="row">
-						<div class="col-sm-3 col3" >
-							<h6><?= $educacao['instituicao'] ?></h6>
-							<h6><?= $educacao['instituCidade'] ?></h6>
-							<h6><?= $educacao['anoConcl'] ?></h6>							
-						</div>
-						<div class="col-sm-9 col9">							
-							<h4><img src="assets/images/star.png"/>
-								<?= $educacao['formacao'] ?></h4>
-							<span><?= $educacao['cursos'] ?></span><br/>
-							<a id="a" href="" target="_blank">Experiência - </a>
-						</div>						
-					</div>
+					</br>
+			
+				
+				<?php   endfor;
+						endif; ?>
 
-				 		<?php endif; ?>
+				 </div>		
 			</div>
 
 		</div>

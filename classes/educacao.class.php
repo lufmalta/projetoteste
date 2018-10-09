@@ -7,7 +7,7 @@
 
 */
 
-//require 'config.php'; // DADOS TESTE BANCO
+require_once 'config.php'; // DADOS TESTE BANCO
 class Educacao{
 	private $pdo;
 	private $id_edu;
@@ -66,7 +66,7 @@ class Educacao{
 	public function pegarEdu(){
 		$con = new Banco();
 		$pdo = $con->conectar($this->pdo);
-		$sql = "SELECT * FROM educacao WHERE id_pessoa = :id_pessoa";
+		$sql = "SELECT * FROM educacao WHERE id_pessoa = :id_pessoa ORDER BY id_edu DESC";
 		$sql = $pdo->prepare($sql);
 		$sql->bindValue(":id_pessoa", $this->id_pessoa);
 		$sql->execute();

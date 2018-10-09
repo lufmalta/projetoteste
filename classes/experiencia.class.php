@@ -78,7 +78,7 @@ class Experiencia{
 	public function pegarExp(){
 		$con = new Banco();
 		$pdo = $con->conectar($this->pdo);
-		$sql = "SELECT * FROM experiencia WHERE id_pessoa = :id_pessoa";
+		$sql = "SELECT * FROM experiencia WHERE id_pessoa = :id_pessoa ORDER BY id_exp DESC";
 		$sql = $pdo->prepare($sql);
 		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
 		$sql->execute();
@@ -96,7 +96,16 @@ class Experiencia{
 			return $arrayEmp;
 		}
 	}
+	public function deletarExp($expAtual){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "DELETE FROM experiencia WHERE id_exp = :id_exp AND id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_exp", $expAtual);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
 
+	}
 	public function getDadosEmpresa(){
 		return $this->dadosEmpresa;
 	}

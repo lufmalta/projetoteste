@@ -69,7 +69,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 						<a href="novaExp.php">Adicionar Experiencia</a>
 					</td>
 					<td>
-						<a href="#">Adicionar Educacao</a>
+						<a href="novaEdu.php">Adicionar Educacao</a>
 					</td>
 				</tr>
 			</table>
@@ -115,14 +115,14 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		<div class="tabelas-scroll">
 			<table class="table table-light" border="5"    >
 				<tr>
-					<th >Empresa</th>	
-					<th >Cargo</th>
+					<th>Empresa</th>	
+					<th>Cargo</th>
 					<th>Descricao Cargo</th>				
-					<th >Cidade</th>
-					<th >Data Entrada</th>
-					<th >Data Saida</th>
-					<th >Editar Experiência</th>
-					<th >Excluir Experiência</th>
+					<th>Cidade</th>
+					<th>Data Entrada</th>
+					<th>Data Saida</th>
+					<th>Editar Experiência</th>
+					<th>Excluir Experiência</th>
 				</tr>
 				<?php
 						if(isset($semExperiencia)):
@@ -158,8 +158,14 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							<td>
 								<a href="#">Editar</a><br/><br/><br/><br/>		
 							</td>	
-							<td>
-								<a href="#">Excluir</a>
+							<td><?php
+									
+									$expAtual = $experienciaAtual[$i]['id_exp'];
+
+									 
+								 ?>
+								
+								<a href="deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')">Excluir</a>
 							</td>		
 						</tr>
 					 <?php endfor;
