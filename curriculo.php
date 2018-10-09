@@ -167,7 +167,7 @@ require "validandoDados.php";
 			
 				
 				<?php   endfor;
-						else: ?>
+						else: ?> <!-- aqui ele entra no caso da qtEdu ser -1 -->
 					<div class="row">
 						<div class="col-sm-3 col3" >
 							<h6><?= $educacao['instituicao'] ?></h6>

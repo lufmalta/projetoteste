@@ -20,16 +20,19 @@ $qtExpBanco--;
 for ($i=0; $i <= $qtExpBanco; $i++) { 
 	$expsBanco[$i] = $dadosExpBanco[$i]['id_exp'];
 }
+
 if(in_array($expAtual, $expsBanco)){
-	echo "Possui essa exp";
+	//caso exista essa experiencia no id dessa pessoa faça:
+	$experiencia->deletarExp($expAtual);
+	header("Location: index.php");
+	exit;
 }else{
-	echo "Nao possui essa exp";
+	//caso nao exista essa experiencia no id da pessoa, entao saia
+	header("Location: index.php");
+	exit;
 }
 
 
-// $experiencia->deletarExp($expAtual);
-// header("Location: index.php");
-// exit;
 
 
  ?>
