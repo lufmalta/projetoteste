@@ -167,7 +167,20 @@ require "validandoDados.php";
 			
 				
 				<?php   endfor;
-						endif; ?>
+						else: ?>
+					<div class="row">
+						<div class="col-sm-3 col3" >
+							<h6><?= $educacao['instituicao'] ?></h6>
+							<h6><?= $educacao['instituCidade'] ?></h6>
+							<h6><?= $educacao['anoConcl'] ?></h6>							
+						</div>
+						<div class="col-sm-9 col9">							
+							<h4><img src="assets/images/star.png"/>
+								<?= $educacao['formacao'] ?></h4>
+							<span><?= $educacao['cursos'] ?></span>													
+						</div>						
+					</div>
+				<?php endif; ?>
 
 				 </div>		
 			</div>

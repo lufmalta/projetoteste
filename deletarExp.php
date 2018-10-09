@@ -5,13 +5,31 @@ if(empty($_SESSION['logado'])){
 	exit;
 }
 require "classes/experiencia.class.php";
+
 $expAtual = $_GET['exp'];
 $id_pessoa = $_SESSION['id_pessoa'];
-
 $experiencia = new Experiencia($id_pessoa);
-$experiencia->deletarExp($expAtual);
-header("Location: index.php");
-exit;
+//Primeiro vou pegar todas as experiencias do banco
+//para depois verificar se a experiencia que esta no get é valida.
+
+
+$expsBanco = '';
+$dadosExpBanco = $experiencia->pegarExp();
+$qtExpBanco = count($dadosExpBanco);
+$qtExpBanco--;
+for ($i=0; $i <= $qtExpBanco; $i++) { 
+	$expsBanco[$i] = $dadosExpBanco[$i]['id_exp'];
+}
+if(in_array($expAtual, $expsBanco)){
+	echo "Possui essa exp";
+}else{
+	echo "Nao possui essa exp";
+}
+
+
+// $experiencia->deletarExp($expAtual);
+// header("Location: index.php");
+// exit;
 
 
  ?>

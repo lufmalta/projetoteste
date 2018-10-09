@@ -45,6 +45,7 @@ if(!empty($_SESSION['logado'])){
 }else if(!empty($_SESSION['educacao']) && !empty($_SESSION['dadosPessoais'])){
 		//recebe os dados do objeto de educacao
 		$educacao = $_SESSION['educacao']; 
+		//$qtEdu = 0;
 		//recebe os dados do objeto de dadosPessoais
 		$dadosPessoais = $_SESSION['dadosPessoais'];
 		$img = '';
