@@ -106,6 +106,23 @@ class Experiencia{
 		$sql->execute();
 
 	}
+	public function editarExp($expAtual){
+	 	$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "UPDATE experiencia SET cargo = :cargo, empresa = :empresa, cidade = :cidade, dataEnt = :dataEnt, dataSai = :dataSai, descCargo = :descCargo
+			 WHERE id_exp = :id_exp AND id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);	 
+		$sql->bindValue(":cargo", $this->getCargo());
+		$sql->bindValue(":empresa", $this->getEmpresa());	
+		$sql->bindValue(":cidade", $this->getCidade());
+		$sql->bindValue(":dataEnt", $this->getDataEnt());
+		$sql->bindValue(":dataSai", $this->getDataSai());
+		$sql->bindValue(":descCargo", $this->getDescCargo());
+		$sql->bindValue(":id_exp", $expAtual);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+
+	}
 	public function getDadosEmpresa(){
 		return $this->dadosEmpresa;
 	}

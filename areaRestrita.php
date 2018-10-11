@@ -156,11 +156,14 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 								<?= $experienciaAtual[$i]['dataSai'] ?>
 							</td>	
 							<td>
-								<a href="#">Editar</a>		
+								<?php
+									$expAtual = $experienciaAtual[$i]['id_exp'];
+								 ?>
+								<a href="editarExp.php?exp=<?=$expAtual?>">Editar</a>		
 							</td>	
 							<td><?php
 									
-									$expAtual = $experienciaAtual[$i]['id_exp'];
+									
 
 									 
 								 ?>
