@@ -35,4 +35,3 @@ if(in_array($expAtual, $expsBanco)){
 
 
 
- ?>

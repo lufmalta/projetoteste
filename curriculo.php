@@ -156,7 +156,7 @@ require "validandoDados.php";
 								<?= $educacao[$i]['formacao'] ?></h4>
 							<span><?= $educacao[$i]['descEducacao'] ?></span><br/>
 							<?php
-								if($educacao[$i]['id_pessoa'] == 1):
+								if($educacao[$i]['id_pessoa'] == 1 && $i == 0):
 							 ?>
 							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank">Experiência - Projeto-Curriculo </a><br/>
 							<a id="b" href="https://github.com/lufmalta/projetoteste2" target="_blank">Outros Projetos - </a>

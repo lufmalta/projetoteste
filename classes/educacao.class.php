@@ -85,6 +85,33 @@ class Educacao{
 			return $arrayEdu;
 		}
 	}
+	public function deletarEdu($eduAtual){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "DELETE FROM educacao WHERE id_edu = :id_edu AND id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":id_edu", $eduAtual);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+
+	}
+	public function editarEdu($eduAtual, $formacao, $instituicao, $instituCidade,
+	 $anoConcl, $cursos){
+	 	$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "UPDATE educacao SET formacao = :formacao, descEducacao = :cursos, instituicao = :instituicao, cidade = :instituCidade, anoConcl = :anoConcl
+			 WHERE id_edu = :id_edu AND id_pessoa = :id_pessoa";
+		$sql = $pdo->prepare($sql);	 
+		$sql->bindValue(":formacao", $formacao);
+		$sql->bindValue(":cursos", $cursos);	
+		$sql->bindValue(":instituicao", $instituicao);
+		$sql->bindValue(":instituCidade", $instituCidade);
+		$sql->bindValue(":anoConcl", $anoConcl);
+		$sql->bindValue(":id_edu", $eduAtual);
+		$sql->bindValue(":id_pessoa", $this->getId_Pessoa());
+		$sql->execute();
+
+	}
 	public function getDadosEdu(){
 		return $this->dadosEdu;
 	}

@@ -113,7 +113,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		
 		<h1 style="color:#CCC;">Experiencia</h1>
 		<div class="tabelas-scroll">
-			<table class="table table-light" border="5"    >
+			<table class="table table-light" border="5">
 				<tr>
 					<th>Empresa</th>	
 					<th>Cargo</th>
@@ -156,7 +156,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 								<?= $experienciaAtual[$i]['dataSai'] ?>
 							</td>	
 							<td>
-								<a href="#">Editar</a><br/><br/><br/><br/>		
+								<a href="#">Editar</a>		
 							</td>	
 							<td><?php
 									
@@ -182,7 +182,14 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					<th style="width:200px;">Cidade</th>				
 					<th style="width:150px;">Ano Conclusao</th>
 					<th style="width:350px;">Cursos</th>	
-					<th style="width:100px;">Editar Educacao</th>	
+					<th style="width:100px;">Editar Educacao</th>
+					<?php
+						if($qtEdu > 0):
+					 ?>	
+					<th style="width:100px;">Excluir Educacao</th> 
+					<?php
+						endif;
+					 ?>
 				</tr>
 				<?php if($qtEdu >= 0):
 						$educacao  = $educacao->pegarEdu();
@@ -207,9 +214,24 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							<?= $educacao[$i]['descEducacao'] ?>
 						</td>
 						<td>
-							<a href="#">Editar</a><br/><br/><br/><br/>		
+							<?php
+								$eduAtual = $educacao[$i]['id_edu'];
+							 ?>
+							<a href="editarEdu.php?edu=<?=$eduAtual?>">Editar</a>		
 						</td>
-												
+						<?php
+							if($qtEdu > 0):
+						 ?>
+						<td><?php
+									
+																					 
+								 ?>
+								
+								<a href="deletarEdu.php?edu=<?=$eduAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa educacao?')">Excluir</a>
+						</td>
+						<?php
+							endif;
+						 ?>						
 					</tr>											
 				<?php   endfor; ?>
 				<?php else: ?>					
