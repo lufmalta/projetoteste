@@ -43,7 +43,7 @@ if(!empty($_SESSION['logado'])){
 			
 			<div class="toporight">
 				<a href="#" style="color:#CCC;" data-toggle="modal" data-target="#modal">Fazer Login</a> -  
-				<a href="#" style="color:#CCC;">Cadastre-se</a>
+				<a href="cadastrar.php" style="color:#CCC;">Cadastre-se</a>
 			</div>
 		</div>
 	</header>

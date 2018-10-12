@@ -22,10 +22,10 @@ if(!empty($_POST['formacao'])){
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Adicionar Experiencia</title>
+	<title>Alterar Educacao</title>
 	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
 	<script type="text/javascript">
-		function voltar(){
+		function Nova(){
 		location.assign('areaRestrita.php');
 		}
 	</script>
@@ -90,7 +90,8 @@ if(!empty($_POST['formacao'])){
 				<button class="btn btn-primary w-100" type="submit">Enviar</button>
 			</div>
 			<div class="form-group">
-				<button class="btn btn-primary"><a href="areaRestrita.php" style="text-decoration:none;color:#FFF;">Voltar</a></button>
+				<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
+				<!-- <button class="btn btn-primary"><a href="areaRestrita.php" style="text-decoration:none;color:#FFF;">Voltar</a></button> -->
 			</div>
 		</form>
 	</div>

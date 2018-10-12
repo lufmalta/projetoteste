@@ -2,7 +2,7 @@
 
 /* Developed by Luiz Fernando Malta Martins
 
-/* Aqui esta a pagina do curriculo.php, onde será gerado um curriculo para imprimir
+/* Aqui esta a pagina do curriculo.php, onde serÃ¡ gerado um curriculo para imprimir
 /* ou baixar
 
 /* @author Luiz Fernando - lufmalta@gmail.com
@@ -24,7 +24,7 @@ require "validandoDados.php";
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- <meta charset="UTF-8"> -->
+	<meta charset="UTF-8">
 	
 	<title>Developed by Luiz Fernando Malta Martins</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -46,7 +46,7 @@ require "validandoDados.php";
 		</div>
 		
 		<div class="container">
-			<h5><strong>Experiência</strong></h5><br/>
+			<h5><strong>ExperiÃªncia</strong></h5><br/>
 			<div class="borda">
 				
 				<div class="ConteudoExp">
@@ -86,7 +86,7 @@ require "validandoDados.php";
 	<section>
 			<div class="row">
 				<div class="col">
-					<h6>Informação de Contato</h6>
+					<h6>InformaÃ§Ã£o de Contato</h6>
 				</div>
 				<div class="col">
 					<span>E-mail</span><br/>
@@ -95,7 +95,7 @@ require "validandoDados.php";
 
 				<div class="col">
 					<p></p>
-					<span>Endereço</span><br/>
+					<span>EndereÃ§o</span><br/>
 					<span style="word-wrap:break-word;"><?= $dadosPessoais['endereco']; ?></span>
 					<span></span>
 				</div>
@@ -132,7 +132,7 @@ require "validandoDados.php";
 			
 		</div>
 		<div class="container">
-			<h5><strong>Formação</strong></h5><br/>
+			<h5><strong>FormaÃ§Ã£o</strong></h5><br/>
 			<div class="fotmargen">
 				<div class="ConteudoExp">
 					<?php
@@ -158,7 +158,7 @@ require "validandoDados.php";
 							<?php
 								if($educacao[$i]['id_pessoa'] == 1 && $i == 0):
 							 ?>
-							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank">Experiência - Projeto-Curriculo </a><br/>
+							<a id="a" href="https://github.com/lufmalta/projetoteste" target="_blank">ExperiÃªncia - Projeto-Curriculo </a><br/>
 							<a id="b" href="https://github.com/lufmalta/projetoteste2" target="_blank">Outros Projetos - </a>
 						<?php endif; ?>
 						</div>						

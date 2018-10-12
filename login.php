@@ -15,7 +15,7 @@ $pdo = '';
 $usuarios = new usuarios();
 if($usuarios->verificarExisteUsuario($email) == true){
 	if($usuarios->verificarUsuSenha($email, $senha) == true){
-		$_SESSION['logado'] = $email;
+		//$_SESSION['logado'] = $email;
 		$_SESSION['invalido'] = '';
 		header("Location: areaRestrita.php");
 		exit;

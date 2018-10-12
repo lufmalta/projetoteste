@@ -34,7 +34,7 @@ if($dado != ''){
 	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
 	<script type="text/javascript">
-		function voltar(){
+		function Nova(){
 		location.assign('areaRestrita.php');
 		}
 	</script>
@@ -167,7 +167,7 @@ if($dado != ''){
 			 	 <input class="btn btn-primary w-100" type="submit" value="Alterar">			 	 
 			 </div>
 			 <div class="form-group">
-			 	<button class="btn btn-primary"><a href="areaRestrita.php" style="text-decoration:none;color:#FFF;">Voltar</a></button>
+			 	<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
 			 </div>
 				  
 		</form>
