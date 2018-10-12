@@ -287,7 +287,8 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 
 
 	}else {
-		$_SESSION['invalido'] = "Ja existe cadastro no banco, faça seu login."; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
+		$erro = "Ja existe cadastro no banco, faça seu login.";
+		//$_SESSION['invalido'] = "Ja existe cadastro no banco, faça seu login."; // se existir este email , significa que existe o cadastro, entao avisa o usuario que ja existe este curriculo no banco.
 
 	}
 

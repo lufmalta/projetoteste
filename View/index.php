@@ -12,14 +12,14 @@ if(!empty($_SESSION['logado'])){
 	exit;
 }else if(!empty($_POST['usuario']) && (!empty($_POST['senha']))){
 	require "../Controller/login.php";
-	if($_SESSION['invalido'] != '' ){
-		$erro = $_SESSION['invalido'];
-	}
+	// if($_SESSION['invalido'] != '' ){
+	// 	$erro = $_SESSION['invalido'];
+	// }
 }else if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	require "../Controller/receberDados.php";
-	if($_SESSION['invalido'] != '' ){
-		$erro = $_SESSION['invalido'];
-	}	
+	// if($_SESSION['invalido'] != '' ){
+	// 	$erro = $_SESSION['invalido'];
+	// }	
 	//o else debaixo é no caso do $_POST['nome'] estiver vazio.
 }
 	
