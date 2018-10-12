@@ -7,8 +7,8 @@ if(empty($_SESSION['logado'])){
 
 
 $email = $_SESSION['logado'];
-require 'classes/dadosPessoais.class.php';
-require 'validandoDados.php';
+require '../Model/classes/dadosPessoais.class.php';
+require '../Controller/validandoDados.php';
 $_SESSION['id_pessoa'] = $id_pessoa;
 ?>
 <!DOCTYPE html>
@@ -17,8 +17,8 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 	<meta charset="UTF-8">
 	<title>Curriculum Creation</title>
 	
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
 
 </head>
 <body style="margin-top:15px;">
@@ -30,7 +30,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 			
 			<div class="toporight">
 				<a href="curriculo.php" style="color:#AAA;">Visualizar Curriculo</a> -  
-				<a href="sair.php" style="color:#AAA;">Sair</a>
+				<a href="../Controller/sair.php" style="color:#AAA;">Sair</a>
 			</div>
 		</div>
 	</header>
@@ -164,7 +164,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 								<a href="editarExp.php?exp=<?=$expAtual?>">Editar</a>		
 							</td>	
 							<td>								
-								<a href="deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')">Excluir</a>
+								<a href="../Controller/deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')">Excluir</a>
 							</td>		
 						</tr>
 					 <?php endfor;
@@ -220,7 +220,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							if($qtEdu > 0):
 						 ?>
 						<td>	
-								<a href="deletarEdu.php?edu=<?=$eduAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa educacao?')">Excluir</a>
+								<a href="../Controller/deletarEdu.php?edu=<?=$eduAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa educacao?')">Excluir</a>
 						</td>
 						<?php
 							endif;
@@ -257,9 +257,9 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 </footer>
 </body>
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/javascript.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/javascript.js"></script>
 		
 </html>

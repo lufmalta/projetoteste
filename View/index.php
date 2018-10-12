@@ -11,12 +11,12 @@ if(!empty($_SESSION['logado'])){
 	header("Location: areaRestrita.php");
 	exit;
 }else if(!empty($_POST['usuario']) && (!empty($_POST['senha']))){
-	require "login.php";
+	require "../Controller/login.php";
 	if($_SESSION['invalido'] != '' ){
 		$erro = $_SESSION['invalido'];
 	}
 }else if(isset($_POST['nome']) && !empty($_POST['nome'])){
-	require "receberDados.php";
+	require "../Controller/receberDados.php";
 	if($_SESSION['invalido'] != '' ){
 		$erro = $_SESSION['invalido'];
 	}	
@@ -30,8 +30,8 @@ if(!empty($_SESSION['logado'])){
 	<meta charset="UTF-8">
 	<title>Curriculum Creation</title>
 	
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
 
 </head>
 <body style="margin-top:15px;">
@@ -394,10 +394,10 @@ if(!empty($_SESSION['logado'])){
 	</footer>
 </body>
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/javascript.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/javascript.js"></script>
 		
 </html>
 

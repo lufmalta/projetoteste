@@ -30,9 +30,9 @@ if($dado != ''){
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>AlterandoDados</title>
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/template.css">
+	<title>Alterando Dados</title>
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
 	<script type="text/javascript">
 		function Nova(){
 		location.assign('areaRestrita.php');
@@ -47,12 +47,12 @@ if($dado != ''){
 			</div>
 			
 			<div class="toporight">				
-				<a href="sair.php" style="color:#CCC;line-height: 50px;">Sair</a>
+				<a href="../Controller/sair.php" style="color:#CCC;line-height: 50px;">Sair</a>
 			</div>
 		</div>
 	</header>
 	<div class="container" style="margin-top:10px;" >
-		<form method="POST" action="mudarDado.php">
+		<form method="POST" action="../Controller/mudarDado.php">
 			<?php
 				if($dado == 'nome'):
 			 ?>
@@ -61,7 +61,7 @@ if($dado != ''){
 				 		<input id="nome" type="text" name="nome" required class="form-control"/ maxlength="50">	
 				 	</div>
 			 	<?php 
-				require "pages/footer.php";
+				require "../pages/footer.php";
 	 			?>		 	
 		
 			 <?php 
@@ -72,7 +72,7 @@ if($dado != ''){
 					 	<textarea name="objPro" id="objPro"  maxlength="200" rows="4" cols="40" placeholder="Digite aqui seu objetivo profissional..." required class="form-control"></textarea>
 					</div>
 			  	<?php 
-				require "pages/footer.php";
+				require "../pages/footer.php";
 	 			?>			 
 			
 			 <?php 
@@ -83,7 +83,7 @@ if($dado != ''){
 			 			<input id="endereco" type="text" name="endereco" required class="form-control" maxlength="80"/>	
 			  		</div>
 			  	<?php 
-				require "pages/footer.php";
+				require "../pages/footer.php";
 	 			?>		 	
 			
 			 <?php 
@@ -94,7 +94,7 @@ if($dado != ''){
 			 		<input id="telefone" type="text" name="telefone" required class="form-control" style="max-width:200px;"/>
 			  	</div>
 			  	<?php 
-				require "pages/footer.php";
+				require "../pages/footer.php";
 	 			?>
 			 			
 			 <?php 
@@ -175,9 +175,9 @@ if($dado != ''){
 	</div>
 	
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/javascript.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/javascript.js"></script>
 </body>
 </html>

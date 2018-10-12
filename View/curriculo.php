@@ -9,9 +9,9 @@
 
 */
 //$dadosPessoais = '';
-require 'classes/dadosPessoais.class.php';
+require '../Model/classes/dadosPessoais.class.php';
 session_start();
-require "validandoDados.php";
+require "../Controller/validandoDados.php";
 
 
 ?>
@@ -28,8 +28,8 @@ require "validandoDados.php";
 	
 	<title>Developed by Luiz Fernando Malta Martins</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body >
 	<header>
@@ -70,7 +70,7 @@ require "validandoDados.php";
 								<h6><?= $experienciaAtual[$i]['dataSai'] ?></h6>
 							</div>
 							<div class="col-sm-9 col9">
-								<h4><img src="assets/images/star.png"/><?= $experienciaAtual[$i]['cargo'] ?></h4>
+								<h4><img src="../assets/images/star.png"/><?= $experienciaAtual[$i]['cargo'] ?></h4>
 								<span><?= $experienciaAtual[$i]['descCargo'] ?></span>
 							</div>						
 						</div>
@@ -152,7 +152,7 @@ require "validandoDados.php";
 							<h6><?= $educacao[$i]['anoConcl'] ?></h6>							
 						</div>
 						<div class="col-sm-9 col9">							
-							<h4><img src="assets/images/star.png"/>
+							<h4><img src="../assets/images/star.png"/>
 								<?= $educacao[$i]['formacao'] ?></h4>
 							<span><?= $educacao[$i]['descEducacao'] ?></span><br/>
 							<?php
@@ -175,7 +175,7 @@ require "validandoDados.php";
 							<h6><?= $educacao['anoConcl'] ?></h6>							
 						</div>
 						<div class="col-sm-9 col9">							
-							<h4><img src="assets/images/star.png"/>
+							<h4><img src="../assets/images/star.png"/>
 								<?= $educacao['formacao'] ?></h4>
 							<span><?= $educacao['cursos'] ?></span>													
 						</div>						
@@ -189,9 +189,9 @@ require "validandoDados.php";
 
 	</footer>
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/script.js"></script>
 
 
 

@@ -1,10 +1,10 @@
 <?php
 if(empty($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 $descCargo = '';
-require "classes/experiencia.class.php";
+require "../Model/classes/experiencia.class.php";
 $cargo = addslashes($_POST['cargo']);
 $empresa = addslashes($_POST['empresa']);
 $cidade = addslashes($_POST['cidade']);
@@ -31,10 +31,10 @@ if(in_array($expAtual, $expsBanco)){
 
 	$experiencia->inserirEmpObj($dadosEmpresa);
 	$experiencia->editarExp($expAtual);
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }else{
 	//caso nao exista essa experiencia no id da pessoa, entao saia
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }

@@ -1,8 +1,8 @@
 <?php 
 
-require 'classes/usuarios.class.php';
+require "../Model/classes/usuarios.class.php";
 if(empty($_POST['usuario'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 //session_start();
@@ -17,7 +17,7 @@ if($usuarios->verificarExisteUsuario($email) == true){
 	if($usuarios->verificarUsuSenha($email, $senha) == true){
 		//$_SESSION['logado'] = $email;
 		$_SESSION['invalido'] = '';
-		header("Location: areaRestrita.php");
+		header("Location: ../View/areaRestrita.php");
 		exit;
 	}else {
 		$_SESSION['invalido'] = "Usuario e/ou senha invalidos";
@@ -32,22 +32,3 @@ if($usuarios->verificarExisteUsuario($email) == true){
 		//exit;
 } 
 
-//$dadosPessoas->
-
-// $sql = "SELECT * FROM usuarios WHERE email = :email AND senha = :senha";
-// $sql = $pdo->prepare($sql);
-// $sql->bindValue(':email',$email);
-// $sql->bindValue(':senha', $senha);
-// $sql->execute();
-
-// if($sql->rowCount() > 0){
-// 	$sql = $sql->fetch();
-// 	session_start();
-// 	$_SESSION['logado'] = $sql['email'];
-// 	header("Location: curriculo.php");
-// }else {
-// 	header("Location: index.php");
-// }
-
-// $resultado = $usuario.'E'.$senha;
-// return $resultado;

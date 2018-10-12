@@ -1,10 +1,10 @@
 <?php
 session_start();
 if(empty($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
-require "classes/experiencia.class.php";
+require "../Model/classes/experiencia.class.php";
 
 $expAtual = $_GET['exp'];
 $id_pessoa = $_SESSION['id_pessoa'];
@@ -24,11 +24,11 @@ for ($i=0; $i <= $qtExpBanco; $i++) {
 if(in_array($expAtual, $expsBanco)){
 	//caso exista essa experiencia no id dessa pessoa faça:
 	$experiencia->deletarExp($expAtual);
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }else{
 	//caso nao exista essa experiencia no id da pessoa, entao saia
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 

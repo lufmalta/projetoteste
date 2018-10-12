@@ -1,10 +1,10 @@
 <?php
 session_start();
 if(empty($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
-require "classes/educacao.class.php";
+require "../Model/classes/educacao.class.php";
 
 $eduAtual = $_GET['edu'];
 $id_pessoa = $_SESSION['id_pessoa'];
@@ -22,10 +22,10 @@ for ($i=0; $i <= $qtEduBanco; $i++) {
 if(in_array($eduAtual, $edusBanco)){
 	//caso exista essa educacao no id dessa pessoa faça:
 	$educacao->deletarEdu($eduAtual);
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }else{
 	//caso nao exista essa educacao no id da pessoa, entao saia
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }

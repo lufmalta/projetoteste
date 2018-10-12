@@ -1,29 +1,19 @@
-<?php
+<?php 
 session_start();
 if(empty($_SESSION['logado'])){
 	header("Location: index.php");
 	exit;
 }
-$expAtual = "";
-
 $id_pessoa = $_SESSION['id_pessoa'];
 $email = $_SESSION['logado'];
-if(!empty($_POST['cargo'])){
-	$expAtual = addslashes($_POST['exp']);
-	require "validarExp.php"; // aqui ele faz a alteracao da educacao, caso ela exista no banco.
-	exit;
-}else {
-	$expAtual = $_GET['exp'];
-
-}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Alterar Experiencia</title>
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<title>Adicionar Experiencia</title>
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
 	<script type="text/javascript">
 		function Nova(){
 		location.assign('areaRestrita.php');
@@ -43,10 +33,9 @@ if(!empty($_POST['cargo'])){
 		</div>
 	</header>
 	<div class="container">
-		<h2>Editar Experiencia</h2>
+		<h2>Nova Experiencia</h2>
 		<hr/>
-		<form method="POST" action="editarExp.php">
-			<input type="hidden" name="exp" value="<?= $expAtual ?>">
+		<form method="POST" action="../Controller/inserirExp.php">
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="form-group">
@@ -96,9 +85,9 @@ if(!empty($_POST['cargo'])){
 		</form>
 	</div>
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/javascript.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/javascript.js"></script>
 </body>
 </html>	

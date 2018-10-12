@@ -102,7 +102,7 @@ class dadosPessoais{
 		$sql->bindValue(":email", $email);
 		$sql->execute();
 		$this->pdo = $pdo;
-		header("Location: index.php");
+		header("Location: ../View/index.php");
 		exit;
 
 	}

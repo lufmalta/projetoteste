@@ -1,15 +1,15 @@
 <?php 
 session_start();
 if(empty($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 
 if(empty($_POST['descCargo'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
-require "classes/experiencia.class.php";
+require "../Model/classes/experiencia.class.php";
 $newExp = '';
 $id_pessoa = $_SESSION['id_pessoa'];
 $experiencia = new Experiencia($id_pessoa);
@@ -29,7 +29,7 @@ $newExp[4] = $dataSai;
 $newExp[5] = $descCargo;
 $experiencia->inserirEmpObj($newExp);
 $experiencia->inserirEmpObjBanco();
-header("Location: index.php");
+header("Location: ../View/index.php");
 exit;
 // for($i = 0; $i <= 5; $i++){
 // 	echo $newExp[$i]."</br>";

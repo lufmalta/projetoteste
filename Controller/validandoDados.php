@@ -1,6 +1,6 @@
 <?php
 
-require 'classes/experiencia.class.php';
+require '../Model/classes/experiencia.class.php';
 //Caso a pessoa esteja logada, entrará aqui
 if(!empty($_SESSION['logado'])){
 	$email = $_SESSION['logado'];
@@ -30,7 +30,7 @@ if(!empty($_SESSION['logado'])){
 		}
 		$qtNovasHab = count($novasHab);
 		$qtNovasHab = $qtNovasHab - 1;
-		require "classes/educacao.class.php";
+		require "../Model/classes/educacao.class.php";
 		$educacao = new Educacao($id_pessoa);
 		$qtEdu = $educacao->qtEdu();
 		$qtEdu--;
@@ -91,7 +91,7 @@ if(!empty($_SESSION['logado'])){
 		}
 		
 }else {
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 		

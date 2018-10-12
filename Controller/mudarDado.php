@@ -1,10 +1,10 @@
 <?php
-require "classes/dadosPessoais.class.php";
+require "../Model/classes/dadosPessoais.class.php";
 session_start();
 if(!empty($_SESSION['logado'])){
 	
 }else {
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 $dado = '';
@@ -81,7 +81,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	$dado = $todasHabili;
 	$dadoAlt = "habilidades";
 	if($dado == "VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO,VAZIO"){
-		header("Location: index.php");
+		header("Location: ../View/index.php");
 		exit;
 	}
 	$dadosPessoais->setHabilidades($dado);
@@ -97,7 +97,7 @@ if($dado != '' && $dadoAlt != ''){
 
 
 }else {
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 //$dadosPessoais->altDadosBanco();

@@ -1,6 +1,6 @@
 <?php 
 session_start();
 unset($_SESSION['logado']);
-header("Location: index.php");
+header("Location: ../View/index.php");
 exit;
 ?>

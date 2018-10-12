@@ -1,10 +1,10 @@
 <?php
 if(empty($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }
 $cursos = '';
-require "classes/educacao.class.php";
+require "../Model/classes/educacao.class.php";
 $formacao = addslashes($_POST['formacao']);
 $instituicao = addslashes($_POST['instituicao']);
 $instituCidade = addslashes($_POST['instituCidade']);
@@ -23,10 +23,10 @@ if(in_array($eduAtual, $edusBanco)){
 	//caso exista essa educacao no id dessa pessoa faça:
 	$educacao->editarEdu($eduAtual, $formacao, $instituicao, $instituCidade,
 	 $anoConcl, $cursos);
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }else{
 	//caso nao exista essa educacao no id da pessoa, entao saia
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 	exit;
 }

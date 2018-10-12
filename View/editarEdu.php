@@ -4,15 +4,26 @@ if(empty($_SESSION['logado'])){
 	header("Location: index.php");
 	exit;
 }
+$eduAtual = "";
+
 $id_pessoa = $_SESSION['id_pessoa'];
 $email = $_SESSION['logado'];
+if(!empty($_POST['formacao'])){
+	$eduAtual = addslashes($_POST['edu']);
+	require "../Controller/validarEdu.php"; // aqui ele faz a alteracao da educacao, caso ela exista no banco.
+	exit;
+}else {
+	$eduAtual = $_GET['edu'];
+
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Adicionar Experiencia</title>
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<title>Alterar Educacao</title>
+	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
 	<script type="text/javascript">
 		function Nova(){
 		location.assign('areaRestrita.php');
@@ -27,14 +38,15 @@ $email = $_SESSION['logado'];
 			</div>
 			
 			<div class="toporight">				
-				<a href="sair.php" style="color:#CCC;line-height: 50px;">Sair</a>
+				<a href="../Controller/sair.php" style="color:#CCC;line-height: 50px;">Sair</a>
 			</div>
 		</div>
 	</header>
 	<div class="container">
-		<h2>Nova Educacao</h2>
+		<h2>Editar Educacao</h2>
 		<hr/>
-		<form method="POST" action="inserirEdu.php">
+		<form method="POST" action="editarEdu.php">
+			<input type="hidden" name="edu" value="<?= $eduAtual ?>">
 			<div class="row">
 					<div class="col-sm-4">
 						<div class="form-group">
@@ -79,13 +91,14 @@ $email = $_SESSION['logado'];
 			</div>
 			<div class="form-group">
 				<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
+				<!-- <button class="btn btn-primary"><a href="areaRestrita.php" style="text-decoration:none;color:#FFF;">Voltar</a></button> -->
 			</div>
 		</form>
 	</div>
 
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="assets/js/javascript.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/javascript.js"></script>
 </body>
 </html>	

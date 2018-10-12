@@ -17,9 +17,9 @@
 
 
 //require 'config.php'; // por enquanto deixa ele em comentario no TESTE BANCO
-require 'classes/dadosPessoais.class.php';
-require 'classes/experiencia.class.php';
-require 'classes/educacao.class.php';
+require "../Model/classes/dadosPessoais.class.php";
+require '../Model/classes/experiencia.class.php';
+require '../Model/classes/educacao.class.php';
 
 
 $qtEmp = 0;
@@ -282,7 +282,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 			$_SESSION['experiencia'] = $qtEmp;
 		}
 		$_SESSION['educacao'] = $educacao->getDadosEdu();
-		header("Location: curriculo.php");
+		header("Location: ../View/curriculo.php");
 		exit;
 
 
@@ -295,7 +295,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 
 // Esse else é referente ao primeiro if que valida se tem os campos obrigatorios
 }else {
-	header("Location: index.php");
+	header("Location: ../View/index.php");
 }
 
 
