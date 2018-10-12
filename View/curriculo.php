@@ -113,6 +113,7 @@ require "../Controller/validandoDados.php";
 					<h6>Habilidades</h6>
 					<ul style="padding-inline-start: 10px;">
 						<?php
+							if($qtNovasHab != ''):
 							for($i = 0;$i <= $qtNovasHab; $i++ ):
 								if($novasHab[$i] != 'VAZIO'):
 
@@ -122,6 +123,7 @@ require "../Controller/validandoDados.php";
 							<?php
 							endif;
 							endfor;
+							endif;
 							 ?>
 					</ul>
 				</div>

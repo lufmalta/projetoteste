@@ -95,6 +95,10 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					<td>
 						<ul>
 						<?php
+							if($novasHab == ""):?>
+								<li>Ainda não possui habilidades</li>					
+							<?php
+							else:	
 							for($i = 0;$i <= $qtNovasHab; $i++ ):
 								if($novasHab[$i] != 'VAZIO'):
 
@@ -104,8 +108,9 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							<?php
 							endif;
 							endfor;
+							endif;
 							 ?>
-					</ul>
+						</ul>
 					</td>
 				</tr>
 		</table>
@@ -160,12 +165,21 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							<td>
 								<?php
 									$expAtual = $experienciaAtual[$i]['id_exp'];
-								 ?>
-								<a href="editarExp.php?exp=<?=$expAtual?>">Editar</a>		
+									if($expAtual != ''):
+								 ?>								 
+								<a href="editarExp.php?exp=<?=$expAtual?>">Editar</a><?php
+									endif;
+								 ?>	
 							</td>	
-							<td>								
+							<td>
+								<?php
+								if($expAtual != ''):
+								 ?>										
 								<a href="../Controller/deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')">Excluir</a>
-							</td>		
+							</td>
+								<?php
+								endif;
+								?>		
 						</tr>
 					 <?php endfor;
 					 		endif; ?>
@@ -213,8 +227,11 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 						<td>
 							<?php
 								$eduAtual = $educacao[$i]['id_edu'];
+								if($eduAtual != ''):
 							 ?>
-							<a href="editarEdu.php?edu=<?=$eduAtual?>">Editar</a>		
+							<a href="editarEdu.php?edu=<?=$eduAtual?>">Editar</a>	<?php
+								endif;
+							 ?>
 						</td>
 						<?php
 							if($qtEdu > 0):

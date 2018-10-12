@@ -1,5 +1,6 @@
 <?php
 	if(isset($_POST['usuario']) && !empty($_POST['usuario'])){
+		$erro = '';
 		require "../Controller/cadastroDados.php";
 	}else {
 		$erro = '';
@@ -37,11 +38,11 @@
 		<form method="POST" action="cadastrar.php">
 			<div class="form-group">
 				<label for="usuario"><strong>Usuario</strong></label>
-				<input id="usuario" type="email" name="usuario" maxlength="50" required class="form-control">
+				<input id="usuario" type="email" name="usuario" maxlength="50" required class="form-control" placeholder="Email">
 			</div>
 			<div class="form-group">
 				<label for="senha"><strong>Senha</strong></label>
-				<input id="senha" type="password" name="senha" maxlength="20" required class="form-control">
+				<input id="senha" type="password" name="senha" maxlength="20" required class="form-control" placeholder="Senha">
 			</div>
 			
 			<div class="form-group">

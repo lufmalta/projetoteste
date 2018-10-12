@@ -16,6 +16,7 @@ if(!empty($_SESSION['logado'])){
 		$experiencia = new Experiencia($id_pessoa);
 		$habilidades = explode (',', $dadosPessoais['habilidades'] );
 		$qtHab = count($habilidades);
+		$novasHab = "";
 		for($i = 0; $i < $qtHab; $i++){
 			// Caso a posiçao da habilidade nao tiver nenhum valor, escrever dentro dela vazio.
 			if(empty($habilidades[$i])){

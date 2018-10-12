@@ -6,7 +6,7 @@
 /* @author Luiz Fernando - lufmalta@gmail.com
 
 */ 
-require 'config.php'; // DADOS TESTE BANCO
+require_once 'config.php'; // DADOS TESTE BANCO
 class dadosPessoais{
 	private $pdo;
 	private $id_pessoa;
@@ -34,7 +34,7 @@ class dadosPessoais{
 		$sql->execute();
 		$this->pdo = $pdo;
 
-		if($sql->rowCount() > 0){
+		if($sql->rowCount() > 0){			
 			return true;
 		}else {
 			return false;
@@ -67,6 +67,12 @@ class dadosPessoais{
 	  	$sql->execute();	  	
 
 	  	$this->pegarID($this->getEmail());
+	}
+	public function inserirBancoEmail(){
+		$sql = "INSERT INTO pessoas SET email = :email";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":email", $this->getEmail());
+		$sql->execute();
 	}
 	public function pegarDadosPessoaisBanco($buscar_email){
 		$sql = "SELECT * FROM pessoas WHERE email = :email";
@@ -136,6 +142,18 @@ class dadosPessoais{
 	// 		$this->setHabilidades($sql['habilidades']);
 	// 	}
 	// }
+	public function pegarIDBanco($email){
+		$sql = "SELECT id_pessoa FROM pessoas WHERE email = :email";
+		$sql = $this->pdo->prepare($sql);
+		$sql->bindValue(":email", $email);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$sql = $sql->fetch(); // futaramente posso colocar um fetchAll para pegar todos os dados que tiverem esse email, para no caso de ter como no sistema mudar o email da pessoa, e depois fazer uma comparaçao de onde o email for = email e id_pessoa for = id_pessoa, assim não ira gerar conflito entre as pesssoas que acessarem com emails iguais.
+			$dado = $sql['id_pessoa'];
+			return $dado;
+		}
+	}
 	public function pegarDados(){
 		return $this->dados;
 	}
