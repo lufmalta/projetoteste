@@ -1,5 +1,9 @@
-Criando um Curriculo-site com o uso de: PHP , jQuery, Javascript, Bootstrap-4, HTML5, CSS3, Banco de dados MySql.
-Nesse código possui 5 classes:
+Criando um Curriculo-site com o uso de: PHP Orientado á Objetos, jQuery, Javascript, Bootstrap-4, HTML5, CSS3, Banco de dados MySql.
+Nesse código possui 5 classes.
+
+______________________________________________________________________________________
+
+- Model(Classes):
 
 - dadosPessoais.class.php(Onde recebe os dados pessoais pela pagina index.php e insere no objeto e depois no banco de dados). No caso estou fazendo a parte de inserção pelo usuario logado no sistema, mas ainda estou desenvolvendo.
 
@@ -11,13 +15,13 @@ Nesse código possui 5 classes:
 
 - config.php(Aqui fica a classe que tem a conexao com o banco de dados, para acessar o banco de dados mysql).
 
+______________________________________________________________________________________
 
-Aqui esta as logicas mais 'complexas' do código:
+- View:
 
-- validandoDados.php(Aqui serve para verificar na pagina do curriculo se os dados a preencher no curriculo, foram recebidos pelo usuario logado, ou pela pagina index por outro qualquer cliente que não tenha login no sistema, e depois que envia para o curriculo para preencher os dados).
+Main do site, onde tudo começa:
 
-- receberDados.php(Aqui recebe os dados do index.php, e insere no objeto das classes e após isto insere no banco de dados). Depois envia o cliente para o curriculo.php e la pega os dados no banco de dados e insere no curriculo.
-
+- index.php(Aqui é onde recebe os dados para gerar o currículo, e no caso de a pessoa ter login no sistema, a pessoa insere os dados de login no formulario e envia para a areaRestrita, onde poderá alterar esses dados, inserir novos dados, e gerar o curriculo).
 
 Aqui esta a área do usuario quando logado:
 
@@ -27,21 +31,51 @@ Aqui esta a área onde tanto o usuario logado, como o cliente que inseriu os dad
 
 - curriculo.php(Aqui é onde recebe os dados, seja do index.php, ou da areaRestrita. Depois preenche o curriculo, para gerar um curriculo responsivo e que pode ser impresso para a pessoa).
 
+- cadastrar.php
+
+- editarEdu.php
+
+- editarExp.php
+
+- novaEdu.php
+
+- novaExp.php
+
+- novosDados.php
+
+
+______________________________________________________________________________________
+
+- Controller:
+
+- validandoDados.php(Aqui serve para verificar na pagina do curriculo se os dados a preencher no curriculo, foram recebidos pelo usuario logado, ou pela pagina index por outro qualquer cliente que não tenha login no sistema, e depois que envia para o curriculo para preencher os dados).
+
+- receberDados.php(Aqui recebe os dados do index.php, e insere no objeto das classes e após isto insere no banco de dados). Depois envia o cliente para o curriculo.php e la pega os dados no banco de dados e insere no curriculo.
 
 Aqui é onde verifica se o usuario é o digitado:
 
 - login.php(Aqui é onde pega os dados do formulario de login na pagina principal e verifica se são validos, para poder ter acesso a areaRestrita do site). Ainda vou fazer uma inserção de senhas mais segura que o md5, mais ainda estou analisando uma maneira melhor.
 
+- deletarEdu.php
 
+- deletarExp.php
+
+- mudarDado.php
+
+- validarEdu.php
+
+- validarExp.php
+
+- inserirExp.php
+
+- inserirEdu.php
 
 - sair.php(Aqui serve para deslogar o usuario pela sessao).
 
 
-Main do site, onde tudo começa:
 
-- index.php(Aqui é onde recebe os dados para gerar o currículo, e no caso de a pessoa ter login no sistema, a pessoa insere os dados de login no formulario e envia para a areaRestrita, onde poderá alterar esses dados, inserir novos dados, e gerar o curriculo).
 
-- footer.php(Aqui esta o rodape da pagina, que esta sendo inserido na maioria das paginas).
+______________________________________________________________________________________
 
 Estilos da pagina:
 
@@ -55,4 +89,8 @@ Javascript(jQuery) da pagina:
 
 - javascript.js(Aqui esta o jQuery da pagina index.php).
 
+______________________________________________________________________________________
 
+- Pages:
+
+- footer.php(Aqui esta o rodape da pagina, que esta sendo inserido na maioria das paginas).
