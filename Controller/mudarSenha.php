@@ -13,8 +13,9 @@
 		$usuarios->mudarSenha($id_user, $senha);
 
 		$userToken->invalidarToken($hash);
-
-		echo "Senha alterada com sucesso";
+		header("Location: index.php");
+		exit;
+	
 	}
 
 	}else {
