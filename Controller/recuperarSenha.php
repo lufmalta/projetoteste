@@ -6,6 +6,7 @@ if(!isset($_POST['email']) && empty($_POST['email'])){
 	require "../Model/classes/usuarios.class.php";
 	$email = addslashes($_POST['email']);
 	$usuarios = new Usuarios();
+	session_start();
 	if($usuarios->verificarExisteUsuario($email) == true){
 		require "../Model/classes/userToken.class.php";
 		$id_user = $_SESSION['id_user'];
