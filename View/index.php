@@ -67,7 +67,7 @@ if(!empty($_SESSION['logado'])){
 									<input id="senha" type="password" name="senha" maxlength="32" class="form-control" required>
 								</div>
 								<div class="form-group">
-									<a href="">Esqueci a senha</a><br/>
+									<a href="esqueciSenha.php">Esqueci a senha</a><br/>
 									<a href="cadastrar.php">Ainda não tenho Login</a><br/>
 								</div>
 								

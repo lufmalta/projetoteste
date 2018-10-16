@@ -1,5 +1,5 @@
 <?php 
-require 'config.php';
+require_once 'config.php';
 class usuarios{
 	private $pdo;
 	private $id_usuario;
@@ -21,6 +21,9 @@ class usuarios{
 		$this->pdo = $pdo;
 
 		if($sql->rowCount() > 0){
+			//session_start();
+			$sql = $sql->fetch();
+			$_SESSION['id_user'] = $sql['id_usuario'];
 			return true;
 		}else {
 			return false;
@@ -61,6 +64,15 @@ class usuarios{
 		$sql->execute();
 		header("Location: ../View/index.php");
 		exit;
+	}
+	public function mudarSenha($id_user, $senha){
+		$con = new Banco();
+		$pdo = $con->conectar($this->pdo);
+		$sql = "UPDATE usuarios SET senha = :senha WHERE id_usuario = :id_usuario";
+		$sql = $pdo->prepare($sql);
+		$sql->bindValue(":senha", md5($senha));
+		$sql->bindValue(":id_usuario", $id_user);
+		$sql->execute();
 	}
 	public function setId_Pessoa($new_id_pessoa){
 		$this->id_pessoa = $new_id_pessoa;
