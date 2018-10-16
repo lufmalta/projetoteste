@@ -55,6 +55,11 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 				<td>
 					<a href="novosDados.php?dado=habilidades">Alterar Habilidades </a>
 				</td>
+			</tr>
+			<tr>
+				<td style="border:none;">
+					<a href="alterarSenha.php">Alterar Senha</a>				
+				</td>				
 			</tr>	
 				
 		</table>		
@@ -77,6 +82,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 	
 	<div class="container" style="margin-top:10px;">
 		<h1 style="color:#CCC;">DadosPessoais</h1>
+		<div class="tabelas-scroll">
 		<table class="table table-light" border="5"  width="1400">
 				<tr>
 					<th style="width:200px;">Nome</th>	
@@ -114,7 +120,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					</td>
 				</tr>
 		</table>
-		
+		</div>
 		
 		<h1 style="color:#CCC;">Experiencia</h1>
 		<div class="tabelas-scroll">
@@ -188,6 +194,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		</div>
 		
 		<h1 style="color:#CCC;">Educacao</h1>
+		<div class="tabelas-scroll">
 		<table class="table table-light" border="5"  width="1200" >
 				<tr>
 					<th style="width:200px;">Formacao</th>	
@@ -265,6 +272,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 
 				 		<?php endif; ?>
 		</table>
+		</div>
 	</div>
 <footer>
 		<div class="container">
