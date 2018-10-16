@@ -33,18 +33,23 @@ class usuarios{
 	public function verificarUsuSenha($new_usuario, $new_senha){
 		//$con = new Banco();
 		//$pdo = $con->conectar($this->pdo);
-		$sql = "SELECT * FROM usuarios WHERE usuario = :usuario and senha = :senha";
+		$sql = "SELECT * FROM usuarios WHERE usuario = :usuario";
 		$sql = $this->pdo->prepare($sql);
 		$sql->bindValue(':usuario', $new_usuario);
-		$sql->bindValue(':senha', $new_senha);
+		//$sql->bindValue(':senha', $new_senha);
 		$sql->execute();
 		//$this->pdo = $pdo;
 
 		if($sql->rowCount() > 0){
 			$sql = $sql->fetch();
-			session_start();
+			//session_start();
 			$_SESSION['logado'] = $sql['usuario'];
-			return true;
+			if(password_verify($new_senha, $sql['senha'])){			
+				return true;
+			}else {				
+			   	return false;
+			}
+			
 		}else {
 			return false;
 		}
@@ -70,7 +75,7 @@ class usuarios{
 		$pdo = $con->conectar($this->pdo);
 		$sql = "UPDATE usuarios SET senha = :senha WHERE id_usuario = :id_usuario";
 		$sql = $pdo->prepare($sql);
-		$sql->bindValue(":senha", md5($senha));
+		$sql->bindValue(":senha", $senha);
 		$sql->bindValue(":id_usuario", $id_user);
 		$sql->execute();
 	}

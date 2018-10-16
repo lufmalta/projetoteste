@@ -6,7 +6,8 @@ if(empty($_POST['usuario']) && empty($_POST['senha'])){
 }
 require "../Model/classes/usuarios.class.php";
 $usuario = addslashes($_POST['usuario']);
-$senha = md5(addslashes($_POST['senha']));
+$senha = $_POST['senha'];
+$senha = password_hash($senha, PASSWORD_BCRYPT);
 
 $usuarios = new Usuarios();
 

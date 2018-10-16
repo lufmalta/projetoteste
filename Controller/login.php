@@ -7,7 +7,8 @@ if(empty($_POST['usuario'])){
 }
 //session_start();
 $email = addslashes($_POST['usuario']);
-$senha = md5(addslashes($_POST['senha']));
+//$senha = md5(addslashes($_POST['senha']));
+$senha = $_POST['senha'];
 $pdo = '';
 
 // $con = new Banco();

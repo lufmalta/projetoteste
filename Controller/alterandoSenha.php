@@ -4,7 +4,8 @@ if(empty($_SESSION['logado'])){
 	exit;
 }
 $id_user = $_SESSION['id_user'];
-$novaSenha = addslashes($_POST['senha']);
+$novaSenha = $_POST['senha'];
+$novaSenha = password_hash($novaSenha, PASSWORD_BCRYPT);
 require "../Model/classes/usuarios.class.php";
 $usuarios = new Usuarios();
 $usuarios->mudarSenha($id_user, $novaSenha);
