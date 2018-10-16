@@ -15,9 +15,6 @@ if(!isset($_POST['email']) && empty($_POST['email'])){
 		$token = md5(time().round(0,9999).round(0,9999));
 		$expirado_em = date('Y-m-d H:i', strtotime('+ 2 months'));
 
-
-
-
 		$userToken->novoToken($token, $expirado_em, $id_user);
 
 
