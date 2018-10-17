@@ -31,7 +31,4 @@ $experiencia->inserirEmpObj($newExp);
 $experiencia->inserirEmpObjBanco();
 header("Location: ../View/index.php");
 exit;
-// for($i = 0; $i <= 5; $i++){
-// 	echo $newExp[$i]."</br>";
-// }
 ?>

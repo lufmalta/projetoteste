@@ -121,27 +121,6 @@ class dadosPessoais{
 		$this->getHabilidades();
 	}
 
-
-	//depois uso isso para se precisar colocar os dados dentro do obj.
-
-	// public function setarObjComBanco($new_email){
-	// 	$sql = "SELECT * FROM pessoas WHERE email = :email";
-	// 	$sql = $this->pdo->prepare($sql);
-	// 	$sql->bindValue(':email',$new_email);
-	// 	$sql->execute();
-
-	// 	if($sql->rowCount() > 0){
-	// 		$sql = $sql->fetch();
-	// 		$this->dados = $sql;
-	// 		$this->id_pessoa = $sql['id_pessoa'];
-	// 		$this->setNome($sql['nome']);
-	// 		$this->setEmail($sql['email']);
-	// 		$this->setEndereco($sql['endereco']);
-	// 		$this->setTelefone($sql['telefone']);
-	// 		$this->setDescricao($sql['descricao']);
-	// 		$this->setHabilidades($sql['habilidades']);
-	// 	}
-	// }
 	public function pegarIDBanco($email){
 		$sql = "SELECT id_pessoa FROM pessoas WHERE email = :email";
 		$sql = $this->pdo->prepare($sql);

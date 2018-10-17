@@ -21,8 +21,6 @@ class Banco{
 		}else {
 				return $this->con;
 			}
-		// $this->con = $this->conexao($new_pdo);
-		// return $this->con;
 		
 	}
 	private function conexao($n_pdo){

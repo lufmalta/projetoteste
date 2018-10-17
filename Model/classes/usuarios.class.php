@@ -21,7 +21,6 @@ class usuarios{
 		$this->pdo = $pdo;
 
 		if($sql->rowCount() > 0){
-			//session_start();
 			$sql = $sql->fetch();
 			$_SESSION['id_user'] = $sql['id_usuario'];
 			return true;

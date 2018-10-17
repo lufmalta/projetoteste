@@ -37,8 +37,6 @@ class userToken{
 		$sql->execute();
 		if($sql->rowCount() > 0){
 			$sql = $sql->fetch();
-			//session_start();
-			//$_SESSION['id_user'] = $sql['id_usuario'];
 			$id_user = $sql['id_usuario'];
 			return true;
 		}else {

@@ -12,15 +12,10 @@ if(!empty($_SESSION['logado'])){
 	exit;
 }else if(!empty($_POST['usuario']) && (!empty($_POST['senha']))){
 	require "../Controller/login.php";
-	// if($_SESSION['invalido'] != '' ){
-	// 	$erro = $_SESSION['invalido'];
-	// }
+	
 }else if(isset($_POST['nome']) && !empty($_POST['nome'])){
 	require "../Controller/receberDados.php";
-	// if($_SESSION['invalido'] != '' ){
-	// 	$erro = $_SESSION['invalido'];
-	// }	
-	//o else debaixo é no caso do $_POST['nome'] estiver vazio.
+
 }
 	
 ?>
@@ -90,8 +85,6 @@ if(!empty($_SESSION['logado'])){
 	</section>
 	<main>		
 		<div class="container">
-			<!-- ainda não estou conseguindo fazer funcionar isso -->
-			<!-- <div id="errolog" class="alert alert-warning"></div> -->
 			<form  id="form" method="POST" action="index.php"> <!-- inicio do formulario -->
 				<h4 style="margin-top:20px;"><strong>Dados Pessoais</strong></h4>
 				<div class="separaDiv"></div>

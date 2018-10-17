@@ -52,8 +52,6 @@ if(!empty($_SESSION['logado'])){
 		$img = '';
 		$img = $dadosPessoais['img'];
 		$qtEdu = -1;
-		// echo $img;
-		// exit;
 		//Pega as habilidades que estao separadas por virgula e coloca numa variavel.
 		$habilidades = explode (',', $dadosPessoais['habilidades'] );
 		// pega a quantidade de habilidades que tem em habilidades, tanto os espaços vazios, quanto os que tem algo.

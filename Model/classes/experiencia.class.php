@@ -30,11 +30,6 @@ class Experiencia{
 		$this->pdo = '';
 		$this->dadosEmpresa = '';
 	}
-	// public function inserirDadosObjExp($new_priEmp){
-	// 	$this->setPriEmp($new_priEmp);
-	// 	$this->setSegEmp($new_segEmp);
-	// 	$this->setTerEmp($new_terEmp);
-	// }
 
 	public function inserirEmpObj($new_dadosEmpresa){
 		$this->cargo = $new_dadosEmpresa[0];
@@ -56,11 +51,7 @@ class Experiencia{
 		$sql = "INSERT INTO experiencia SET id_pessoa = ?, cargo = ?, descCargo = ?, empresa = ?, cidade = ?, dataEnt = ?, dataSai = ? ";
 		$sql = $pdo->prepare($sql);
 		$sql->execute(array($this->getId_Pessoa(), $this->getCargo(), $this->getDescCargo(), $this->getEmpresa(), $this->getCidade(), $this->getDataEnt(), $this->getDataSai()));
-		
-		// $sql->fetch();
-		// $sql = $sql['cargo'];
-		
-		echo "Parabéns inserido empresa com sucesso!".'<br/>';
+		//echo "Parabéns inserido empresa com sucesso!".'<br/>';
 		$this->pdo = $pdo;
 		$this->pegarIDExp($this->getCargo(), $this->getId_Pessoa(), $pdo);// pega o cargo, para fazer a consulta no banco do id_exp
 	}

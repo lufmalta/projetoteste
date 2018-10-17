@@ -100,6 +100,6 @@ if($dado != '' && $dadoAlt != ''){
 	header("Location: ../View/index.php");
 	exit;
 }
-//$dadosPessoais->altDadosBanco();
+
 
 ?>

@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -16,7 +15,6 @@
 
 
 
-//require 'config.php'; // por enquanto deixa ele em comentario no TESTE BANCO
 require "../Model/classes/dadosPessoais.class.php";
 require '../Model/classes/experiencia.class.php';
 require '../Model/classes/educacao.class.php';
@@ -26,8 +24,6 @@ $qtEmp = 0;
 $priEmp = ''; //define a primeira empresa onde ira colocar o array
 $segEmp = ''; //define a segunda empresa onde ira colocar o array
 $terEmp = ''; //define a terceira empresa onde ira colocar o array
-
-// $con = new Banco(); // dentro de $con esta o '$pdo', ou seja é só usar ele quando for chamar outras classes, enviar ele como parâmetro.
 
 
 //(isset($_POST['nome']) && !empty($_POST['nome'])
@@ -42,7 +38,6 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 	  				&& (isset($_POST['objetivo']) && !empty($_POST['objetivo']))){
 
 	// Depois armazena os valores obrigatorios em variaveis
-	//session_start();
 	// DADOS PESSOAIS / EDUCACAO - armazenando os dados em variaveis
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
@@ -116,11 +111,6 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 	}
 
 
-	// echo $todasHabili.'<br/>'.$nome.'<br/>'.$email.'<br/>'.$endereco.'<br/>'.$telefone.'<br/>'.$objetivo;
-
-
-	// $dados = addslashes($_POST['habilidade1']).','.addslashes($_POST['habilidade2']).','.addslashes($_POST['habilidade3']).','.addslashes($_POST['habilidade4']).','.addslashes($_POST['habilidade5']).','.addslashes($_POST['habilidade6']).','.addslashes($_POST['habilidade7']).','.addslashes($_POST['habilidade8']).','.addslashes($_POST['habilidade9']).','.addslashes($_POST['habilidade10']);
-	// echo $dados; //assim também funciona, mas do outro jeito usa menas linha de codigo, apesar do outro fazer mais execuções.
 
 	//FIM DADOS PESSOAIS
 
@@ -164,9 +154,6 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 		$priEmp[4] = $dataSai[0];
 		$priEmp[5] = $descCargo[0];
 
-		// for ($i=0; $i < 6; $i++) {  //para visualizar os dados
-		// 	echo $priEmp[$i].'<br/>';
-		// }
 	}else {
 		// echo "Algum campo da empresa 1 não foi preenchido";
 		
@@ -181,9 +168,6 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 		$segEmp[4] = $dataSai[1];
 		$segEmp[5] = $descCargo[1];
 
-		// for ($i=0; $i < 6; $i++) { //para visualizar os dados
-		// 	echo $segEmp[$i].'<br/>';
-		// }
 	}else {
 		// echo "Algum campo da empresa 2 não foi preenchido";
 	}
@@ -197,9 +181,6 @@ if (isset($_POST['email']) && !empty($_POST['email'])
 		$terEmp[4] = $dataSai[2];
 		$terEmp[5] = $descCargo[2];
 
-		// for ($i=0; $i < 6; $i++) { //para visualizar os dados
-		// 	echo $terEmp[$i].'<br/>';
-		// }
 	}else {
 		// echo "Algum campo da empresa 3 não foi preenchido";
 	}

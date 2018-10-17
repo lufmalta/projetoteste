@@ -23,7 +23,6 @@ if($dado != ''){
 	header("Location: index.php");
 	exit;
 }
-//<link rel="stylesheet" type="text/css" href="assets/css/template.css">
 ?>
 
 <!DOCTYPE html>

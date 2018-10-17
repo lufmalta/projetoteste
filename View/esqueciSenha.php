@@ -1,8 +1,5 @@
 <?php
 $erro = '';
-// if(isset($_POST['email']) && !empty($_POST['email'])){
-// 	require "../Controller/recuperarSenha.php";
-// }
 ?>
 <!DOCTYPE html>
 <html>
