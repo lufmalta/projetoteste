@@ -24,10 +24,8 @@ if(!empty($_SESSION['logado'])){
 <head>
 	<meta charset="UTF-8">
 	<title>Curriculum Creation</title>
-	
 	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
-
 </head>
 <body style="margin-top:15px;">
 	<header>
@@ -35,7 +33,6 @@ if(!empty($_SESSION['logado'])){
 			<div class="topoleft">
 				<h2><strong>Criando seu Currículo</strong></h2>
 			</div>
-			
 			<div class="toporight">
 				<a href="#" style="color:#CCC;" data-toggle="modal" data-target="#modal">Fazer Login</a> -  
 				<a href="cadastrar.php" style="color:#CCC;">Cadastre-se</a>
@@ -53,7 +50,6 @@ if(!empty($_SESSION['logado'])){
 						<div class="modal-body">							
 							<form id="form_login" method="POST" action="index.php" >
 								<div class="form-group">
-									<!-- <h2 style="color:#FF0000">Usuário ou senha invalidos</h2> isso fazer parte da requisicao ajax --> 
 									<label for="usuario"><strong>Usuario</strong></label>
 									<input id="usuario" type="email" name="usuario" maxlength="50" class="form-control" placeholder="email@algo.com" required>
 								</div>
@@ -65,14 +61,9 @@ if(!empty($_SESSION['logado'])){
 									<a href="esqueciSenha.php">Esqueci a senha</a><br/>
 									<a href="cadastrar.php">Ainda não tenho Login</a><br/>
 								</div>
-								
 								<div class="form-group">
 									<button class="btn btn-success w-100" type="submit">Fazer Login</button>
-								</div>
-								<!-- <div class="form-group">
-									
-								</div> -->
-								
+								</div>			
 							</form>
 						</div>
 						<div class="modal-footer">
@@ -166,134 +157,53 @@ if(!empty($_SESSION['logado'])){
 				</div>
 				<h4 style="margin-top:20px;"><strong>Experiência</strong></h4>
 				<div class="separaDiv"></div>
-				<h3>Primeira Empresa</h3>
-				<div class="separaDiv"></div>
+				<?php
+					for($i = 1; $i <= 3; $i++ ): ?>
+                <h3>Empresa</h3>
+                <div class="separaDiv"></div>
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label for="cargo1" class="label2 cargos" data-toggle="tooltip" data-placement="right" ><strong>Cargo</strong></label>
-							<input id="cargo1" type="text" name="cargo1" class="form-control" maxlength="50" />
+							<label for="cargo<?= $i ?>" class="label2 cargos" data-toggle="tooltip" data-placement="right" ><strong>Cargo</strong></label>
+							<input id="cargo<?= $i ?>" type="text" name="cargo<?= $i ?>" class="form-control" maxlength="50" />
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label for="empresa1" class="label2 empresas" data-toggle="tooltip" data-placement="right" ><strong>Empresa</strong></label>
-							<input id="empresa1" type="text" name="empresa1" class="form-control" maxlength="40" />
+							<label for="empresa<?= $i ?>" class="label2 empresas" data-toggle="tooltip" data-placement="right" ><strong>Empresa</strong></label>
+							<input id="empresa<?= $i ?>" type="text" name="empresa<?= $i ?>" class="form-control" maxlength="40" />
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label for="cidade1" class="label2 cidades" data-toggle="tooltip" data-placement="right" ><strong>Cidade</strong></label>
-							<input id="cidade1" type="text" name="cidade1" class="form-control" maxlength="30" />
+							<label for="cidade<?= $i ?>" class="label2 cidades" data-toggle="tooltip" data-placement="right" ><strong>Cidade</strong></label>
+							<input id="cidade<?= $i ?>" type="text" name="cidade<?= $i ?>" class="form-control" maxlength="30" />
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
 						<div class="form-group">
-							<label for="dataEnt1" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
-							<input id="dataEnt1" type="text" name="dataEnt1" class="form-control dataEnt"  />
+							<label for="dataEnt<?= $i ?>" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
+							<input id="dataEnt<?= $i ?>" type="text" name="dataEnt<?= $i ?>" class="form-control dataEnt"  />
 						</div>
 					</div>
 					<div class="col">
 						<div class="form-group">
-							<label for="dataSai1" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
-							<input id="dataSai1" type="text" name="dataSai1" class="form-control dataSai"  />
+							<label for="dataSai<?= $i ?>" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
+							<input id="dataSai<?= $i ?>" type="text" name="dataSai<?= $i ?>" class="form-control dataSai"  />
 						</div>
 					</div>
 					<div class="col">
 						<div class="form-group">
-							<label class="label2 descCargos" for="descCargo1" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea name="descCargo1" id="descCargo1"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>							
-						</div>
-					</div>
-				</div>				
-				<h3>Segunda Empresa</h3>
-				<div class="separaDiv"></div>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="cargo2" class="label2 cargos" data-toggle="tooltip" data-placement="right" ><strong>Cargo</strong></label>
-							<input id="cargo2" type="text" name="cargo2" class="form-control" maxlength="50" />
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="empresa2" class="label2 empresas"  data-toggle="tooltip" data-placement="right" ><strong>Empresa</strong></label>
-							<input id="empresa2" type="text" name="empresa2" class="form-control" maxlength="40" />
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="cidade2" class="label2 cidades" data-toggle="tooltip" data-placement="right" ><strong>Cidade</strong></label>
-							<input id="cidade2" type="text" name="cidade2" class="form-control" maxlength="30" />
+							<label class="label2 descCargos" for="descCargo<?= $i ?>" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
+							<textarea name="descCargo<?= $i ?>" id="descCargo<?= $i ?>"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>							
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<div class="form-group">
-							<label for="dataEnt2" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
-							<input id="dataEnt2" type="text" name="dataEnt2" class="form-control dataEnt"  />
-						</div>
-					</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="dataSai2" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
-							<input id="dataSai2" type="text" name="dataSai2" class="form-control dataSai"  />
-						</div>
-					</div>
-					<div class="col">
-						<div class="form-group">
-							<label class="label2 descCargos" for="descCargo2" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea name="descCargo2" id="descCargo2"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>						
-						</div>
-					</div>
-				</div>
-				
-				<h3>Terceira Empresa</h3>
-				<div class="separaDiv"></div>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="cargo3" class="label2 cargos" data-toggle="tooltip" data-placement="right" ><strong>Cargo</strong></label>
-							<input id="cargo3" type="text" name="cargo3" class="form-control" maxlength="50" />
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="empresa3" class="label2 empresas" data-toggle="tooltip" data-placement="right" ><strong>Empresa</strong></label>
-							<input id="empresa3" type="text" name="empresa3" class="form-control" maxlength="40" />
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group">
-							<label for="cidade3" class="label2 cidades" data-toggle="tooltip" data-placement="right" ><strong>Cidade</strong></label>
-							<input id="cidade3" type="text" name="cidade3" class="form-control" maxlength="30" />
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<div class="form-group">
-							<label for="dataEnt3" class="label2 dataEntrada" data-toggle="tooltip" title="Aqui você coloca a data que entrou na empresa" data-placement="right" ><strong>Data Entrada</strong></label>
-							<input id="dataEnt3" type="text" name="dataEnt3" class="form-control dataEnt"  />
-						</div>
-					</div>
-					<div class="col">
-						<div class="form-group">
-							<label for="dataSai3" class="label2 dataSaida" data-toggle="tooltip" title="Aqui você coloca a data que saiu da empresa" data-placement="right" ><strong>Data Saida</strong></label>
-							<input id="dataSai3" type="text" name="dataSai3" class="form-control dataSai"  />
-						</div>
-					</div>
-					<div class="col">
-						<div class="form-group">
-							<label class="label2 descCargos" for="descCargo3" data-toggle="tooltip" data-placement="right"><strong>Descrição Cargo</strong></label><br/>
-							<textarea name="descCargo3" id="descCargo3"  maxlength="500" rows="3" cols="40" placeholder="Digite aqui sua função na empresa..."></textarea>
-						</div>
-					</div>
-				</div>
-				
+				<?php
+					endfor;
+				 ?>
 				<h4 style="margin-top:20px;"><strong>Educação</strong></h4>
 				<div class="separaDiv"></div>
 				<h3>Formação</h3>
