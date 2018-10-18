@@ -10,30 +10,8 @@ $email = $_SESSION['logado'];
 require '../Model/classes/dadosPessoais.class.php';
 require '../Controller/validandoDados.php';
 $_SESSION['id_pessoa'] = $id_pessoa;
+require "../pages/head.php";
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Curriculum Creation</title>
-	
-	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
-
-</head>
-<body style="margin-top:15px;">
-	<header>
-		<div class="topoint" style="display:flex;justify-content: space-around;">
-			<div class="topoleft">
-				<h3 style="line-height: 40px;"><strong>Usuario Logado - <?= $email ?></strong></h3>
-			</div>
-			
-			<div class="toporight">
-				<a href="curriculo.php" style="color:#AAA;">Visualizar Curriculo</a> -  
-				<a href="../Controller/sair.php" style="color:#AAA;">Sair</a>
-			</div>
-		</div>
-	</header>
 	<div style="background-color:#CCC;" class="jumbotron">
 		<table border="0" class='table'>
 			<tr>
@@ -280,11 +258,6 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 			<h4>Contato: lufmalta@gmail.com</h4>
 		</div>
 </footer>
-</body>
-
-	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="../assets/js/javascript.js"></script>
-		
-</html>
+<?php
+ require "../pages/end-body.html";
+?>

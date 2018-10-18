@@ -17,28 +17,8 @@ if(!empty($_SESSION['logado'])){
 	require "../Controller/receberDados.php";
 
 }
-	
+require "../pages/head.php";	
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Curriculum Creation</title>
-	<link 	rel="stylesheet" type="text/css" href="../assets/css/bootstrap4-css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
-</head>
-<body style="margin-top:15px;">
-	<header>
-		<div class="topoint" style="display:flex;justify-content: space-around;">
-			<div class="topoleft">
-				<h2><strong>Criando seu Currículo</strong></h2>
-			</div>
-			<div class="toporight">
-				<a href="#" style="color:#CCC;" data-toggle="modal" data-target="#modal">Fazer Login</a> -  
-				<a href="cadastrar.php" style="color:#CCC;">Cadastre-se</a>
-			</div>
-		</div>
-	</header>
 	<section>
 		<div class="container">
 			<div class="modal fade modal-dismissible" id="modal" role="modal" >
@@ -265,13 +245,8 @@ if(!empty($_SESSION['logado'])){
 			<h4>Contato: lufmalta@gmail.com</h4>
 		</div>
 	</footer>
-</body>
-
-	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="../assets/js/javascript.js"></script>
-		
-</html>
+<?php
+ require "../pages/end-body.html";
+?>
 
 	

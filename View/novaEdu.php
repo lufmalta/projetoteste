@@ -82,10 +82,6 @@ $email = $_SESSION['logado'];
 			</div>
 		</form>
 	</div>
-
-	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
-	<script type="text/javascript" src="../assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="../assets/js/javascript.js"></script>
-</body>
-</html>	
+<?php
+ require "../pages/end-body.html";
+?>
