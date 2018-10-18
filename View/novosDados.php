@@ -99,78 +99,46 @@ if($dado != ''){
 			 <?php 
 			  	endif; if($dado == 'habilidades'):
 			  ?>
-			  
-			  <div class="col colHabilidades"> <!-- aqui dentro esta os form groups de habilidades -->
-						<div class="row"> <!-- aqui dentro esta os form groups de habilidades -->
-							<div class="col"> <!-- aqui esta os form-group das 5 primeiras habilidades -->
-								<div class="form-group">
-									<label for="habilidade1" data-toggle="tooltip" class="habilidades"><strong>Habilidade 1</strong></label>
-									<input id="habilidade1" type="text" name="habilidade1" class="form-control" maxlength="29">
-								</div>
-								<div class="form-group">
-									<label for="habilidade2" data-toggle="tooltip" class="habilidades"><strong>Habilidade 2</strong></label>
-									<input id="habilidade2" type="text" name="habilidade2" class="form-control" maxlength="29">	
-								</div>
-								<div class="form-group">
-									<label for="habilidade3" data-toggle="tooltip" class="habilidades"><strong>Habilidade 3</strong></label>
-									<input id="habilidade3" type="text" name="habilidade3" class="form-control" maxlength="29">			
-								</div>
-								<div class="form-group">
-									<label for="habilidade4" data-toggle="tooltip" class="habilidades"><strong>Habilidade 4</strong></label>
-									<input id="habilidade4" type="text" name="habilidade4" class="form-control" maxlength="29">
-								</div>
-								<div class="form-group">
-									<label for="habilidade5" data-toggle="tooltip" class="habilidades"><strong>Habilidade 5</strong></label>	
-									<input id="habilidade5" type="text" name="habilidade5" class="form-control" maxlength="29">			
-								</div>
+			  <div class="col colHabilidades">
+						<div class="row">
+							<div class="col">
+								<?php
+									for ($i=1; $i <= 5 ; $i++): ?>
+									<div class="form-group">
+									      <label for="habilidade<?= $i ?>" data-toggle="tooltip" class="habilidades"><strong>Habilidade</strong></label>
+									     <input id="habilidade<?= $i ?>" type="text" name="habilidade<?= $i ?>" class="form-control" maxlength="29">
+								    </div>
+								 <?php
+								 	endfor;
+								  ?>											
 							</div>
-							<div class="col"> <!-- aqui esta os form-group das ultimas 5 habilidades -->
-								<div class="form-group">
-									<label for="habilidade6" data-toggle="tooltip" class="habilidades"><strong>Habilidade 6</strong></label>
-									<input id="habilidade6" type="text" name="habilidade6" class="form-control" maxlength="29">
-								</div>
-								<div class="form-group">
-									<label for="habilidade7" data-toggle="tooltip" class="habilidades"><strong>Habilidade 7</strong></label>	
-									<input id="habilidade7" type="text" name="habilidade7" class="form-control" maxlength="29">
-								</div>
-								<div class="form-group">
-									<label for="habilidade8" data-toggle="tooltip" class="habilidades"><strong>Habilidade 8</strong></label>	
-									<input id="habilidade8" type="text" name="habilidade8" class="form-control" maxlength="29">		
-								</div>
-								<div class="form-group">
-									<label for="habilidade9" data-toggle="tooltip" class="habilidades"><strong>Habilidade 9</strong></label>
-									<input id="habilidade9" type="text" name="habilidade9" class="form-control" maxlength="29">
-								</div>
-								<div class="form-group">
-									<label for="habilidade10" data-toggle="tooltip" class="habilidades"><strong>Habilidade 10</strong></label>	
-									<input id="habilidade10" type="text" name="habilidade10" class="form-control" maxlength="29">			
-								</div>
-							</div> <!-- aqui encerra a col das 5 ultimas habilidades -->
-						</div>	 <!-- aqui encerra a linha que esta todas as 10 habilidades	 -->							
-					</div> <!-- aqui esta a coluna que dentro tem a linha das habilidades -->	
+							<div class="col">
+								<?php
+									for ($i=6; $i <= 10 ; $i++): ?>
+									<div class="form-group">
+									      <label for="habilidade<?= $i ?>" data-toggle="tooltip" class="habilidades"><strong>Habilidade</strong></label>
+									     <input id="habilidade<?= $i ?>" type="text" name="habilidade<?= $i ?>" class="form-control" maxlength="29">
+								    </div>
+								 <?php
+								 	endfor;
+								  ?>
+							</div>
+						</div>							
+					</div>	
 			  		<footer style="position:absolute;left:0px;right:0px;bottom:-60px;">
 						<div class="container">
 							<h3>Desenvolvido por Luiz Fernando Malta Martins</h3>
 							<h4>Contato: lufmalta@gmail.com</h4>
 						</div>
 					</footer>
-			  	
-			  
-			  	
-				
-			  		
-			  	
-			 	
 			 <?php endif; ?>	
 			 <div class="form-group">
-			 	 <input class="btn btn-primary w-100" type="submit" value="Alterar">			 	 
+                <input class="btn btn-primary w-100" type="submit" value="Alterar"> 
 			 </div>
 			 <div class="form-group">
 			 	<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
-			 </div>
-				  
+			 </div>		  
 		</form>
-
 	</div>
 	
 
