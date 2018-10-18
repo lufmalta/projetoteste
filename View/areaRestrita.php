@@ -25,7 +25,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 	<header>
 		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<div class="topoleft">
-				<h3 style="line-height: 40px;"><strong>Usuario logado - <?= $email ?></strong></h3>
+				<h3 style="line-height: 40px;"><strong>Usuario Logado - <?= $email ?></strong></h3>
 			</div>
 			
 			<div class="toporight">
@@ -83,7 +83,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 	<div class="container" style="margin-top:10px;">
 		<h1 style="color:#CCC;">DadosPessoais</h1>
 		<div class="tabelas-scroll">
-		<table class="table table-light" border="5"  width="1400">
+		<table class="table table-bordered table-striped" border="5"  width="1400">
 				<tr>
 					<th style="width:200px;">Nome</th>	
 					<th style="width:200px;">Email</th>
@@ -92,8 +92,8 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 					<th style="width:200px;">Telefone</th>
 					<th style="width:200px;">Habilidades</th>
 				</tr>
-				<tr>
-					<td><?= $dadosPessoais['nome'] ?></td>
+				<tr style="color:#888;">
+					<td><strong><?= $dadosPessoais['nome'] ?></strong></td>
 					<td><?= $dadosPessoais['email'] ?></td>
 					<td><?= $dadosPessoais['descricao'] ?></td>
 					<td><?= $dadosPessoais['endereco'] ?></td>
@@ -124,7 +124,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		
 		<h1 style="color:#CCC;">Experiencia</h1>
 		<div class="tabelas-scroll">
-			<table class="table table-light" border="5">
+			<table class="table table-bordered table-striped" >
 				<tr>
 					<th>Cargo</th>
 					<th>Empresa</th>						
@@ -147,10 +147,10 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 							//echo $experienciaAtual[$i]['id_exp'].'<br/>';
 						 ?>
 
-						<tr>
-							<td >
-								<?= $experienciaAtual[$i]['cargo']				
-								 ?>
+						<tr style="color:#888;">
+							<td ><strong><?= $experienciaAtual[$i]['cargo']				
+								 ?></strong>
+								
 							</td>	
 							<td>
 								<?= $experienciaAtual[$i]['empresa']			
@@ -195,7 +195,7 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 		
 		<h1 style="color:#CCC;">Educacao</h1>
 		<div class="tabelas-scroll">
-		<table class="table table-light" border="5"  width="1200" >
+		<table class="table table-bordered table-striped" width="1200" >
 				<tr>
 					<th style="width:200px;">Formacao</th>	
 					<th style="width:200px;">Instituicao</th>
@@ -215,9 +215,9 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 						$educacao  = $educacao->pegarEdu();
 						for ($i=0; $i <= $qtEdu ; $i++):
 					 ?>
-					<tr>
+					<tr style="color:#888;">
 						<td>							
-							<?= $educacao[$i]['formacao'] ?>
+							<strong><?= $educacao[$i]['formacao'] ?></strong>
 						</td>
 						<td>							
 							<?= $educacao[$i]['instituicao'] ?>
