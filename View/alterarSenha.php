@@ -29,10 +29,10 @@ if(isset($_POST['senha']) && !empty($_POST['senha'])){
 				<input id="senha" type="password" name="senha" maxlength="20" class="form-control" required>
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Enviar" class="btn btn-primary form-control"/>	
+				<input type="submit" value="Enviar" class="btn btn-dark form-control"/>	
 			</div>			
 		</form>
-		<button onClick="voltar()" class="btn btn-primary">Voltar</button>
+		<button onClick="voltar()" class="btn btn-dark">Voltar</button>
 	</div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>

@@ -13,34 +13,34 @@ $_SESSION['id_pessoa'] = $id_pessoa;
 require "../pages/head.php";
 ?>
 	<div style="background-color:#CCC;" class="jumbotron">
-		<table border="0" class='table'>
-			<tr>
-				<h2 style="color:#EEE;">Dados Pessoais</h2>
-			</tr>
-			<tr>
-				<td>
-					<a href="novosDados.php?dado=nome">Alterar Nome</a>
-				</td>
-				<td>
-					<a href="novosDados.php?dado=objPro">Alterar Objetivo Profissional </a>
-				</td>
-				<td>
-					<a href="novosDados.php?dado=endereco">Alterar Endereço </a>
-				</td>
-				<td>
-					<a href="novosDados.php?dado=telefone">Alterar Telefone </a>
-				</td>
-				<td>
-					<a href="novosDados.php?dado=habilidades">Alterar Habilidades </a>
-				</td>
-			</tr>
-			<tr>
-				<td style="border:none;">
-					<a href="alterarSenha.php">Alterar Senha</a>				
-				</td>				
-			</tr>	
-				
-		</table>		
+				<div class="row">
+					<h2 style="color:#EEE;">Dados Pessoais</h2>
+				</div>
+				<hr>				
+				<div class="row" style="flex-direction:column;">
+					<div class="col-md-4" >						
+					   <a href="novosDados.php?dado=nome" class="btn btn-dark">Alterar Nome</a>
+					</div>
+					
+					<div class="col-md-4" style="padding-top:5px;">
+						<a href="novosDados.php?dado=endereco" class="btn btn-dark">Alterar Endereço </a>
+					</div>
+					<div class="col-md-4" style="padding-top:5px;">
+						<a href="novosDados.php?dado=telefone" class="btn btn-dark">Alterar Telefone </a>
+					</div>
+				</div>
+				<br/>
+				<div class="row" style="flex-direction:column;">
+					<div class="col-md-4">
+						<a href="novosDados.php?dado=habilidades" class="btn btn-dark">Alterar Habilidades </a>
+					</div>
+					<div class="col-md-4" style="padding-top:5px;">
+						<a href="novosDados.php?dado=objPro" class="btn btn-dark">Alterar Objetivo Profissional </a>
+					</div>
+					<div class="col-md-4" style="padding-top:5px;">
+						<a href="alterarSenha.php" class="btn btn-dark">Alterar Senha</a>
+					</div>
+				</div>	
 	</div>
 	<div style="background-color:#CCC;" class="jumbotron">
 			<table border="0" class='table'>
@@ -49,10 +49,10 @@ require "../pages/head.php";
 				</tr>
 				<tr>
 					<td>
-						<a href="novaExp.php">Adicionar Experiencia</a>
+						<a href="novaExp.php" class="btn btn-primary">Adicionar Experiencia</a>
 					</td>
 					<td>
-						<a href="novaEdu.php">Adicionar Educacao</a>
+						<a href="novaEdu.php" class="btn btn-primary">Adicionar Educacao</a>
 					</td>
 				</tr>
 			</table>
@@ -151,7 +151,7 @@ require "../pages/head.php";
 									$expAtual = $experienciaAtual[$i]['id_exp'];
 									if($expAtual != ''):
 								 ?>								 
-								<a href="editarExp.php?exp=<?=$expAtual?>">Editar</a><?php
+								<a href="editarExp.php?exp=<?=$expAtual?>" class="btn btn-dark">Editar</a><?php
 									endif;
 								 ?>	
 							</td>	
@@ -159,7 +159,7 @@ require "../pages/head.php";
 								<?php
 								if($expAtual != ''):
 								 ?>										
-								<a href="../Controller/deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')">Excluir</a>
+								<a href="../Controller/deletarExp.php?exp=<?=$expAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa experiencia?')" class="btn btn-danger">Excluir</a>
 							</td>
 								<?php
 								endif;
@@ -214,7 +214,7 @@ require "../pages/head.php";
 								$eduAtual = $educacao[$i]['id_edu'];
 								if($eduAtual != ''):
 							 ?>
-							<a href="editarEdu.php?edu=<?=$eduAtual?>">Editar</a>	<?php
+							<a href="editarEdu.php?edu=<?=$eduAtual?>" class="btn btn-dark">Editar</a>	<?php
 								endif;
 							 ?>
 						</td>
@@ -222,7 +222,7 @@ require "../pages/head.php";
 							if($qtEdu > 0):
 						 ?>
 						<td>	
-								<a href="../Controller/deletarEdu.php?edu=<?=$eduAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa educacao?')">Excluir</a>
+								<a href="../Controller/deletarEdu.php?edu=<?=$eduAtual?>" onclick="return confirm('Tem certeza que deseja deletar essa educacao?')" class="btn btn-danger">Excluir</a>
 						</td>
 						<?php
 							endif;

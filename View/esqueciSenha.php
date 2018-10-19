@@ -35,9 +35,11 @@ $erro = '';
 				<input id="email" type="email" name="email"/ class="form-control" required >	
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Enviar" class="btn btn-primary">
+				<input type="submit" value="Enviar" class="btn btn-primary form-control">	
+			</div>	
+			<div class="form-group">
 				<input onClick="voltar()" type="button" class="btn btn-primary" value="Voltar">
-			</div>		
+			</div>	
 		</form>
 	</div>
 </body>

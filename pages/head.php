@@ -7,7 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/template.css">
 </head>
 <body style="margin-top:15px;">
-	<header>
+	<header style="background-color:#333;">
+
 		<div class="topoint" style="display:flex;justify-content: space-around;">
 			<?php
 				if(isset($_SESSION['logado']) && !empty($_SESSION['logado'])): ?>

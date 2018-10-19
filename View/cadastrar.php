@@ -46,10 +46,12 @@
 			</div>
 			
 			<div class="form-group">
-				<input type="submit" value="Cadastrar" class="btn btn-primary">
+				<input type="submit" value="Cadastrar" class="btn btn-primary form-control" >
+				
+			</div>
+			<div class="form-group">
 				<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
 			</div>
-			
 		</form>
 	</div>
 </body>

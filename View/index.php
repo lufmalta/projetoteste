@@ -24,17 +24,17 @@ require "../pages/head.php";
 			<div class="modal fade modal-dismissible" id="modal" role="modal" >
 				<div class="modal-dialog" >
 					<div class="modal-content">
-						<div class="modal-header">
+						<div class="modal-header" style="background-color:#333;">
 							<h3><strong>Formulário de Login</strong></h3>
 						</div>
 						<div class="modal-body">							
 							<form id="form_login" method="POST" action="index.php" >
 								<div class="form-group">
-									<label for="usuario"><strong>Usuario</strong></label>
+									<label for="usuario"><strong>USUARIO</strong></label>
 									<input id="usuario" type="email" name="usuario" maxlength="50" class="form-control" placeholder="email@algo.com" required>
 								</div>
 								<div class="form-group">
-									<label for="senha" ><strong>Senha</strong></label>
+									<label for="senha" ><strong>SENHA</strong></label>
 									<input id="senha" type="password" name="senha" maxlength="32" class="form-control" required>
 								</div>
 								<div class="form-group">

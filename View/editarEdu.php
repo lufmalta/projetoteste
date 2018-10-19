@@ -87,10 +87,10 @@ if(!empty($_POST['formacao'])){
 					</div>					
 				</div>	
 			<div class="form-group">
-				<button class="btn btn-primary w-100" type="submit">Enviar</button>
+				<button class="btn btn-dark w-100" type="submit">Enviar</button>
 			</div>
 			<div class="form-group">
-				<input type="button" value="Voltar" onClick="Nova()" class="btn btn-primary">
+				<input type="button" value="Voltar" onClick="Nova()" class="btn btn-dark">
 				<!-- <button class="btn btn-primary"><a href="areaRestrita.php" style="text-decoration:none;color:#FFF;">Voltar</a></button> -->
 			</div>
 		</form>
